@@ -11,8 +11,7 @@ public class Kamehameha : MonoBehaviour
     public float explosionDuration = 1f;
     public int explosionRadius = 1;
 
-    [Header("Bomb")]
-    public float bombFuseTime = 3f;
+    [Header("Kamehameha")]
     public AnimationCurve curve;
     Coroutine coroutine;
     public GameObject player;
