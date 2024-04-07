@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class PositionChanger : MonoBehaviour
 {
     public float range = 10.0f;
+    public Vector4 Range;
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {

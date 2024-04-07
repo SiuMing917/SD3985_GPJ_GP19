@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartGameScene.unity
     guid: a633df0f89b680642a35bfdfa90c0f3b
+  - enabled: 1
+    path: Assets/Scenes/BoomBoomFightertest.unity
+    guid: b3fd5f6369495aa4498642fe6e13da3c
   m_configObjects: {}
