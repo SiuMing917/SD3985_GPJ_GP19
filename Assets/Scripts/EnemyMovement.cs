@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     //PlayerHealth playerHealth;
     //EnemyHealth enemyHealth;
     UnityEngine.AI.NavMeshAgent nav;
+    public float speed = 2f;
 
 
     void Awake()
@@ -15,19 +16,12 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         //playerHealth = player.GetComponent<PlayerHealth>();
         //enemyHealth = GetComponent<EnemyHealth>();
-        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        
     }
 
 
     void Update()
     {
-        if (isPlayerAlive == true)
-        {
-            nav.SetDestination(player.position);
-        }
-        else
-        {
-            nav.enabled = false;
-        }
+        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 }
