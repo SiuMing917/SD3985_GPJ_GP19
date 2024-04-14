@@ -327,6 +327,7 @@ MonoBehaviour:
   spawnTime: 3
   spawnPoints:
   - {fileID: 87762990}
+  effect: {fileID: 0}
 --- !u!4 &141140250
 Transform:
   m_ObjectHideFlags: 0
@@ -1437,8 +1438,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1362547322}
   - component: {fileID: 1362547321}
-  - component: {fileID: 1362547320}
   - component: {fileID: 1362547319}
+  - component: {fileID: 1362547320}
   m_Layer: 0
   m_Name: SkillFairy
   m_TagString: Untagged
@@ -1483,7 +1484,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
 --- !u!212 &1362547321
 SpriteRenderer:
@@ -1690,6 +1691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerAlive: 0
+  speed: 2
 --- !u!1001 &1464388577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2237,54 +2239,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: destructibleTiles
-      value: 
-      objectReference: {fileID: 519426611}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: destructibleObjects
-      value: 
-      objectReference: {fileID: 2376848378151871956, guid: e8b3c7300e3ead74ab6011c197093dad, type: 3}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].time
-      value: 0.99998593
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].value
-      value: 0.0033085942
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[0].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].inSlope
-      value: -1.9734238
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[0].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].inWeight
-      value: 0.119396694
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].outSlope
-      value: -1.9734238
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[0].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2339102580472310842, guid: e63ec893d7654b441b612deead49955c, type: 3}
-      propertyPath: curve.m_Curve.Array.data[1].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2339102580472310843, guid: e63ec893d7654b441b612deead49955c, type: 3}
       propertyPath: m_RootOrder
       value: 25

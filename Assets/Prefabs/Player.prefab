@@ -879,6 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8500768775690073657}
   - component: {fileID: 1416415562528645687}
+  - component: {fileID: 6133092652527855009}
   m_Layer: 0
   m_Name: Fairy
   m_TagString: Untagged
@@ -951,6 +952,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6133092652527855009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609243863097947428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ec5f2b9987473469443ff9a11580f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fairypowerPrefab: {fileID: 3996477548929918750, guid: 4643023b908b34a43a662b01410fa3c1, type: 3}
+  FuseTime: 1.5
+  player: {fileID: 2339102580472310983}
 --- !u!1 &4537129843992287871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1100,6 @@ MonoBehaviour:
     m_Bits: 256
   explosionDuration: 1.5
   explosionRadius: 15
-  bombFuseTime: 3
   curve:
     serializedVersion: 2
     m_Curve: []

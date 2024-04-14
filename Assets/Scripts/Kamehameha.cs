@@ -49,10 +49,37 @@ public class Kamehameha : MonoBehaviour
         kamehamehaActive = true;
         Vector2 position = playPos;
         //position += Vector2.right;
-        Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
-        explosion.SetActiveRenderer(explosion.start);
-        explosion.DestroyAfter(explosionDuration);
-        Explode(position, Vector2.right, 15);
+
+        if (player.transform.Find("Right").GetComponent<SpriteRenderer>().enabled)
+        {
+            Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+            explosion.SetActiveRenderer(explosion.start);
+            explosion.DestroyAfter(explosionDuration);
+            Explode(position, Vector2.right, 15);
+        }else if(player.transform.Find("Left").GetComponent<SpriteRenderer>().enabled)
+        {
+            Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+            explosion.SetActiveRenderer(explosion.start);
+            explosion.SetDirection(Vector2.left);
+            explosion.DestroyAfter(explosionDuration);
+            Explode(position, Vector2.left, 15);
+        }
+        else if (player.transform.Find("Up").GetComponent<SpriteRenderer>().enabled)
+        {
+            Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+            explosion.SetActiveRenderer(explosion.start);
+            explosion.SetDirection(Vector2.up);
+            explosion.DestroyAfter(explosionDuration);
+            Explode(position, Vector2.up, 15);
+        }
+        else if (player.transform.Find("Down").GetComponent<SpriteRenderer>().enabled)
+        {
+            Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+            explosion.SetActiveRenderer(explosion.start);
+            explosion.SetDirection(Vector2.down);
+            explosion.DestroyAfter(explosionDuration);
+            Explode(position, Vector2.down, 15);
+        }
         StartCoroutine(EnablePlayerMovementAfterKamehameha());
     }
 
