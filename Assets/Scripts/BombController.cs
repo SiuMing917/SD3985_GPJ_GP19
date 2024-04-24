@@ -131,6 +131,7 @@ public class BombController : MonoBehaviour
         explosion.DestroyAfter(explosionDuration);
 
         Explode(position, direction, length - 1);
+
     }
 
     private void ClearDestructible(Vector2 position)

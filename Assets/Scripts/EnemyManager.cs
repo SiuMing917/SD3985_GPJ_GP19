@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -20,14 +21,15 @@ public class EnemyManager : MonoBehaviour
         if (isPlayerAlive == true)
         {
             Debug.Log("spwan");
+            int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            Instantiate(effect, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+
+            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
             return;
         }
 
-        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-        Instantiate(effect, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 
-        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-        
+
 
     }
 }
