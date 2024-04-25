@@ -20,7 +20,7 @@ public class EnemyManager : MonoBehaviour
     {
         if (isPlayerAlive == true)
         {
-            Debug.Log("spwan");
+
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
             Instantiate(effect, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 

@@ -81,7 +81,8 @@ public class MovementController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-        
+
+
             //DeathSequence();
             var healthComonent = this.gameObject.GetComponent<Health>();
             Debug.Log("explosion hit2");

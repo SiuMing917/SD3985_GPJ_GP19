@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2907180126785060953, guid: e8b3c7300e3ead74ab6011c197093dad, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2376848378151871956, guid: e8b3c7300e3ead74ab6011c197093dad, type: 3}
       propertyPath: m_Name
       value: Test_enemy2

@@ -152,7 +152,7 @@ public class BombController : MonoBehaviour
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.gameObject.CompareTag("Destructible"))
+            if (collider.gameObject.CompareTag("Destructible") || collider.gameObject.CompareTag("Enemy"))
             {
                 Instantiate(destructiblePrefab, position, Quaternion.identity);
                 Destroy(collider.gameObject);

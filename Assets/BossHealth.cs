@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class BossHealth : MonoBehaviour
 {
-    public float currentHealth = 100f;
+    public float currentHealth ;
     public Image healthBar;
     public float maxhealth = 100f;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,24 +18,24 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            
+
             TakeDamage(20);
         }
     }
     public void TakeDamage(int amount)
     {
-      
-        currentHealth -= amount;
-        healthBar.fillAmount = currentHealth /maxhealth;
 
-        if (currentHealth<=0)
+        currentHealth -= amount;
+        healthBar.fillAmount = currentHealth ;
+
+        if (currentHealth <= 0)
         {
-            GetComponent<MovementController>().DeathSequence();
+            Destroy(this.gameObject);
             //player died 
             //show death scene
-            //GetComponent<EnemyManager>().isPlayerAlive = false;
+            
         }
     }
 
