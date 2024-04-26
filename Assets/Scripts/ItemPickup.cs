@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
+    [System.Serializable]
     public enum ItemType
     {
         ExtraBomb,
@@ -16,7 +17,13 @@ public class ItemPickup : MonoBehaviour
     }
 
     public ItemType type;
-
+    public SavableItem GetSaveInfo()
+    {
+        SavableItem data = new SavableItem();
+        data.itemType = this.type;
+        data.position = this.transform.position;
+        return data;
+    }
     private void OnItemPickup(GameObject player)
     {
         Transform skillTransform = player.transform.Find("Skill");
