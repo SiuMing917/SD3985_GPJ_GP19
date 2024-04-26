@@ -167,5 +167,9 @@ public class Kamehameha : MonoBehaviour
             coroutine = null;
             NormalExplosion(other.transform.position,this.gameObject);
         }
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("hitted");
+        }
     }
 }

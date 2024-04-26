@@ -42,15 +42,10 @@ public class Boss : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-
-            //DeathSequence();
-            
-            var healthComonent1 = this.gameObject.GetComponent<Boss>();
-
-            
-            Debug.Log(healthComonent1);
+            //DeathSequence();            
+            var healthComonent1 = this.gameObject.GetComponent<Boss>();            
+            //Debug.Log(healthComonent1);
             Debug.Log("explosion hit boss");
-
             if (healthComonent1 != null)
             {
                 healthComonent1.TakeDamage(10);
