@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovementController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class MovementController : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererDeath;
 
     private AnimatedSpriteRenderer activeSpriteRenderer;
+
+    public int damage = 10;
 
     private void Awake()
     {
@@ -78,11 +81,22 @@ public class MovementController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-            DeathSequence();
+
+
+            //DeathSequence();
+            var healthComonent = this.gameObject.GetComponent<Health>();
+            Debug.Log("explosion hit2");
+            Debug.Log(healthComonent);
+            
+            if (healthComonent != null)
+            {
+                healthComonent.TakeDamage(damage);
+                Debug.Log("explosion hit3");
+            }
         }
     }
 
-    private void DeathSequence()
+    public void DeathSequence()
     {
         enabled = false;
         GetComponent<BombController>().enabled = false;

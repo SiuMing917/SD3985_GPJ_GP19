@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PositionChanger : MonoBehaviour
+public class positionChanger : MonoBehaviour
 {
     public float range = 10.0f;
     public Vector4 Range;

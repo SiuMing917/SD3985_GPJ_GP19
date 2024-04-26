@@ -131,6 +131,7 @@ public class BombController : MonoBehaviour
         explosion.DestroyAfter(explosionDuration);
 
         Explode(position, direction, length - 1);
+
     }
 
     private void ClearDestructible(Vector2 position)
@@ -151,7 +152,7 @@ public class BombController : MonoBehaviour
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.gameObject.CompareTag("Destructible"))
+            if (collider.gameObject.CompareTag("Destructible") || collider.gameObject.CompareTag("Enemy"))
             {
                 Instantiate(destructiblePrefab, position, Quaternion.identity);
                 Destroy(collider.gameObject);

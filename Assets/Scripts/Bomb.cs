@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class Bomb : MonoBehaviour
 {
+    public float damage;
+
     [Header("Bomb")]
     public float bombFuseTime = 3f;
     public AnimationCurve curve;
