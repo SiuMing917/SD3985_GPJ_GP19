@@ -8,6 +8,17 @@ TagManager:
   - Spike
   - Explosion
   - Enemy
+  - Bullet
+  - Bomb
+  - Role
+  - Box
+  - door
+  - Barriar
+  - tool_potion
+  - tool_bomb
+  - tool_shoes
+  - tool_heart
+  - wall
   layers:
   - Default
   - TransparentFX

@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 1731500511895903766}
   - component: {fileID: 2779332703345819764}
   - component: {fileID: 1869961066746539484}
-  - component: {fileID: 3116831726162418011}
+  - component: {fileID: -8829887323829694509}
+  - component: {fileID: -66451366748755154}
   m_Layer: 11
   m_Name: Bomb1
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 740861331241348081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.9982114, y: 5.000962, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.95, y: 0.95, z: 1}
   m_Children:
   - {fileID: 2039617517578930690}
   m_Father: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -7260530041815125738, guid: e462357b67c153f4f9852dfe4f12829e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,7 +104,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 6bb1daae12b78634eb4abdb4c1457e65, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -137,7 +138,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 740861331241348081}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6bb1daae12b78634eb4abdb4c1457e65, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -154,7 +155,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.95, y: 1.025}
   m_EdgeRadius: 0
---- !u!114 &3116831726162418011
+--- !u!114 &-8829887323829694509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740861331241348081}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3e44f14a146ce4c890f9724950c640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0
+  explodeTime: 2
+  x: 0
+  y: 0
+  host: 0
+  isStatic: 1
+  targetCoord: {x: 0, y: 0}
+--- !u!114 &-66451366748755154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,9 +183,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 740861331241348081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3e44f14a146ce4c890f9724950c640, type: 3}
+  m_Script: {fileID: 11500000, guid: 151fa4ce12d96794ca9ac7e2648a788c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   bombFuseTime: 3
   curve:
     serializedVersion: 2
@@ -191,14 +212,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  explosionPrefab: {fileID: 8893071391486193149, guid: 43283f08def395f4bb71274e0c5111ae, type: 3}
+  explosionPrefab: {fileID: 823413358125780218, guid: 43283f08def395f4bb71274e0c5111ae, type: 3}
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 256
   explosionDuration: 1
   explosionRadius: 1
   destructiblePrefab: {fileID: 5517966312333032629, guid: 39b7cb57db51ea145becebbea44df9cd, type: 3}
-  destructibleObjects: {fileID: 2376848378151871956, guid: e8b3c7300e3ead74ab6011c197093dad, type: 3}
+  destructibleObjects: {fileID: 0}
 --- !u!1 &1614289592215908144
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,8 +245,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614289592215908144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.445, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalScale: {x: 1.5, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 506478341621981589}
   m_RootOrder: 0
@@ -269,7 +290,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: -2666187217680338886, guid: b5f6c841c60ee4048a45847cbca3c77c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

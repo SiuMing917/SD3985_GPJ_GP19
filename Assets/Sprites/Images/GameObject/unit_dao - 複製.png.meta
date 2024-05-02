@@ -1,0 +1,1956 @@
+fileFormatVersion: 2
+guid: 1f2c9e1b254e7b148a1f5fab876368f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -164338784521221802
+    second: "unit_dao - \u8907\u88FD_0"
+  - first:
+      213: 6434854342699975203
+    second: "unit_dao - \u8907\u88FD_1"
+  - first:
+      213: -2195965784052399886
+    second: "unit_dao - \u8907\u88FD_2"
+  - first:
+      213: -252861909706666191
+    second: "unit_dao - \u8907\u88FD_3"
+  - first:
+      213: -4318944769454674227
+    second: "unit_dao - \u8907\u88FD_4"
+  - first:
+      213: 2163410922545873884
+    second: "unit_dao - \u8907\u88FD_5"
+  - first:
+      213: 4699753273060486772
+    second: "unit_dao - \u8907\u88FD_6"
+  - first:
+      213: -7902263289644375034
+    second: "unit_dao - \u8907\u88FD_7"
+  - first:
+      213: -2824569021316776029
+    second: "unit_dao - \u8907\u88FD_8"
+  - first:
+      213: 84979183635061050
+    second: "unit_dao - \u8907\u88FD_9"
+  - first:
+      213: 3648416861911243043
+    second: "unit_dao - \u8907\u88FD_10"
+  - first:
+      213: -1879943451887410010
+    second: "unit_dao - \u8907\u88FD_11"
+  - first:
+      213: 6329937546786091851
+    second: "unit_dao - \u8907\u88FD_12"
+  - first:
+      213: 7536508021813992245
+    second: "unit_dao - \u8907\u88FD_13"
+  - first:
+      213: -8324727623900559589
+    second: "unit_dao - \u8907\u88FD_14"
+  - first:
+      213: -3361061905759130715
+    second: "unit_dao - \u8907\u88FD_15"
+  - first:
+      213: 7423301387365974405
+    second: "unit_dao - \u8907\u88FD_16"
+  - first:
+      213: 1106433039042959477
+    second: "unit_dao - \u8907\u88FD_17"
+  - first:
+      213: 4677348730776548124
+    second: "unit_dao - \u8907\u88FD_18"
+  - first:
+      213: 9089368657597704567
+    second: "unit_dao - \u8907\u88FD_19"
+  - first:
+      213: 5258558395573014483
+    second: "unit_dao - \u8907\u88FD_20"
+  - first:
+      213: 2051658461793164655
+    second: "unit_dao - \u8907\u88FD_21"
+  - first:
+      213: 1829133422328498173
+    second: "unit_dao - \u8907\u88FD_22"
+  - first:
+      213: -7773328270760515619
+    second: "unit_dao - \u8907\u88FD_23"
+  - first:
+      213: -8109206882558917157
+    second: "unit_dao - \u8907\u88FD_24"
+  - first:
+      213: -3340677283874495907
+    second: "unit_dao - \u8907\u88FD_25"
+  - first:
+      213: 1662956735946738605
+    second: "unit_dao - \u8907\u88FD_26"
+  - first:
+      213: -8911490083244165766
+    second: "unit_dao - \u8907\u88FD_27"
+  - first:
+      213: -1157186887459388767
+    second: "unit_dao - \u8907\u88FD_28"
+  - first:
+      213: 8090586609264251751
+    second: "unit_dao - \u8907\u88FD_29"
+  - first:
+      213: 7168390931401243503
+    second: "unit_dao - \u8907\u88FD_30"
+  - first:
+      213: -4516978932307995633
+    second: "unit_dao - \u8907\u88FD_31"
+  - first:
+      213: 8818397477828724959
+    second: "unit_dao - \u8907\u88FD_32"
+  - first:
+      213: 169533316322001052
+    second: "unit_dao - \u8907\u88FD_33"
+  - first:
+      213: 1168218603104358265
+    second: "unit_dao - \u8907\u88FD_34"
+  - first:
+      213: -2300259030002088071
+    second: "unit_dao - \u8907\u88FD_35"
+  - first:
+      213: -4715567876387148222
+    second: "unit_dao - \u8907\u88FD_36"
+  - first:
+      213: -95445078328932438
+    second: "unit_dao - \u8907\u88FD_37"
+  - first:
+      213: 7794068557189638577
+    second: "unit_dao - \u8907\u88FD_38"
+  - first:
+      213: 4241366689302614815
+    second: "unit_dao - \u8907\u88FD_39"
+  - first:
+      213: -2782746575365002235
+    second: "unit_dao - \u8907\u88FD_40"
+  - first:
+      213: -547415000878024254
+    second: "unit_dao - \u8907\u88FD_41"
+  - first:
+      213: -1286631071935798019
+    second: "unit_dao - \u8907\u88FD_42"
+  - first:
+      213: 4606170222641508909
+    second: "unit_dao - \u8907\u88FD_43"
+  - first:
+      213: 5350402304380792841
+    second: "unit_dao - \u8907\u88FD_44"
+  - first:
+      213: 7159352671299792028
+    second: "unit_dao - \u8907\u88FD_45"
+  - first:
+      213: -8187323940574797580
+    second: "unit_dao - \u8907\u88FD_46"
+  - first:
+      213: -812879861603534652
+    second: "unit_dao - \u8907\u88FD_47"
+  - first:
+      213: 9217566105714924557
+    second: "unit_dao - \u8907\u88FD_48"
+  - first:
+      213: -3290934959032603851
+    second: "unit_dao - \u8907\u88FD_49"
+  - first:
+      213: -9108980850073129118
+    second: "unit_dao - \u8907\u88FD_50"
+  - first:
+      213: -2961598797519811023
+    second: "unit_dao - \u8907\u88FD_51"
+  - first:
+      213: -1232113237042695413
+    second: "unit_dao - \u8907\u88FD_52"
+  - first:
+      213: 2530074711698736701
+    second: "unit_dao - \u8907\u88FD_53"
+  - first:
+      213: -8291733459726423159
+    second: "unit_dao - \u8907\u88FD_54"
+  - first:
+      213: -8733563780387911750
+    second: "unit_dao - \u8907\u88FD_55"
+  - first:
+      213: 7113320173863302679
+    second: "unit_dao - \u8907\u88FD_56"
+  - first:
+      213: -2507400955523802611
+    second: "unit_dao - \u8907\u88FD_57"
+  - first:
+      213: 4010578372036440203
+    second: "unit_dao - \u8907\u88FD_58"
+  - first:
+      213: 7463583714172825443
+    second: "unit_dao - \u8907\u88FD_59"
+  - first:
+      213: -7252905107638108266
+    second: "unit_dao - \u8907\u88FD_60"
+  - first:
+      213: 5152945397245904290
+    second: "unit_dao - \u8907\u88FD_61"
+  - first:
+      213: 6380713240545313989
+    second: "unit_dao - \u8907\u88FD_62"
+  - first:
+      213: 1986917044138618046
+    second: "unit_dao - \u8907\u88FD_63"
+  - first:
+      213: 3202907100979186012
+    second: "unit_dao - \u8907\u88FD_64"
+  - first:
+      213: 4280002626240642906
+    second: "unit_dao - \u8907\u88FD_65"
+  - first:
+      213: -2380887051436065729
+    second: "unit_dao - \u8907\u88FD_66"
+  - first:
+      213: -5754750537158821686
+    second: "unit_dao - \u8907\u88FD_67"
+  - first:
+      213: -4560312461422756840
+    second: "unit_dao - \u8907\u88FD_68"
+  - first:
+      213: -5139370339965685260
+    second: "unit_dao - \u8907\u88FD_69"
+  - first:
+      213: 4885952399065980123
+    second: "unit_dao - \u8907\u88FD_70"
+  - first:
+      213: 2787933792785244497
+    second: "unit_dao - \u8907\u88FD_71"
+  - first:
+      213: 6683124197695060065
+    second: "unit_dao - \u8907\u88FD_72"
+  - first:
+      213: -2010087859664730660
+    second: "unit_dao - \u8907\u88FD_73"
+  - first:
+      213: 8762809639630090442
+    second: "unit_dao - \u8907\u88FD_74"
+  - first:
+      213: -3850206749939249817
+    second: "unit_dao - \u8907\u88FD_75"
+  - first:
+      213: 6319640099685531416
+    second: "unit_dao - \u8907\u88FD_76"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_0"
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 694
+        width: 42
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6590bc50fb628bdf0800000000000000
+      internalID: -164338784521221802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_1"
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 694
+        width: 52
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322030e6ee13d4950800000000000000
+      internalID: 6434854342699975203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_2"
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 694
+        width: 52
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f005ae01cc5681e0800000000000000
+      internalID: -2195965784052399886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_3"
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 725
+        width: 42
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f05bece67ad7cf0800000000000000
+      internalID: -252861909706666191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_4"
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 725
+        width: 52
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce6f1c6d960014c0800000000000000
+      internalID: -4318944769454674227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_5"
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 725
+        width: 52
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd30c8595caf50e10800000000000000
+      internalID: 2163410922545873884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_6"
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 694
+        width: 25
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47eefb493b0e83140800000000000000
+      internalID: 4699753273060486772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_7"
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 694
+        width: 34
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6042323f765855290800000000000000
+      internalID: -7902263289644375034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_8"
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 694
+        width: 34
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af37d8b07d1dc8d0800000000000000
+      internalID: -2824569021316776029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_9"
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 624
+        width: 44
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39ded50e18ed2100800000000000000
+      internalID: 84979183635061050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_10"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 624
+        width: 42
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329d3c64ec7c1a230800000000000000
+      internalID: 3648416861911243043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_11"
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 624
+        width: 42
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4ed60146919e5e0800000000000000
+      internalID: -1879943451887410010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_12"
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 624
+        width: 42
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43b79e49a478d750800000000000000
+      internalID: 6329937546786091851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_13"
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 624
+        width: 48
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bda1f9d1e079860800000000000000
+      internalID: 7536508021813992245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_14"
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 624
+        width: 51
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1786851550a87c80800000000000000
+      internalID: -8324727623900559589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_15"
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 548
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab212f110c1b51d0800000000000000
+      internalID: -3361061905759130715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_16"
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 548
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5810d9e084dd40760800000000000000
+      internalID: 7423301387365974405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_17"
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 548
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57859e3acf6da5f00800000000000000
+      internalID: 1106433039042959477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_18"
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 548
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c137f8493e749e040800000000000000
+      internalID: 4677348730776548124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_19"
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 553
+        width: 46
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7792ea4f2ace32e70800000000000000
+      internalID: 9089368657597704567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_20"
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 553
+        width: 49
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df07ceeff62af840800000000000000
+      internalID: 5258558395573014483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_21"
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 498
+        width: 31
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d1b973084f87c10800000000000000
+      internalID: 2051658461793164655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_22"
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 524
+        width: 6
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df74fac0823626910800000000000000
+      internalID: 1829133422328498173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_23"
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 508
+        width: 30
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd761d26f179f1490800000000000000
+      internalID: -7773328270760515619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_24"
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 473
+        width: 52
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd54ce20e4f467f80800000000000000
+      internalID: -8109206882558917157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_25"
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 468
+        width: 67
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52a171c5b783a1d0800000000000000
+      internalID: -3340677283874495907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_26"
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 482
+        width: 47
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabc2f23752041710800000000000000
+      internalID: 1662956735946738605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_27"
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 482
+        width: 49
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75b0d00cf6045480800000000000000
+      internalID: -8911490083244165766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_28"
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 495
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a24e3a28a8d0ffe0800000000000000
+      internalID: -1157186887459388767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_29"
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 465
+        width: 27
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7635ab5c7a9874070800000000000000
+      internalID: 8090586609264251751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_30"
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 481
+        width: 5
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b7d45829d3b7360800000000000000
+      internalID: 7168390931401243503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_31"
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 466
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04dbd1d7977051c0800000000000000
+      internalID: -4516978932307995633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_32"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 409
+        width: 42
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd88e22c8cd316a70800000000000000
+      internalID: 8818397477828724959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_33"
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 402
+        width: 24
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9087f827ad4a5200800000000000000
+      internalID: 169533316322001052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_34"
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 439
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97fc90a41a8563010800000000000000
+      internalID: 1168218603104358265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_35"
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 415
+        width: 34
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97747597996d310e0800000000000000
+      internalID: -2300259030002088071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_36"
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 411
+        width: 47
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e63b52000fe8eb0800000000000000
+      internalID: -4715567876387148222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_37"
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 411
+        width: 47
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa705aaf439ecaef0800000000000000
+      internalID: -95445078328932438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_38"
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 409
+        width: 46
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9645ade081a2c60800000000000000
+      internalID: 7794068557189638577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_39"
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 402
+        width: 8
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f139e0e388c5cda30800000000000000
+      internalID: 4241366689302614815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_40"
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 395
+        width: 8
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c2f6bbbb2b169d0800000000000000
+      internalID: -2782746575365002235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_41"
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 391
+        width: 11
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9f1fff4f03768f0800000000000000
+      internalID: -547415000878024254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_42"
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 385
+        width: 16
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df469406bd7f42ee0800000000000000
+      internalID: -1286631071935798019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_43"
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 381
+        width: 12
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d227787b9676cef30800000000000000
+      internalID: 4606170222641508909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_44"
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 382
+        width: 13
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9007c065c82704a40800000000000000
+      internalID: 5350402304380792841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_45"
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 322
+        width: 52
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c619a92512b5360800000000000000
+      internalID: 7159352671299792028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_46"
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 322
+        width: 32
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0ecfc1148c06e80800000000000000
+      internalID: -8187323940574797580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_47"
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 323
+        width: 50
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c87d0c921218b4f0800000000000000
+      internalID: -812879861603534652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_48"
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 310
+        width: 66
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c91d0598f5bef70800000000000000
+      internalID: 9217566105714924557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_49"
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 218
+        width: 9
+        height: 5
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b62f347104452d0800000000000000
+      internalID: -3290934959032603851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_50"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 199
+        width: 50
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f2e85ad26669180800000000000000
+      internalID: -9108980850073129118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_51"
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 198
+        width: 50
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e8b9ab59946e6d0800000000000000
+      internalID: -2961598797519811023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_52"
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 199
+        width: 50
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b037307f987a6eee0800000000000000
+      internalID: -1232113237042695413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_53"
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 199
+        width: 50
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36800e9b81ac1320800000000000000
+      internalID: 2530074711698736701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_54"
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 198
+        width: 9
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b29c09958ddec80800000000000000
+      internalID: -8291733459726423159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_55"
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 146
+        width: 6
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7c2ce93062cc680800000000000000
+      internalID: -8733563780387911750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_56"
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 146
+        width: 6
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716fdb8920797b260800000000000000
+      internalID: 7113320173863302679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_57"
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 145
+        width: 11
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a5780ad1ce33dd0800000000000000
+      internalID: -2507400955523802611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_58"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 145
+        width: 12
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80b819c7cf68a730800000000000000
+      internalID: 4010578372036440203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_59"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 128
+        width: 31
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f69a228d9f39760800000000000000
+      internalID: 7463583714172825443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_60"
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 128
+        width: 33
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f3d9d6b31885b90800000000000000
+      internalID: -7252905107638108266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_61"
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 128
+        width: 34
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a583dd8980f28740800000000000000
+      internalID: 5152945397245904290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_62"
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 128
+        width: 34
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c4c554c2e8dc8850800000000000000
+      internalID: 6380713240545313989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_63"
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 127
+        width: 9
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc2d064682f29b10800000000000000
+      internalID: 1986917044138618046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_64"
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 127
+        width: 9
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59c072e903037c20800000000000000
+      internalID: 3202907100979186012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_65"
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 98
+        width: 12
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5fffce46bf956b30800000000000000
+      internalID: 4280002626240642906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_66"
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 95
+        width: 9
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c73d857d365fed0800000000000000
+      internalID: -2380887051436065729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_67"
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 94
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8f8ad50e40320b0800000000000000
+      internalID: -5754750537158821686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_68"
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 95
+        width: 9
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81cfb185af386b0c0800000000000000
+      internalID: -4560312461422756840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_69"
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 70
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1ba25c7e94da8b0800000000000000
+      internalID: -5139370339965685260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_70"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 72
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc9bcfe1d36ec340800000000000000
+      internalID: 4885952399065980123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_71"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 57
+        width: 42
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151a540730bb0b620800000000000000
+      internalID: 2787933792785244497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_72"
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 57
+        width: 42
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1687e619c0a3fbc50800000000000000
+      internalID: 6683124197695060065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_73"
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 57
+        width: 34
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd5cb55ddbbba14e0800000000000000
+      internalID: -2010087859664730660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_74"
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 61
+        width: 34
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0358c90f0cb9970800000000000000
+      internalID: 8762809639630090442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_75"
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 57
+        width: 7
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d4f063c51519ac0800000000000000
+      internalID: -3850206749939249817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_dao - \u8907\u88FD_76"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 55
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ff112103fd3b750800000000000000
+      internalID: 6319640099685531416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

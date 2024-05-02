@@ -1,0 +1,1980 @@
+fileFormatVersion: 2
+guid: 85c321b0a7a5c49479e95a90f4abf530
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7179261059575498265
+    second: "unit_luxcappi - \u8907\u88FD_0"
+  - first:
+      213: 6758810324380331240
+    second: "unit_luxcappi - \u8907\u88FD_1"
+  - first:
+      213: -8978781589751883514
+    second: "unit_luxcappi - \u8907\u88FD_2"
+  - first:
+      213: 8724630633424368260
+    second: "unit_luxcappi - \u8907\u88FD_3"
+  - first:
+      213: 5858106495774663793
+    second: "unit_luxcappi - \u8907\u88FD_4"
+  - first:
+      213: -7159056795403052946
+    second: "unit_luxcappi - \u8907\u88FD_5"
+  - first:
+      213: -7592917781667027140
+    second: "unit_luxcappi - \u8907\u88FD_6"
+  - first:
+      213: 5405966486017209762
+    second: "unit_luxcappi - \u8907\u88FD_7"
+  - first:
+      213: 1505279307176860248
+    second: "unit_luxcappi - \u8907\u88FD_8"
+  - first:
+      213: 8644845024926017502
+    second: "unit_luxcappi - \u8907\u88FD_9"
+  - first:
+      213: 97314858220494948
+    second: "unit_luxcappi - \u8907\u88FD_10"
+  - first:
+      213: 4979383048576348072
+    second: "unit_luxcappi - \u8907\u88FD_11"
+  - first:
+      213: -7747142308089405313
+    second: "unit_luxcappi - \u8907\u88FD_12"
+  - first:
+      213: 3508663562285308060
+    second: "unit_luxcappi - \u8907\u88FD_13"
+  - first:
+      213: -7457630188497098511
+    second: "unit_luxcappi - \u8907\u88FD_14"
+  - first:
+      213: 4413362959072499947
+    second: "unit_luxcappi - \u8907\u88FD_15"
+  - first:
+      213: -8440760419041781454
+    second: "unit_luxcappi - \u8907\u88FD_16"
+  - first:
+      213: -3903076237843920001
+    second: "unit_luxcappi - \u8907\u88FD_17"
+  - first:
+      213: -5800281470612070064
+    second: "unit_luxcappi - \u8907\u88FD_18"
+  - first:
+      213: 2489054805755526826
+    second: "unit_luxcappi - \u8907\u88FD_19"
+  - first:
+      213: 1678121625116285733
+    second: "unit_luxcappi - \u8907\u88FD_20"
+  - first:
+      213: -2060357670480196479
+    second: "unit_luxcappi - \u8907\u88FD_21"
+  - first:
+      213: 5736243062044919225
+    second: "unit_luxcappi - \u8907\u88FD_22"
+  - first:
+      213: 1430703705113276562
+    second: "unit_luxcappi - \u8907\u88FD_23"
+  - first:
+      213: 8391281428947520146
+    second: "unit_luxcappi - \u8907\u88FD_24"
+  - first:
+      213: 2684081081551569379
+    second: "unit_luxcappi - \u8907\u88FD_25"
+  - first:
+      213: -3831864270168051037
+    second: "unit_luxcappi - \u8907\u88FD_26"
+  - first:
+      213: -2986894319302004394
+    second: "unit_luxcappi - \u8907\u88FD_27"
+  - first:
+      213: -7000593152137393419
+    second: "unit_luxcappi - \u8907\u88FD_28"
+  - first:
+      213: -5313990830907321628
+    second: "unit_luxcappi - \u8907\u88FD_29"
+  - first:
+      213: -8193579630245377796
+    second: "unit_luxcappi - \u8907\u88FD_30"
+  - first:
+      213: 4229756288498625147
+    second: "unit_luxcappi - \u8907\u88FD_31"
+  - first:
+      213: -5247431671044397016
+    second: "unit_luxcappi - \u8907\u88FD_32"
+  - first:
+      213: 1969727553994170576
+    second: "unit_luxcappi - \u8907\u88FD_33"
+  - first:
+      213: -4427922687064899990
+    second: "unit_luxcappi - \u8907\u88FD_34"
+  - first:
+      213: 4467601574724494345
+    second: "unit_luxcappi - \u8907\u88FD_35"
+  - first:
+      213: -2738973202970434502
+    second: "unit_luxcappi - \u8907\u88FD_36"
+  - first:
+      213: 4435968929936064594
+    second: "unit_luxcappi - \u8907\u88FD_37"
+  - first:
+      213: -3939275175294807635
+    second: "unit_luxcappi - \u8907\u88FD_38"
+  - first:
+      213: -6649101517888222240
+    second: "unit_luxcappi - \u8907\u88FD_39"
+  - first:
+      213: 3921144918112626317
+    second: "unit_luxcappi - \u8907\u88FD_40"
+  - first:
+      213: 8093218599420013524
+    second: "unit_luxcappi - \u8907\u88FD_41"
+  - first:
+      213: -20778393028783301
+    second: "unit_luxcappi - \u8907\u88FD_42"
+  - first:
+      213: -4743863249276287639
+    second: "unit_luxcappi - \u8907\u88FD_43"
+  - first:
+      213: 2188622576153999657
+    second: "unit_luxcappi - \u8907\u88FD_44"
+  - first:
+      213: 7419420234855922546
+    second: "unit_luxcappi - \u8907\u88FD_45"
+  - first:
+      213: -935868500905211512
+    second: "unit_luxcappi - \u8907\u88FD_46"
+  - first:
+      213: 2676062156358692164
+    second: "unit_luxcappi - \u8907\u88FD_47"
+  - first:
+      213: 932297995923366703
+    second: "unit_luxcappi - \u8907\u88FD_48"
+  - first:
+      213: -3511757529657932836
+    second: "unit_luxcappi - \u8907\u88FD_49"
+  - first:
+      213: 6412152991370043482
+    second: "unit_luxcappi - \u8907\u88FD_50"
+  - first:
+      213: -5566684203028555419
+    second: "unit_luxcappi - \u8907\u88FD_51"
+  - first:
+      213: 2326910791313815792
+    second: "unit_luxcappi - \u8907\u88FD_52"
+  - first:
+      213: -4230813356245801957
+    second: "unit_luxcappi - \u8907\u88FD_53"
+  - first:
+      213: -7040900800626945391
+    second: "unit_luxcappi - \u8907\u88FD_54"
+  - first:
+      213: -6657643470706005700
+    second: "unit_luxcappi - \u8907\u88FD_55"
+  - first:
+      213: -3018726646274053818
+    second: "unit_luxcappi - \u8907\u88FD_56"
+  - first:
+      213: -6284585790804843189
+    second: "unit_luxcappi - \u8907\u88FD_57"
+  - first:
+      213: -6097671764601590045
+    second: "unit_luxcappi - \u8907\u88FD_58"
+  - first:
+      213: 3793364218667476400
+    second: "unit_luxcappi - \u8907\u88FD_59"
+  - first:
+      213: -494931940815612744
+    second: "unit_luxcappi - \u8907\u88FD_60"
+  - first:
+      213: 460948855589929549
+    second: "unit_luxcappi - \u8907\u88FD_61"
+  - first:
+      213: 4054936022361456634
+    second: "unit_luxcappi - \u8907\u88FD_62"
+  - first:
+      213: -3258857580841169906
+    second: "unit_luxcappi - \u8907\u88FD_63"
+  - first:
+      213: 8945971854035486219
+    second: "unit_luxcappi - \u8907\u88FD_64"
+  - first:
+      213: -452122688984681346
+    second: "unit_luxcappi - \u8907\u88FD_65"
+  - first:
+      213: -3354818593210348993
+    second: "unit_luxcappi - \u8907\u88FD_66"
+  - first:
+      213: -657472816696154342
+    second: "unit_luxcappi - \u8907\u88FD_67"
+  - first:
+      213: -3966115657416691833
+    second: "unit_luxcappi - \u8907\u88FD_68"
+  - first:
+      213: -1630138895270497098
+    second: "unit_luxcappi - \u8907\u88FD_69"
+  - first:
+      213: 7404582095504572873
+    second: "unit_luxcappi - \u8907\u88FD_70"
+  - first:
+      213: -2335967782839394494
+    second: "unit_luxcappi - \u8907\u88FD_71"
+  - first:
+      213: 6852768087571600545
+    second: "unit_luxcappi - \u8907\u88FD_72"
+  - first:
+      213: 5535361519585313047
+    second: "unit_luxcappi - \u8907\u88FD_73"
+  - first:
+      213: 5370921194726770109
+    second: "unit_luxcappi - \u8907\u88FD_74"
+  - first:
+      213: 2892675542749810618
+    second: "unit_luxcappi - \u8907\u88FD_75"
+  - first:
+      213: -4655842657619131781
+    second: "unit_luxcappi - \u8907\u88FD_76"
+  - first:
+      213: -8861101651299365587
+    second: "unit_luxcappi - \u8907\u88FD_77"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_0"
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 727
+        width: 47
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916cac575ebd1a360800000000000000
+      internalID: 7179261059575498265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_1"
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 726
+        width: 56
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ecaee82e2e1ccd50800000000000000
+      internalID: 6758810324380331240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_2"
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 726
+        width: 56
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609950b37b5f46380800000000000000
+      internalID: -8978781589751883514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_3"
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 695
+        width: 27
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48230c5065d141970800000000000000
+      internalID: 8724630633424368260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_4"
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 694
+        width: 34
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174ae0102dc2c4150800000000000000
+      internalID: 5858106495774663793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_5"
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 694
+        width: 34
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68972f56cbe5ac90800000000000000
+      internalID: -7159056795403052946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_6"
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 624
+        width: 47
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c376dfea18980a690800000000000000
+      internalID: -7592917781667027140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_7"
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 623
+        width: 56
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5f8b280e9d50b40800000000000000
+      internalID: 5405966486017209762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_8"
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 623
+        width: 56
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ad508fd83d3e410800000000000000
+      internalID: 1505279307176860248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_9"
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 623
+        width: 55
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7a4017fb8a8f770800000000000000
+      internalID: 8644845024926017502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_10"
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 623
+        width: 56
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460a993195bb95100800000000000000
+      internalID: 97314858220494948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_11"
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 553
+        width: 49
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8afaef230825a1540800000000000000
+      internalID: 4979383048576348072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_12"
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 552
+        width: 48
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f706eeded1f9c7490800000000000000
+      internalID: -7747142308089405313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_13"
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 553
+        width: 46
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c985f529be641b030800000000000000
+      internalID: 3508663562285308060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_14"
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 552
+        width: 47
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8a6641bdc218890800000000000000
+      internalID: -7457630188497098511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_15"
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 552
+        width: 54
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be812607a3a6f3d30800000000000000
+      internalID: 4413362959072499947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_16"
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 553
+        width: 55
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23956d4be156cda80800000000000000
+      internalID: -8440760419041781454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_17"
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 481
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b8b0057dc75d9c0800000000000000
+      internalID: -3903076237843920001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_18"
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 482
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05123e2dbb2418fa0800000000000000
+      internalID: -5800281470612070064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_19"
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 482
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae79838826ea8220800000000000000
+      internalID: 2489054805755526826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_20"
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 482
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b15fa1ab2e94710800000000000000
+      internalID: 1678121625116285733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_21"
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 481
+        width: 55
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18cc6cc6d932863e0800000000000000
+      internalID: -2060357670480196479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_22"
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 482
+        width: 56
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b58c7a4caa3b9f40800000000000000
+      internalID: 5736243062044919225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_23"
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 426
+        width: 31
+        height: 36
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290bc1a8071ead310800000000000000
+      internalID: 1430703705113276562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_24"
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 452
+        width: 6
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29acfbe2002d37470800000000000000
+      internalID: 8391281428947520146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_25"
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 436
+        width: 30
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e14a36d585cf3520800000000000000
+      internalID: 2684081081551569379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_26"
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 398
+        width: 60
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a23f159fbb72dac0800000000000000
+      internalID: -3831864270168051037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_27"
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 393
+        width: 67
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6513f5c117b6c86d0800000000000000
+      internalID: -2986894319302004394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_28"
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 410
+        width: 54
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa81dd6e95e8de90800000000000000
+      internalID: -7000593152137393419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_29"
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 411
+        width: 55
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e216187e79e046b0800000000000000
+      internalID: -5313990830907321628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_30"
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 423
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8095cdcbe8a4e80800000000000000
+      internalID: -8193579630245377796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_31"
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 399
+        width: 32
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a6f662fec13ba30800000000000000
+      internalID: 4229756288498625147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_32"
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 393
+        width: 27
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828a34082b06d27b0800000000000000
+      internalID: -5247431671044397016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_33"
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 409
+        width: 5
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d02f1836c0e55b10800000000000000
+      internalID: 1969727553994170576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_34"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 394
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e7a98b6cbdc82c0800000000000000
+      internalID: -4427922687064899990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_35"
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 317
+        width: 68
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904ed6b36fb100e30800000000000000
+      internalID: 4467601574724494345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_36"
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 388
+        width: 5
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3422a332663df9d0800000000000000
+      internalID: -2738973202970434502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_37"
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 317
+        width: 60
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250428f2d3abf8d30800000000000000
+      internalID: 4435968929936064594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_38"
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 329
+        width: 24
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1d9086912e459c0800000000000000
+      internalID: -3939275175294807635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_39"
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 366
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb03ced565a9b3a0800000000000000
+      internalID: -6649101517888222240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_40"
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 342
+        width: 34
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d866ee42784ba6630800000000000000
+      internalID: 3921144918112626317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_41"
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 323
+        width: 56
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dba30cbf63e05070800000000000000
+      internalID: 8093218599420013524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_42"
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 323
+        width: 42
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b331480692e26bff0800000000000000
+      internalID: -20778393028783301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_43"
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 323
+        width: 54
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9654bd342896a2eb0800000000000000
+      internalID: -4743863249276287639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_44"
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 329
+        width: 8
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9293f0f13ac8f5e10800000000000000
+      internalID: 2188622576153999657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_45"
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 322
+        width: 8
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27bbee1d46317f660800000000000000
+      internalID: 7419420234855922546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_46"
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 318
+        width: 11
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889411f8e802303f0800000000000000
+      internalID: -935868500905211512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_47"
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 312
+        width: 16
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d20a25a58432520800000000000000
+      internalID: 2676062156358692164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_48"
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 308
+        width: 12
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2322d7761030fc00800000000000000
+      internalID: 932297995923366703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_49"
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 309
+        width: 13
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd38f63022bb34fc0800000000000000
+      internalID: -3511757529657932836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_50"
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 206
+        width: 9
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50e1103c2b8cf850800000000000000
+      internalID: 6412152991370043482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_51"
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 209
+        width: 9
+        height: 5
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56954bdf53a2fb2b0800000000000000
+      internalID: -5566684203028555419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_52"
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 198
+        width: 50
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f878444909da4020800000000000000
+      internalID: 2326910791313815792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_53"
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 197
+        width: 50
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14adf51ba12945c0800000000000000
+      internalID: -4230813356245801957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_54"
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 198
+        width: 50
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1921edfa602b94e90800000000000000
+      internalID: -7040900800626945391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_55"
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 198
+        width: 50
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39ae5f798c4b93a0800000000000000
+      internalID: -6657643470706005700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_56"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 147
+        width: 6
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64924deeb145b16d0800000000000000
+      internalID: -3018726646274053818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_57"
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 147
+        width: 6
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b452c9a358aa8c8a0800000000000000
+      internalID: -6284585790804843189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_58"
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 146
+        width: 11
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee2ef146d7b06ba0800000000000000
+      internalID: -6097671764601590045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_59"
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 146
+        width: 12
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b52a55a8acb4a430800000000000000
+      internalID: 3793364218667476400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_60"
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 127
+        width: 31
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4d0b7a506a129f0800000000000000
+      internalID: -494931940815612744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_61"
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 127
+        width: 33
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d428f0dba8e956600800000000000000
+      internalID: 460948855589929549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_62"
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 127
+        width: 36
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff3acf04d6064830800000000000000
+      internalID: 4054936022361456634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_63"
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 127
+        width: 34
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c8f50eb4636c2d0800000000000000
+      internalID: -3258857580841169906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_64"
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 128
+        width: 9
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b068d62e00a762c70800000000000000
+      internalID: 8945971854035486219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_65"
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 128
+        width: 9
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e747c205fccb9b9f0800000000000000
+      internalID: -452122688984681346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_66"
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 99
+        width: 12
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a42d9934a4171d0800000000000000
+      internalID: -3354818593210348993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_67"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 96
+        width: 9
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17a957e4ff20e6f0800000000000000
+      internalID: -657472816696154342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_68"
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 95
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f209da2d685f8c0800000000000000
+      internalID: -3966115657416691833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_69"
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 96
+        width: 9
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4bad4cf459069e0800000000000000
+      internalID: -1630138895270497098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_70"
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 71
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c184c84f2c52c660800000000000000
+      internalID: 7404582095504572873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_71"
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 73
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fd9119da9f49fd0800000000000000
+      internalID: -2335967782839394494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_72"
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 56
+        width: 42
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a496d3a44ce91f50800000000000000
+      internalID: 6852768087571600545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_73"
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 56
+        width: 42
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711cf3679fd81dc40800000000000000
+      internalID: 5535361519585313047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_74"
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 56
+        width: 36
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db54e48ce58598a40800000000000000
+      internalID: 5370921194726770109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_75"
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 61
+        width: 34
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf00108419d42820800000000000000
+      internalID: 2892675542749810618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_76"
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 58
+        width: 7
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72408645cf136fb0800000000000000
+      internalID: -4655842657619131781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "unit_luxcappi - \u8907\u88FD_77"
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 56
+        width: 8
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d8cab0ffa070580800000000000000
+      internalID: -8861101651299365587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

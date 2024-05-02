@@ -148,5 +148,5 @@ MonoBehaviour:
   itemSpawnChance: 0.8
   spawnableItems:
   - {fileID: 612663071865862141, guid: d042b51f103553743a005ad670e1a6f1, type: 3}
-  - {fileID: 1249546504348543240, guid: 12f72d5a61c421f41a381116022193cc, type: 3}
   - {fileID: 2564135331099385375, guid: 5aa9acf73e5d6334b8066db80a42d051, type: 3}
+  - {fileID: 1249546504348543240, guid: 12f72d5a61c421f41a381116022193cc, type: 3}

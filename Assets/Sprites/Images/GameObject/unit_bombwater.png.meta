@@ -3,7 +3,7 @@ guid: b5f6c841c60ee4048a45847cbca3c77c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,12 +20,10 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -48,7 +46,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -64,15 +62,13 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -968,64 +964,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      unit_bombwater_0: -720742723
-      unit_bombwater_1: -422194734
-      unit_bombwater_10: -1744106850
-      unit_bombwater_11: -1166916769
-      unit_bombwater_12: -173272658
-      unit_bombwater_13: -1047484789
-      unit_bombwater_14: 562059990
-      unit_bombwater_15: 33726392
-      unit_bombwater_16: -357861598
-      unit_bombwater_17: 303078511
-      unit_bombwater_18: 643803829
-      unit_bombwater_19: -772098095
-      unit_bombwater_2: 1207302684
-      unit_bombwater_20: 1435364439
-      unit_bombwater_21: -43873163
-      unit_bombwater_22: -1609209781
-      unit_bombwater_23: 1280041050
-      unit_bombwater_24: -730066306
-      unit_bombwater_25: 773752819
-      unit_bombwater_26: -1242678571
-      unit_bombwater_27: -852674256
-      unit_bombwater_28: -1073018075
-      unit_bombwater_29: -1432144818
-      unit_bombwater_3: -511409539
-      unit_bombwater_30: 1023504398
-      unit_bombwater_31: -120613242
-      unit_bombwater_32: -1391396427
-      unit_bombwater_33: 903844051
-      unit_bombwater_34: 1208581344
-      unit_bombwater_35: -1578942257
-      unit_bombwater_36: -1396303240
-      unit_bombwater_37: -135619732
-      unit_bombwater_38: -1406612929
-      unit_bombwater_39: -435831634
-      unit_bombwater_4: -1429935716
-      unit_bombwater_40: 603790074
-      unit_bombwater_41: -482547870
-      unit_bombwater_42: -1937411563
-      unit_bombwater_43: 1467827674
-      unit_bombwater_44: 1124820
-      unit_bombwater_45: 560787430
-      unit_bombwater_46: -1164717811
-      unit_bombwater_47: 1807460168
-      unit_bombwater_48: -210780923
-      unit_bombwater_49: 1983056553
-      unit_bombwater_5: 2100776912
-      unit_bombwater_50: -1243823371
-      unit_bombwater_51: 1561577720
-      unit_bombwater_52: 2100001678
-      unit_bombwater_53: -516509474
-      unit_bombwater_54: 706744349
-      unit_bombwater_6: 1732800175
-      unit_bombwater_7: 152632291
-      unit_bombwater_8: 1019165012
-      unit_bombwater_9: 1020003616
-  mipmapLimitGroupName: 
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,8 +1,9 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimatedSpriteRenderer : MonoBehaviour
+public class AnimatedSpriteRenderer : MonoBehaviourPun, IPunObservable
 {
     private SpriteRenderer spriteRenderer;
 
@@ -51,6 +52,37 @@ public class AnimatedSpriteRenderer : MonoBehaviour
         else if (animationFrame >= 0 && animationFrame < animationSprites.Length)
         {
             spriteRenderer.sprite = animationSprites[animationFrame];
+        }
+
+        if (PhotonNetwork.IsConnected)
+        {
+            photonView.RPC("SyncSprite", RpcTarget.All, animationFrame);
+        }
+    }
+
+    [PunRPC]
+    void SyncSprite(int frame)
+    {
+        animationFrame = frame;
+        if (idle)
+        {
+            spriteRenderer.sprite = idleSprite;
+        }
+        else if (animationFrame >= 0 && animationFrame < animationSprites.Length)
+        {
+            spriteRenderer.sprite = animationSprites[animationFrame];
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(animationFrame);
+        }
+        else
+        {
+            animationFrame = (int)stream.ReceiveNext();
         }
     }
 }
