@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 public class GameManager : MonoBehaviourPun
 {
+    [Header("Explosion")]
+    public Explosion explosionPrefab;
+    public LayerMask explosionLayerMask;
+    [Header("Destructible")]
+    public Destructible destructiblePrefab;
     //for PVE
     public static GameManager PVEInstance;
     public GameObject player1;
@@ -20,7 +25,8 @@ public class GameManager : MonoBehaviourPun
         BOX,
         TOOL,
         BOMB,
-        DOOR
+        DOOR,
+        EXPLOSION
     }
     public struct Location
     {
@@ -33,13 +39,13 @@ public class GameManager : MonoBehaviourPun
         }
     }
 
-    //��Ϸģʽ(������)
+
     public int mode;
-    //��ͼ����
+
     public int xColumn = 16;
     public int yRow = 15;
     public Vector3 reference = new Vector3(-5.2f, 7.1f, 0);
-    //��Ϸ��Դ
+
     public GameObject[] item;//初始化地图所需物体 0.障碍 1.箱子 2.边界墙 3.地板 4.炸弹 5.爆炸效果 6.传送门 7.声波
     public GameObject rolePrefab;
     public Sprite[] barriarSprites;
@@ -68,7 +74,7 @@ public class GameManager : MonoBehaviourPun
     private static GameManager instance;
     public static GameManager Instance { get => instance; set => instance = value; }
 
-    public GameObject[,] itemsObject;//�����Ὠ�������Ͻ�Ϊԭ��
+    public GameObject[,] itemsObject;
     public ItemType[,] itemsType;
     public Array<GameObject> roleList = new Array<GameObject>(4);
     public List<Bomb>[,] bombRange;
@@ -514,9 +520,73 @@ public class GameManager : MonoBehaviourPun
             itemGo.GetComponent<Person>().NO = NO;
             itemGo.GetComponent<Person>().PlayerNO = PlayerNO;
             itemGo.GetComponent<Person>().index = index;
+            if (NO == 0)
+            {
+                itemGo.GetComponent<Person>().speed = 3.0f;
+                itemGo.GetComponent<Person>().bombNumber = 2;
+                itemGo.GetComponent<Person>().bombRadius = 1;
+                itemGo.GetComponent<Person>().life = 3;
+                itemGo.GetComponent<Person>().coin = 0;
+                itemGo.GetComponent<Person>().maxspeed = 9.0f;
+                itemGo.GetComponent<Person>().maxbombNumber = 8;
+                itemGo.GetComponent<Person>().maxbombRadius = 8;
+                itemGo.GetComponent<Person>().maxlife = 8;
+            }
+            if (NO == 1)
+            {
+                itemGo.GetComponent<Person>().speed = 2.0f;
+                itemGo.GetComponent<Person>().bombNumber = 1;
+                itemGo.GetComponent<Person>().bombRadius = 2;
+                itemGo.GetComponent<Person>().life = 3;
+                itemGo.GetComponent<Person>().coin = 0;
+                itemGo.GetComponent<Person>().maxspeed = 10.0f;
+                itemGo.GetComponent<Person>().maxbombNumber = 9;
+                itemGo.GetComponent<Person>().maxbombRadius = 9;
+                itemGo.GetComponent<Person>().maxlife = 8;
+            }
+
+            if (NO == 2)
+            {
+                itemGo.GetComponent<Person>().speed = 1.0f;
+                itemGo.GetComponent<Person>().bombNumber = 1;
+                itemGo.GetComponent<Person>().bombRadius = 1;
+                itemGo.GetComponent<Person>().life = 5;
+                itemGo.GetComponent<Person>().coin = 0;
+                itemGo.GetComponent<Person>().maxspeed = 6.0f;
+                itemGo.GetComponent<Person>().maxbombNumber = 8;
+                itemGo.GetComponent<Person>().maxbombRadius = 12;
+                itemGo.GetComponent<Person>().maxlife = 10;
+            }
+
+            if (NO == 3)
+            {
+                itemGo.GetComponent<Person>().speed = 3.0f;
+                itemGo.GetComponent<Person>().bombNumber = 2;
+                itemGo.GetComponent<Person>().bombRadius = 1;
+                itemGo.GetComponent<Person>().life = 3;
+                itemGo.GetComponent<Person>().coin = 0;
+                itemGo.GetComponent<Person>().maxspeed = 8.0f;
+                itemGo.GetComponent<Person>().maxbombNumber = 8;
+                itemGo.GetComponent<Person>().maxbombRadius = 8;
+                itemGo.GetComponent<Person>().maxlife = 7;
+            }
+
+            if (NO == 4)
+            {
+                itemGo.GetComponent<Person>().speed = 2.0f;
+                itemGo.GetComponent<Person>().bombNumber = 2;
+                itemGo.GetComponent<Person>().bombRadius = 2;
+                itemGo.GetComponent<Person>().life = 2;
+                itemGo.GetComponent<Person>().coin = 0;
+                itemGo.GetComponent<Person>().maxspeed = 9.0f;
+                itemGo.GetComponent<Person>().maxbombNumber = 9;
+                itemGo.GetComponent<Person>().maxbombRadius = 9;
+                itemGo.GetComponent<Person>().maxlife = 7;
+            }
             roleList.AddByIndex(itemGo, index);
             if (PlayerNO == 0)
                 leftRoleNOList.Remove(NO);
+
         }
     }
 
@@ -532,6 +602,8 @@ public class GameManager : MonoBehaviourPun
             return ItemType.TOOL;
         if (typeTag.CompareTo("door") == 0)
             return ItemType.DOOR;
+        if (typeTag.CompareTo("Explosion") == 0)
+            return ItemType.EXPLOSION;
         return ItemType.EMPTY;
     }
 
@@ -545,15 +617,19 @@ public class GameManager : MonoBehaviourPun
         return new Location((int)Mathf.Floor(position.x - reference.x + 0.5f), (int)Mathf.Floor(reference.y - position.y + 0.5f));
     }
 
-    public GameObject PlaceBomb(Vector3 position, int bombRadius, int host)
+    public IEnumerator PlaceBomb(Vector3 position, int bombRadius, int host)
     {
         Location coord = GetCoord(position);
-        if (itemsType[coord.x, coord.y] == ItemType.EMPTY && bombNumbers[host] < roleList.GetT(host)?.GetComponent<Person>().bombNumber)
+        Vector2 bombposition = position;
+        bombposition.x = Mathf.Round(position.x);
+        bombposition.y = Mathf.Round(position.y);
+        if (roleList.GetT(host).GetComponent<Person>().bombNumber > 0)
         {
             Vector3 createPosition = CorrectPosition(coord.x, coord.y) - new Vector3(0, 0.3f, 0);
+            roleList.GetT(host).GetComponent<Person>().bombNumber--;
             if (!Online)
             {
-                GameObject bombObject = Instantiate(item[4], createPosition, Quaternion.identity);
+                GameObject bombObject = Instantiate(item[4], bombposition, Quaternion.identity);
                 itemsObject[coord.x, coord.y] = bombObject;
                 itemsType[coord.x, coord.y] = ItemType.BOMB;
                 Bomb bomb = bombObject.GetComponent<Bomb>();
@@ -561,98 +637,89 @@ public class GameManager : MonoBehaviourPun
                 bomb.x = coord.x;
                 bomb.y = coord.y;
                 bomb.radius = bombRadius;
-                bomb.targetCoord = new Vector2Int(coord.x, coord.y);
-                bombRange[coord.x, coord.y].Add(bomb);
-                explosionRange[coord.x, coord.y]++;
-                //向上遍历
-                for (int i = 1; i <= bombRadius; i++)
-                {
-                    if (coord.y - i < 0 || itemsType[coord.x, coord.y - i] == ItemType.BARRIAR)
-                        break;
-                    bombRange[coord.x, coord.y - i].Add(bomb);
-                    explosionRange[coord.x, coord.y - i]++;
-                }
-                //向左遍历
-                for (int i = 1; i <= bombRadius; i++)
-                {
-                    if (coord.x - i < 0 || itemsType[coord.x - i, coord.y] == ItemType.BARRIAR)
-                        break;
-                    bombRange[coord.x - i, coord.y].Add(bomb);
-                    explosionRange[coord.x - i, coord.y]++;
-                }
-                //向右遍历
-                for (int i = 1; i <= bombRadius; i++)
-                {
-                    if (coord.x + i >= xColumn || itemsType[coord.x + i, coord.y] == ItemType.BARRIAR)
-                        break;
-                    bombRange[coord.x + i, coord.y].Add(bomb);
-                    explosionRange[coord.x + i, coord.y]++;
-                }
-                //向下遍历
-                for (int i = 1; i <= bombRadius; i++)
-                {
-                    if (coord.y + i >= yRow || itemsType[coord.x, coord.y + i] == ItemType.BARRIAR)
-                        break;
-                    bombRange[coord.x, coord.y + i].Add(bomb);
-                    explosionRange[coord.x, coord.y + i]++;
-                }
-                bomb.host = host;
-                bombNumbers[host]++;
-                return bombObject;
+                yield return new WaitForSeconds(bomb.bombFuseTime);
+                bombposition = bombObject.transform.position;
+                bombposition.x = Mathf.Round(bombposition.x);
+                bombposition.y = Mathf.Round(bombposition.y);
+                NormalExplosion(position, bombObject.GetPhotonView().ViewID, host);
             }
             else
             {
                 //Debug.Log("Place Bomb");
-                GameObject bombObject = PhotonNetwork.Instantiate(this.item[4].name, createPosition, Quaternion.identity);
-                itemsObject[coord.x, coord.y] = bombObject;
-                itemsType[coord.x, coord.y] = ItemType.BOMB;
+                GameObject bombObject = PhotonNetwork.Instantiate(this.item[4].name, bombposition, Quaternion.identity);
                 Bomb bomb = bombObject.GetComponent<Bomb>();
-                bomb.GameManager = instance;
+                bomb.GameManager = this;
                 bomb.x = coord.x;
                 bomb.y = coord.y;
                 bomb.radius = bombRadius;
-                bombRange[coord.x, coord.y].Add(bomb);
-                explosionRange[coord.x, coord.y]++;
-                //向上遍历
-                for (int i = 1; i <= bombRadius; i++)
-                {
-                    if (coord.y - i < 0 || itemsType[coord.x, coord.y - i] == ItemType.BARRIAR)
-                        break;
-                    bombRange[coord.x, coord.y - i].Add(bomb);
-                    explosionRange[coord.x, coord.y - i]++;
-                }
-                //向左遍历
-                for (int i = 1; i <= bombRadius; i++)
-                {
-                    if (coord.x - i < 0 || itemsType[coord.x - i, coord.y] == ItemType.BARRIAR)
-                        break;
-                    bombRange[coord.x - i, coord.y].Add(bomb);
-                    explosionRange[coord.x - i, coord.y]++;
-                }
-                //向右遍历
-                for (int i = 1; i <= bombRadius; i++)
-                {
-                    if (coord.x + i >= xColumn || itemsType[coord.x + i, coord.y] == ItemType.BARRIAR)
-                        break;
-                    bombRange[coord.x + i, coord.y].Add(bomb);
-                    explosionRange[coord.x + i, coord.y]++;
-                }
-                //向下遍历
-                for (int i = 1; i <= bombRadius; i++)
-                {
-                    if (coord.y + i >= yRow || itemsType[coord.x, coord.y + i] == ItemType.BARRIAR)
-                        break;
-                    bombRange[coord.x, coord.y + i].Add(bomb);
-                    explosionRange[coord.x, coord.y + i]++;
-                }
-                bomb.host = host;
-                bombNumbers[host]++;
-                return bombObject;
+                yield return new WaitForSeconds(bomb.bombFuseTime);
+                bombposition = bombObject.transform.position;
+                bombposition.x = Mathf.Round(bombposition.x);
+                bombposition.y = Mathf.Round(bombposition.y);
+                photonView.RPC("NormalExplosion", RpcTarget.All, bombposition, bombObject.GetPhotonView().ViewID, host);
             }
         }
-        return null;
     }
 
+    [PunRPC]
+    void NormalExplosion(Vector2 position, int bombViewID, int host)
+    {
+
+        GameObject explosionObject = PhotonNetwork.Instantiate(this.item[9].name, position, Quaternion.identity);
+        Explosion explosion = explosionObject.GetComponent<Explosion>();
+        int PlayerExplosionRadius = roleList.GetT(host).GetComponent<Person>().bombRadius;
+        explosion.SetActiveRenderer(explosion.start);
+        explosion.DestroyAfter(1.0f);
+        Explode(position, Vector2.up, PlayerExplosionRadius);
+        Explode(position, Vector2.down, PlayerExplosionRadius);
+        Explode(position, Vector2.left, PlayerExplosionRadius);
+        Explode(position, Vector2.right, PlayerExplosionRadius);
+        PhotonNetwork.Destroy(PhotonView.Find(bombViewID));
+        //PhotonNetwork.Destroy(explosionObject);
+        roleList.GetT(host).GetComponent<Person>().bombNumber++;
+        //coroutine = null;
+    }
+
+   public void Explode(Vector2 position, Vector2 direction, int length)
+    {
+        if (length <= 0)
+        {
+            return;
+        }
+
+        position += direction;
+
+
+        if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))
+        {
+
+            ClearDestructibleObject(position);
+            return;
+        }
+
+        GameObject explosionObject = PhotonNetwork.Instantiate(this.item[9].name, position, Quaternion.identity);
+        Explosion explosion = explosionObject.GetComponent<Explosion>();
+        explosion.SetActiveRenderer(length > 1 ? explosion.middle : explosion.end);
+        explosion.SetDirection(direction);
+        explosion.DestroyAfter(1.0f);
+        //PhotonNetwork.Destroy(explosionObject);
+
+        Explode(position, direction, length - 1);
+    }
+
+    public void ClearDestructibleObject(Vector2 position)
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(position, Vector2.one, 0f);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject.CompareTag("Box"))
+            {
+                PhotonNetwork.InstantiateRoomObject(destructiblePrefab.name, position, Quaternion.identity);
+                PhotonNetwork.Destroy(collider.gameObject);
+            }
+        }
+    }
 
     public IEnumerator BombExplode(GameObject bombObject)
     {
@@ -1019,9 +1086,9 @@ public class GameManager : MonoBehaviourPun
         }
         if (explosionGo != null)
         {
-            explosionGo.GetComponent<Explosion>().x = x;
-            explosionGo.GetComponent<Explosion>().y = y;
-            explosionGo.GetComponent<Explosion>().isEnd = isEnd;
+            //explosionGo.GetComponent<Explosion>().x = x;
+            //explosionGo.GetComponent<Explosion>().y = y;
+            //explosionGo.GetComponent<Explosion>().isEnd = isEnd;
         }
     }
 
@@ -1317,7 +1384,6 @@ public class GameManager : MonoBehaviourPun
         }
     }
 
-    //���ʤ��
     private void Victory()
     {
         GameObject.Find("background").GetComponent<AudioSource>().Stop();
@@ -1325,7 +1391,6 @@ public class GameManager : MonoBehaviourPun
         ui.Victory();
     }
 
-    //ʧ��
     private void Defeat()
     {
         GameObject.Find("background").GetComponent<AudioSource>().Stop();

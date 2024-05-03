@@ -371,14 +371,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6c965821f41974e94b67c548a1d6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerNO: 0
   speed: 2
-  NO: 1
-  index: 0
   bombNumber: 1
   bombRadius: 1
-  life: 1
+  bombsRemaining: 0
+  life: 2
   coin: 0
+  maxspeed: 6
+  maxbombNumber: 8
+  maxbombRadius: 10
+  maxlife: 10
+  PlayerNO: 0
+  NO: 5
+  index: 0
   isDefended: 0
   Online: 0
   delayTime: 0
@@ -463,7 +468,7 @@ MonoBehaviour:
   - {fileID: 2073663245400510256, guid: bda941f62be060243848f2dc34aec2e7, type: 3}
   - {fileID: 4823176730932392787, guid: bda941f62be060243848f2dc34aec2e7, type: 3}
   - {fileID: 8421388423229008996, guid: bda941f62be060243848f2dc34aec2e7, type: 3}
-  bombPrefab: {fileID: 740861331241348081, guid: 52a85e6e11207e74e846b80ff9168854, type: 3}
+  bombPrefab: {fileID: 3147321454223629555, guid: adac868832468de4c8652ac499a4b771, type: 3}
   deathSprites:
   - {fileID: 4800928902700201374, guid: 978455e5d320f8347806ff47ab646081, type: 3}
   - {fileID: -5013002863798270936, guid: 978455e5d320f8347806ff47ab646081, type: 3}
@@ -501,26 +506,6 @@ MonoBehaviour:
   haveGun: 0
   haveUnknownWeapon: 0
   canEnterDoor: 0
-  xColumn: 0
-  yRow: 0
-  delta: 0
-  check: 0
-  reverse: 0
-  moveState: 0
-  currentPoint: {x: 0, y: 0}
-  currentLocation: {x: 0, y: 0}
-  isBomb: 0
-  canFire: 0
-  targetType: 0
-  isFound: 0
-  nearBox: 0
-  nearlyBox: 0
-  nearlySafe: 0
-  nearlyTool: 0
-  startPoint: {x: 0, y: 0}
-  targetPoint: {x: 0, y: 0}
-  counterStep: 0
-  counterPeace: 0
 --- !u!212 &6947048899544125240
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -627,6 +612,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: -6956420554312704428}
   - {fileID: 7623019596036823126}
   - {fileID: 7623019596224323081}
   - {fileID: 7623019597387178298}

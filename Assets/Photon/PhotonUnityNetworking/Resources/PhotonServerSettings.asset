@@ -53,6 +53,10 @@ MonoBehaviour:
   - SyncSprite
   - DestroyObject
   - ChangeExplosionSprite
+  - NormalExplosion
+  - DestroyItem
+  - OnItemPickup
+  - ActivateGokuSkill
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

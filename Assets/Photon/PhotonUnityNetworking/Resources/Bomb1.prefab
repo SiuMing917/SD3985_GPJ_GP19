@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 766927689450106457}
   - component: {fileID: -7186867657168878794}
   - component: {fileID: 8694956250150902772}
+  - component: {fileID: 3294801893753910902}
   m_Layer: 11
   m_Name: Bomb1
   m_TagString: Bomb
@@ -141,13 +142,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3e44f14a146ce4c890f9724950c640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  bombFuseTime: 3
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.99676514
+      value: -0.0014152527
+      inSlope: -2.0949578
+      outSlope: -2.0949578
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.032723844
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   radius: 1
   explodeTime: 3
   x: 0
   y: 0
   host: 0
   isStatic: 1
-  targetCoord: {x: 0, y: 0}
+  explosionPrefab: {fileID: 6081993494393245072, guid: 62e5ccd54e15b4e408f0109a24b5d295, type: 3}
+  explosionLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  explosionDuration: 1
+  explosionRadius: 1
+  destructiblePrefab: {fileID: 2954635204356252722, guid: 41538b1e9b8f6484e8d6384ed8b5c288, type: 3}
+  destructibleObjects: {fileID: 0}
 --- !u!114 &-7186867657168878794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +202,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 538097715101071222}
+  - {fileID: 3294801893753910902}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -181,13 +216,13 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3485}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.16}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.95, y: 1.025}
     newSize: {x: 0.95, y: 1.025}
     adaptiveTilingThreshold: 0.5
@@ -197,6 +232,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.95, y: 1.025}
   m_EdgeRadius: 0
+--- !u!114 &3294801893753910902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147321454223629555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &3999902972571162674
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3999902972571162674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.009, y: -0.032, z: 0}
+  m_LocalPosition: {x: -0.009, y: -0.366, z: 0}
   m_LocalScale: {x: 1.5, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 2802019643530614423}

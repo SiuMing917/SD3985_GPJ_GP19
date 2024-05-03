@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -8,7 +8,7 @@ public class Explosion : MonoBehaviourPun
 {
     //new Code
     #region
-    ///**
+    /**
     public int x, y;
     public int isEnd;//0:middle 1:end -1:center
     public Sprite[] explosionSprites;
@@ -74,13 +74,13 @@ public class Explosion : MonoBehaviourPun
     {
         GetComponent<SpriteRenderer>().sprite = explosionSprites[i];
     }
-    //**/
+    **/
     #endregion
 
 
     //OLD CODE
     #region
-    /**
+    ///**
     public AnimatedSpriteRenderer start;
     public AnimatedSpriteRenderer middle;
     public AnimatedSpriteRenderer end;
@@ -113,10 +113,23 @@ public class Explosion : MonoBehaviourPun
     }
 
     [PunRPC]
-    void DestroyObject(float seconds)
+    public void DestroyObject(float seconds)
     {
         Destroy(gameObject, seconds);
     }
-    **/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Role"))
+        {
+            if (!collision.GetComponent<Person>().isDefended)
+            {
+                collision.GetComponent<Person>().ReduceLife();
+            }
+
+        }
+
+    }
+    //**/
     #endregion
 }

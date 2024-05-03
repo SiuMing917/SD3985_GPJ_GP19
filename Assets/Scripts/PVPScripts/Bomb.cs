@@ -6,9 +6,11 @@ using Photon.Pun;
 
 public class Bomb : MonoBehaviourPun
 {
+    #region
+    /**
     [Header("Bomb")]
     public int radius;
-    public float explodeTime = 2.0f;
+    public float explodeTime = 3.0f;
     [HideInInspector]
     public int x, y;
     public int host;
@@ -35,67 +37,6 @@ public class Bomb : MonoBehaviourPun
         }
 
         explodeTime -= Time.deltaTime;
-
-    }
-
-    private void FixedUpdate()
-    {
-        if (Menu.mode != 2)
-            return;
-        Vector3 targetPosition = gameManager.CorrectPosition(targetCoord.x, targetCoord.y) - new Vector3(0, 0.3f, 0);
-        if (Vector3.Distance(this.transform.position, targetPosition) > 0.1f)
-        {
-            transform.Translate(3f * Time.fixedDeltaTime * (targetPosition - transform.position).normalized, Space.World);
-        }
-        else
-        {
-            if (!isStatic)
-            {
-                transform.position = targetPosition;
-                x = targetCoord.x;
-                y = targetCoord.y;
-                gameManager.itemsType[x, y] = GameManager.ItemType.BOMB;
-                gameManager.itemsObject[x, y] = this.gameObject;
-                isStatic = true;
-                
-                #region
-                gameManager.bombRange[x, y].Add(GetComponent<Bomb>());
-                gameManager.explosionRange[x, y]++;
-                
-                for (int i = 1; i <= radius; i++)
-                {
-                    if (y - i < 0 || gameManager.itemsType[x, y - i] == GameManager.ItemType.BARRIAR)
-                        break;
-                    gameManager.bombRange[x, y - i].Add(GetComponent<Bomb>());
-                    gameManager.explosionRange[x, y - i]++;
-                }
-                
-                for (int i = 1; i <= radius; i++)
-                {
-                    if (x - i < 0 || gameManager.itemsType[x - i, y] == GameManager.ItemType.BARRIAR)
-                        break;
-                    gameManager.bombRange[x - i, y].Add(GetComponent<Bomb>());
-                    gameManager.explosionRange[x - i, y]++;
-                }
-                
-                for (int i = 1; i <= radius; i++)
-                {
-                    if (x + i >= gameManager.xColumn || gameManager.itemsType[x + i, y] == GameManager.ItemType.BARRIAR)
-                        break;
-                    gameManager.bombRange[x + i, y].Add(GetComponent<Bomb>());
-                    gameManager.explosionRange[x + i, y]++;
-                }
-                
-                for (int i = 1; i <= radius; i++)
-                {
-                    if (y + i >= gameManager.yRow || gameManager.itemsType[x, y + i] == GameManager.ItemType.BARRIAR)
-                        break;
-                    gameManager.bombRange[x, y + i].Add(GetComponent<Bomb>());
-                    gameManager.explosionRange[x, y + i]++;
-                }
-                #endregion
-            }
-        }
 
     }
 
@@ -342,16 +283,28 @@ public class Bomb : MonoBehaviourPun
             }
         }
     }
+    **/
+    #endregion
 
     //OLD CODE For Reference
     #region
-    /*
+    ///*
     public float damage;
 
     [Header("Bomb")]
     public float bombFuseTime = 3f;
     public AnimationCurve curve;
     Coroutine coroutine;
+    private GameManager gameManager;
+    public GameManager GameManager { get => gameManager; set => gameManager = value; }
+    public int radius;
+    public float explodeTime = 3.0f;
+
+    [HideInInspector]
+    public int x, y;
+    public int host;
+    public bool isStatic = true;
+    private bool isExploded = false;
 
     [Header("Explosion")]
     public Explosion explosionPrefab;
@@ -364,156 +317,104 @@ public class Bomb : MonoBehaviourPun
     public GameObject destructibleObjects;
 
     private void Awake(){
-        explosionRadius = GameManager.instance.player1.GetComponent<BombController>().explosionRadius;
+        gameManager = GameManager.Instance;
+        //explosionRadius = GameManager.instance.player1.GetComponent<BombController>().explosionRadius;
     }
 
-    public void PlaceBombActive(Vector3 playPos)
+    private void Update()
     {
-        coroutine = StartCoroutine(PlaceBomb(playPos));
+        //if (!isExploded && explodeTime <= 0)
+        //{
+        //    Explode();
+        //    isExploded = true;
+        //}
+
+        //explodeTime -= Time.deltaTime;
+
+    }
+
+    private void Explode()
+    {
+        if (PhotonNetwork.IsConnected && !PhotonNetwork.IsMasterClient)
+            return;
+
+        if (this.gameObject != null)
+        {
+            if (PhotonNetwork.IsConnected == false)
+            {
+                StartCoroutine(gameManager.BombExplode(this.gameObject));
+            }
+            else if (PhotonNetwork.IsConnected == true && PhotonNetwork.IsMasterClient)
+            {
+                StartCoroutine(gameManager.BombExplode(this.gameObject));
+            }
+        }
+
     }
 
     public void ThrowBombActive(Vector3 playPos, Vector3 targetPos)
     {
-        coroutine = StartCoroutine(ThrowBomb(playPos, targetPos));
+        //coroutine = StartCoroutine(ThrowBomb(playPos, targetPos));
     }
 
 
-    private IEnumerator PlaceBomb(Vector3 playPos)
-    {
-        Vector2 position = playPos;
 
-        position.x = Mathf.Round(position.x);
-        position.y = Mathf.Round(position.y);
+    //private IEnumerator ThrowBomb(Vector3 playPos, Vector3 position)
+    //{
+    //    GameObject bomb = this.gameObject;
+    //    transform.position = playPos;
+    //    bomb.GetComponent<Renderer>().sortingOrder = 10;
+    //    bomb.GetComponent<Collider2D>().enabled = false;
 
-        transform.position = position;
-        
-        GameObject bomb = this.gameObject;
-        GameManager.instance.player1.GetComponent<BombController>().bombsRemaining--;
+    //    GameObject bombpos = Instantiate(this.gameObject, position, Quaternion.identity);
+    //    Color customColor = new Color(1f, 0f, 0f, 0.3f);
+    //    bombpos.GetComponent<Renderer>().material.SetColor("_Color", customColor);
+    //    bombpos.GetComponent<Collider2D>().enabled = false;
 
-        yield return new WaitForSeconds(bombFuseTime);
+    //    Vector3 direction = (position - transform.position).normalized;
+    //    float distance = Vector3.Distance(transform.position, position);
+    //    float speed = distance / bombFuseTime;
+    //    float startTime = Time.time;
 
-        position = bomb.transform.position;
-        position.x = Mathf.Round(position.x);
-        position.y = Mathf.Round(position.y);
+    //    List<Vector3> bombPath = new List<Vector3>(); // List to store bomb's path
 
-        //position2 = bomb.transform.position;
-        //position2.x = Mathf.Round(position.x+1);
-        //position2.y = Mathf.Round(position.y);
+    //    Vector3 initialPosition = bomb.transform.position;
+    //    Vector3 peakPosition = (initialPosition + position) / 2f;
+    //    peakPosition.y += 2f; // Adjust the height for parabolic trajectory
 
-        NormalExplosion(position,bomb);
-    }
+    //    var timePast = 0f;
+    //    var maxbombhegiht = 7f;
+    //    while (timePast < bombFuseTime)
+    //    {
+    //        timePast += Time.deltaTime;
 
-    private IEnumerator ThrowBomb(Vector3 playPos, Vector3 position)
-    {
-        GameObject bomb = this.gameObject;
-        transform.position = playPos;
-        bomb.GetComponent<Renderer>().sortingOrder = 10;
-        bomb.GetComponent<Collider2D>().enabled = false;
+    //        var linearTime = timePast / bombFuseTime; //time 0 to 3s
+    //        var heightTime = curve.Evaluate(linearTime); //value from curve
 
-        GameObject bombpos = Instantiate(this.gameObject, position, Quaternion.identity);
-        Color customColor = new Color(1f, 0f, 0f, 0.3f);
-        bombpos.GetComponent<Renderer>().material.SetColor("_Color", customColor);
-        bombpos.GetComponent<Collider2D>().enabled = false;
+    //        var height = Mathf.Lerp(0f, maxbombhegiht, heightTime);//clamped between the max height and 0
 
-        Vector3 direction = (position - transform.position).normalized;
-        float distance = Vector3.Distance(transform.position, position);
-        float speed = distance / bombFuseTime;
-        float startTime = Time.time;
+    //        bomb.transform.position = Vector3.Lerp(initialPosition, position, linearTime) + new Vector3(0f, height, 0f);//adding values on y axis
 
-        List<Vector3> bombPath = new List<Vector3>(); // List to store bomb's path
-
-        Vector3 initialPosition = bomb.transform.position;
-        Vector3 peakPosition = (initialPosition + position) / 2f;
-        peakPosition.y += 2f; // Adjust the height for parabolic trajectory
-
-        var timePast = 0f;
-        var maxbombhegiht = 7f;
-        while (timePast < bombFuseTime)
-        {
-            timePast += Time.deltaTime;
-
-            var linearTime = timePast / bombFuseTime; //time 0 to 3s
-            var heightTime = curve.Evaluate(linearTime); //value from curve
-
-            var height = Mathf.Lerp(0f, maxbombhegiht, heightTime);//clamped between the max height and 0
-
-            bomb.transform.position = Vector3.Lerp(initialPosition, position, linearTime) + new Vector3(0f, height, 0f);//adding values on y axis
-
-            yield return null;
-        }
+    //        yield return null;
+    //    }
 
 
-        Destroy(bombpos);
-        bomb.GetComponent<Collider2D>().enabled = true;
-        bomb.GetComponent<Renderer>().sortingOrder = 3;
+    //    Destroy(bombpos);
+    //    bomb.GetComponent<Collider2D>().enabled = true;
+    //    bomb.GetComponent<Renderer>().sortingOrder = 3;
 
-        Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
-        explosion.SetActiveRenderer(explosion.start);
-        explosion.DestroyAfter(explosionDuration);
-        Explode(position, Vector2.up, explosionRadius);
-        Explode(position, Vector2.down, explosionRadius);
-        Explode(position, Vector2.left, explosionRadius);
-        Explode(position, Vector2.right, explosionRadius);
+    //    Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+    //    explosion.SetActiveRenderer(explosion.start);
+    //    explosion.DestroyAfter(explosionDuration);
+    //    Explode(position, Vector2.up, explosionRadius);
+    //    Explode(position, Vector2.down, explosionRadius);
+    //    Explode(position, Vector2.left, explosionRadius);
+    //    Explode(position, Vector2.right, explosionRadius);
 
-        Destroy(bomb);
-        GameManager.instance.player1.GetComponent<BombController>().bombsRemaining++;
-    }
+    //    Destroy(bomb);
+    //    GameManager.instance.player1.GetComponent<BombController>().bombsRemaining++;
+    //}
 
-    private void NormalExplosion(Vector2 position, GameObject bomb){
-
-        Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
-        int PlayerExplosionRadius = GameManager.instance.player1.GetComponent<BombController>().explosionRadius;
-        explosion.SetActiveRenderer(explosion.start);
-        explosion.DestroyAfter(explosionDuration);
-        Explode(position, Vector2.up, PlayerExplosionRadius);
-        Explode(position, Vector2.down, PlayerExplosionRadius);
-        Explode(position, Vector2.left, PlayerExplosionRadius);
-        Explode(position, Vector2.right, PlayerExplosionRadius);
-
-        Destroy(this.gameObject);
-        GameManager.instance.player1.GetComponent<BombController>().bombsRemaining++;
-        coroutine = null;
-    }
-
-    private void Explode(Vector2 position, Vector2 direction, int length)
-    {
-        if (length <= 0)
-        {
-            return;
-        }
-
-        position += direction;
-
-
-        if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))
-        {
-            //Vector2 mask = position + 1f;
-            ClearDestructible(position);
-            // ClearDestructible(mask);
-            ClearDestructibleObject(position);
-            return;
-        }
-
-        Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
-        explosion.SetActiveRenderer(length > 1 ? explosion.middle : explosion.end);
-        explosion.SetDirection(direction);
-        explosion.DestroyAfter(explosionDuration);
-
-        Explode(position, direction, length - 1);
-    }
-
-    private void ClearDestructible(Vector2 position)
-    {
-        Tilemap t = GameManager.instance.destructibleTiles;
-        Vector3Int cell = t.WorldToCell(position);
-        TileBase tile = t.GetTile(cell);
-
-        if (tile != null)
-        {
-            Instantiate(destructiblePrefab, position, Quaternion.identity);
-            t.SetTile(cell, null);
-        }
-    }
 
     private void ClearDestructibleObject(Vector2 position)
     {
@@ -535,9 +436,8 @@ public class Bomb : MonoBehaviourPun
         {
             StopCoroutine(coroutine);
             coroutine = null;
-            NormalExplosion(other.transform.position,this.gameObject);
         }
     }
-    **/
+    //**/
     #endregion
 }

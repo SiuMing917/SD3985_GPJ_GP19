@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Tools : MonoBehaviour
+public class Tools : MonoBehaviourPun
 {
-    
     GameManager gameManager;
-    
+
     public int x, y;
     public float disappearTime = 30f;
-    
+
     public AudioClip toolAudio;
 
     private void Awake()
@@ -22,8 +22,8 @@ public class Tools : MonoBehaviour
         disappearTime -= Time.deltaTime;
         if (disappearTime < 0)
         {
-            gameManager.itemsType[x, y] = GameManager.ItemType.EMPTY;
-            Destroy(gameObject);
+            //gameManager.itemsType[x, y] = GameManager.ItemType.EMPTY;
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 
@@ -33,26 +33,30 @@ public class Tools : MonoBehaviour
 
         if (CompareTag("tool_bomb"))
         {
-            if(collision.GetComponent<Person>().bombNumber < 4)
+            if (collision.GetComponent<Person>().bombNumber < collision.GetComponent<Person>().maxbombNumber)
                 collision.GetComponent<Person>().bombNumber++;
         }
         if (CompareTag("tool_potion"))
         {
-            if(collision.GetComponent<Person>().bombRadius < 4)
+            if (collision.GetComponent<Person>().bombRadius < collision.GetComponent<Person>().maxbombRadius)
                 collision.GetComponent<Person>().bombRadius++;
         }
         if (CompareTag("tool_shoes"))
         {
-            if(collision.GetComponent<Person>().speed < 4.0f)
+            if (collision.GetComponent<Person>().speed < collision.GetComponent<Person>().maxspeed)
                 collision.GetComponent<Person>().speed += 1.0f;
         }
         if (CompareTag("tool_heart"))
         {
-            if (collision.GetComponent<Person>().life < 4)
+            if (collision.GetComponent<Person>().life < collision.GetComponent<Person>().maxlife)
                 collision.GetComponent<Person>().life++;
         }
+        if (CompareTag("Skill_Goku"))
+        {
+            collision.GetComponent<Person>().photonView.RPC("ActivateGokuSkill", RpcTarget.All);
+        }
 
-        gameManager.itemsType[x, y] = GameManager.ItemType.EMPTY;
-        Destroy(gameObject);
+        //gameManager.itemsType[x, y] = GameManager.ItemType.EMPTY;
+        PhotonNetwork.Destroy(gameObject);
     }
 }

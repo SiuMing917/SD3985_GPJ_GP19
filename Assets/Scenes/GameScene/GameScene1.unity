@@ -1129,13 +1129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a9608b413f6274da325c22f33043af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 6081993494393245072, guid: 62e5ccd54e15b4e408f0109a24b5d295, type: 3}
+  explosionLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  destructiblePrefab: {fileID: 2954635204356252722, guid: 41538b1e9b8f6484e8d6384ed8b5c288, type: 3}
   player1: {fileID: 0}
   player2: {fileID: 0}
   destructibleTiles: {fileID: 0}
   mode: 0
   xColumn: 16
   yRow: 15
-  reference: {x: -6, y: 7, z: 0}
+  reference: {x: -5, y: 7, z: 0}
   item:
   - {fileID: 4526472316180749697, guid: 9c4d0ff6919310b4fb9e7e9f392c4e6e, type: 3}
   - {fileID: 7585466305538422592, guid: 341778b6845c0ce449ec62c669c37aa6, type: 3}
@@ -1143,6 +1148,10 @@ MonoBehaviour:
   - {fileID: 6707633058054854326, guid: 310cc6dec53652948be65bab8934f266, type: 3}
   - {fileID: 740861331241348081, guid: 52a85e6e11207e74e846b80ff9168854, type: 3}
   - {fileID: 1106137889039500152, guid: 70b85a0d20e3b294bab2db22c7c28052, type: 3}
+  - {fileID: 1106137889039500152, guid: 70b85a0d20e3b294bab2db22c7c28052, type: 3}
+  - {fileID: 1106137889039500152, guid: 70b85a0d20e3b294bab2db22c7c28052, type: 3}
+  - {fileID: 1106137889039500152, guid: 70b85a0d20e3b294bab2db22c7c28052, type: 3}
+  - {fileID: 2971102628148007592, guid: 62e5ccd54e15b4e408f0109a24b5d295, type: 3}
   rolePrefab: {fileID: 2339102580472310983, guid: e63ec893d7654b441b612deead49955c, type: 3}
   barriarSprites: []
   explosionAudio: {fileID: 8300000, guid: 8b4c6f47f124d2742b6305e44b5d3c4f, type: 3}
@@ -1169,6 +1178,10 @@ MonoBehaviour:
   - {fileID: 4437094477119991455, guid: 2d9228838ee0518459ed2afccf213958, type: 3}
   - {fileID: 3147321454223629555, guid: adac868832468de4c8652ac499a4b771, type: 3}
   - {fileID: 4646033836772947525, guid: 4b6e5b0ee0992694ba8dd4e4a20f9632, type: 3}
+  - {fileID: 4646033836772947525, guid: 4b6e5b0ee0992694ba8dd4e4a20f9632, type: 3}
+  - {fileID: 4646033836772947525, guid: 4b6e5b0ee0992694ba8dd4e4a20f9632, type: 3}
+  - {fileID: 4646033836772947525, guid: 4b6e5b0ee0992694ba8dd4e4a20f9632, type: 3}
+  - {fileID: 2971102628148007592, guid: 62e5ccd54e15b4e408f0109a24b5d295, type: 3}
   InRoomPeople: 0
   OnlinePlayerNum: 0
   ui: {fileID: 0}
@@ -1684,7 +1697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.3, y: 0.3}
+  m_AnchoredPosition: {x: 0.7, y: 0.3}
   m_SizeDelta: {x: 22.7144, y: 16.9453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &614388234
@@ -4200,9 +4213,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d50657e4c82411f4c926e9824802eb48, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 76e974a2981de6b40b7d4aa5db700249, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
