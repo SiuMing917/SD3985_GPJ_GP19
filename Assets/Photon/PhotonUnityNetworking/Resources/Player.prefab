@@ -387,6 +387,8 @@ MonoBehaviour:
   isDefended: 0
   Online: 0
   delayTime: 0
+  isSkilled: 0
+  SkillCD: 0
   sprites:
   - {fileID: 1035218825800341191, guid: 978455e5d320f8347806ff47ab646081, type: 3}
   - {fileID: -2284197978936713291, guid: 978455e5d320f8347806ff47ab646081, type: 3}
@@ -501,6 +503,10 @@ MonoBehaviour:
   - {fileID: -1528866400981345049, guid: bda941f62be060243848f2dc34aec2e7, type: 3}
   - {fileID: -8247361826655507954, guid: bda941f62be060243848f2dc34aec2e7, type: 3}
   gameManager: {fileID: 0}
+  leftCount: 0
+  rightCount: 0
+  upCount: 0
+  downCount: 0
   orientation: 0
   canPushBomb: 0
   haveGun: 0

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviourPun
     [Header("Explosion")]
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
+    public LayerMask IndestrucbleLayerMask;
     [Header("Destructible")]
     public Destructible destructiblePrefab;
     //for PVE
@@ -26,7 +27,8 @@ public class GameManager : MonoBehaviourPun
         TOOL,
         BOMB,
         DOOR,
-        EXPLOSION
+        EXPLOSION,
+        KAMEHAMEHA
     }
     public struct Location
     {
@@ -96,7 +98,13 @@ public class GameManager : MonoBehaviourPun
         //PVP
         CollhasIng = false;
         instance = this;
-        map1 = (new MapCreation()).RandomMap();
+
+        //RandomMap by Default
+        //map1 = (new MapCreation()).RandomMap();
+        
+        //ReadMap From File
+        map1 = (new MapCreation("Assets/Maps/MapData.txt")).RandomMap();
+
         itemsObject = new GameObject[xColumn, yRow];
         itemsType = new ItemType[xColumn, yRow];
         mode = Menu.mode;
@@ -170,7 +178,7 @@ public class GameManager : MonoBehaviourPun
                 {
                     int n = Random.Range(0, 100);
                     bool nextToDoor = ((i - 1 >= 0 && itemsType[i - 1, j] == ItemType.DOOR) || (i + 1 < xColumn && itemsType[i + 1, j] == ItemType.DOOR) || (j - 1 >= 0 && itemsType[i, j - 1] == ItemType.DOOR) || (j + 1 < yRow && itemsType[i, j + 1] == ItemType.DOOR));
-                    if (itemsType[i, j] == ItemType.EMPTY && n <= 90 && !nextToDoor)
+                    if (itemsType[i, j] == ItemType.EMPTY && n <= 101 && !nextToDoor)
                     {
                         CreateItem(item[1], i, j, Quaternion.identity);
                     }
@@ -520,7 +528,7 @@ public class GameManager : MonoBehaviourPun
             itemGo.GetComponent<Person>().NO = NO;
             itemGo.GetComponent<Person>().PlayerNO = PlayerNO;
             itemGo.GetComponent<Person>().index = index;
-            if (NO == 0)
+            /**if (NO == 0)
             {
                 itemGo.GetComponent<Person>().speed = 3.0f;
                 itemGo.GetComponent<Person>().bombNumber = 2;
@@ -582,7 +590,7 @@ public class GameManager : MonoBehaviourPun
                 itemGo.GetComponent<Person>().maxbombNumber = 9;
                 itemGo.GetComponent<Person>().maxbombRadius = 9;
                 itemGo.GetComponent<Person>().maxlife = 7;
-            }
+            }**/
             roleList.AddByIndex(itemGo, index);
             if (PlayerNO == 0)
                 leftRoleNOList.Remove(NO);
@@ -604,6 +612,8 @@ public class GameManager : MonoBehaviourPun
             return ItemType.DOOR;
         if (typeTag.CompareTo("Explosion") == 0)
             return ItemType.EXPLOSION;
+        if (typeTag.CompareTo("Kamehameha") == 0)
+            return ItemType.KAMEHAMEHA;
         return ItemType.EMPTY;
     }
 
@@ -680,7 +690,72 @@ public class GameManager : MonoBehaviourPun
         //coroutine = null;
     }
 
-   public void Explode(Vector2 position, Vector2 direction, int length)
+    [PunRPC]
+    public void KamehamehaActive(Vector3 playPos, int host,int orientation)
+    {
+        Vector3 playerStartPosition = roleList.GetT(host).GetComponent<Transform>().position;
+        //roleList.GetT(host).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        roleList.GetT(host).GetComponent<Person>().isSkilled = true;
+        roleList.GetT(host).GetComponent<Person>().SkillCD = 5f;
+        photonView.RPC("UseKamehameha", RpcTarget.All, playerStartPosition, host, orientation);
+
+    }
+
+    [PunRPC]
+    public void UseKamehameha(Vector3 playPos, int host, int orientation)
+    {
+        //kamehamehaActive = true;
+        Vector2 position = playPos;
+        //position += Vector2.right;
+        int kamelength = roleList.GetT(host).GetComponent<Person>().bombRadius + 2;
+        if (orientation == 2)
+        {
+            GameObject kamekameha = PhotonNetwork.Instantiate(this.item[10].name, position+ Vector2.right, Quaternion.identity);
+            Explosion explosion = kamekameha.GetComponent<Explosion>();
+            explosion.SetActiveRenderer(explosion.start);
+            explosion.DestroyAfter(1f);
+            KameExplode(position + Vector2.right, Vector2.right, kamelength);
+        }
+        else if (orientation == 1)
+        {
+            GameObject kamekameha = PhotonNetwork.Instantiate(this.item[10].name, position+Vector2.left, Quaternion.identity);
+            Explosion explosion = kamekameha.GetComponent<Explosion>();
+            explosion.SetActiveRenderer(explosion.start);
+            explosion.SetDirection(Vector2.left);
+            explosion.DestroyAfter(1f);
+            KameExplode(position+ Vector2.left, Vector2.left, kamelength);
+        }
+        else if (orientation == 3)
+        {
+            GameObject kamekameha = PhotonNetwork.Instantiate(this.item[10].name, position+ Vector2.up, Quaternion.identity);
+            Explosion explosion = kamekameha.GetComponent<Explosion>();
+            explosion.SetActiveRenderer(explosion.start);
+            explosion.SetDirection(Vector2.up);
+            explosion.DestroyAfter(1f);
+            KameExplode(position+ Vector2.up, Vector2.up, kamelength);
+        }
+        else if (orientation == 0)
+        {
+            GameObject kamekameha = PhotonNetwork.Instantiate(this.item[10].name, position+ Vector2.down, Quaternion.identity);
+            Explosion explosion = kamekameha.GetComponent<Explosion>();
+            explosion.SetActiveRenderer(explosion.start);
+            explosion.SetDirection(Vector2.down);
+            explosion.DestroyAfter(1f);
+            KameExplode(position+ Vector2.down, Vector2.down, kamelength);
+        }
+        StartCoroutine(EnablePlayerMovementAfterKamehameha(position,host));
+        //yield return new WaitForSeconds(1f);
+    }
+
+    public IEnumerator EnablePlayerMovementAfterKamehameha(Vector3 position,int host)
+    {
+        yield return new WaitForSeconds(1f);
+        //roleList.GetT(host).GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        roleList.GetT(host).GetComponent<Person>().isSkilled = false;
+        roleList.GetT(host).transform.position = position;
+    }
+
+    public void Explode(Vector2 position, Vector2 direction, int length)
     {
         if (length <= 0)
         {
@@ -689,8 +764,9 @@ public class GameManager : MonoBehaviourPun
 
         position += direction;
 
-
-        if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))
+        Collider2D hitCollider = Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask);
+        Collider2D hitIndestrucble = Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, IndestrucbleLayerMask);
+        if (hitCollider|| hitIndestrucble)
         {
 
             ClearDestructibleObject(position);
@@ -705,6 +781,38 @@ public class GameManager : MonoBehaviourPun
         //PhotonNetwork.Destroy(explosionObject);
 
         Explode(position, direction, length - 1);
+    }
+
+    public void KameExplode(Vector2 position, Vector2 direction, int length)
+    {
+        if (length <= 0)
+        {
+            return;
+        }
+
+        position += direction;
+
+        Collider2D hitCollider = Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask);
+        Collider2D hitIndestrucble = Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, IndestrucbleLayerMask);
+        if (hitCollider != null)
+        {
+            ClearDestructibleObject(position);
+
+        }
+        if (hitIndestrucble)
+        {
+            ClearDestructibleObject(position);
+            return;
+        }
+
+        GameObject explosionObject = PhotonNetwork.Instantiate(this.item[10].name, position, Quaternion.identity);
+        Explosion explosion = explosionObject.GetComponent<Explosion>();
+        explosion.SetActiveRenderer(length > 1 ? explosion.middle : explosion.end);
+        explosion.SetDirection(direction);
+        explosion.DestroyAfter(1.0f);
+        //PhotonNetwork.Destroy(explosionObject);
+
+        KameExplode(position, direction, length - 1);
     }
 
     public void ClearDestructibleObject(Vector2 position)

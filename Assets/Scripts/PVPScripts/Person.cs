@@ -24,6 +24,8 @@ public class Person : MonoBehaviourPun
     public bool isDefended = false;
     public bool Online = false;
     public float delayTime;
+    public bool isSkilled = false;
+    public float SkillCD = 0f;
 
 
     public Sprite[] sprites;
@@ -35,10 +37,10 @@ public class Person : MonoBehaviourPun
     public GameManager gameManager;
     private SpriteRenderer sr;
 
-    private int leftCount = 0;
-    private int rightCount = 0;
-    private int upCount = 0;
-    private int downCount = 0;
+    public int leftCount = 0;
+    public int rightCount = 0;
+    public int upCount = 0;
+    public int downCount = 0;
     public int orientation = 0;//0:下 1:左 2:右 3:上
     private bool isFree = true;
     private bool isDead = false;
@@ -227,6 +229,11 @@ public class Person : MonoBehaviourPun
             FireByKey();
         }
 
+        if (SkillCD > 0)
+        {
+            SkillCD -= Time.deltaTime;
+        }
+
     }
     #endregion
 
@@ -237,6 +244,10 @@ public class Person : MonoBehaviourPun
     {
         if (!isFree)
             return;
+
+        if (isSkilled)
+            return;
+
         if (direction == 1)
         {
             rightCount = upCount = downCount = 0;
@@ -389,6 +400,20 @@ public class Person : MonoBehaviourPun
         }
     }
 
+    public void UseKamahemaha()
+    {
+        GameManager.Instance.photonView.RPC("UseKamehameha", RpcTarget.All,new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index, orientation);
+    }
+
+    [PunRPC]
+    public void UseKamahemahaOnline(Vector3 POS, int LocalIndex,int orientation)
+    {
+        //StartCoroutine(GameManager.Instance.UseKamehameha(POS, LocalIndex));
+        GameManager.Instance.photonView.RPC("KamehamehaActive", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index, orientation);
+    }
+
+
+
     private void FireByKey()
     {
         if (PlayerNO == 1)
@@ -407,6 +432,13 @@ public class Person : MonoBehaviourPun
             }
         }
 
+        if(transform.Find("Skill").Find("Goku").gameObject.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Q )&& SkillCD <= 0)
+            {
+                photonView.RPC("UseKamahemahaOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index, orientation);
+            }
+        }
 
     }
 

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class ItemPickup : MonoBehaviour
+public class ItemPickup : MonoBehaviourPun
 {
     [System.Serializable]
     public enum ItemType
