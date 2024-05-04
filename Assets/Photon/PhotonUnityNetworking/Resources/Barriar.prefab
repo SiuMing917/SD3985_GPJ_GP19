@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5986816865237669082}
   - component: {fileID: 9088992742749822807}
   - component: {fileID: 1388500973625087026}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Barriar
   m_TagString: Barriar
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5986816866195577272}
   - component: {fileID: 5986816866195577275}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}

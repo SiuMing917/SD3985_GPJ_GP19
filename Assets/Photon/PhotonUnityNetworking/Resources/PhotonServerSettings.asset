@@ -57,6 +57,9 @@ MonoBehaviour:
   - DestroyItem
   - OnItemPickup
   - ActivateGokuSkill
+  - KamehamehaActive
+  - UseKamehameha
+  - UseKamahemahaOnline
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -20,6 +20,7 @@ TagManager:
   - tool_heart
   - wall
   - Skill_Goku
+  - Kamehameha
   layers:
   - Default
   - TransparentFX
@@ -35,7 +36,7 @@ TagManager:
   - Bomb
   - Explosion
   - Item
-  - 
+  - Indestrucble
   - 
   - 
   - 
