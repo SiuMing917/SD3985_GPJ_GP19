@@ -299,12 +299,13 @@ public class Bomb : MonoBehaviourPun
     public GameManager GameManager { get => gameManager; set => gameManager = value; }
     public int radius;
     public float explodeTime = 3.0f;
+    public int bombID;
 
     [HideInInspector]
     public int x, y;
     public int host;
     public bool isStatic = true;
-    private bool isExploded = false;
+    public bool isExploded = false;
 
     [Header("Explosion")]
     public Explosion explosionPrefab;
@@ -437,7 +438,14 @@ public class Bomb : MonoBehaviourPun
             StopCoroutine(coroutine);
             coroutine = null;
         }
+        if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        {
+            //bombFuseTime = 0f;
+            isExploded = true;
+        }
+
     }
+
     //**/
     #endregion
 }

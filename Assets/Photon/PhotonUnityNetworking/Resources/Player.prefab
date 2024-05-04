@@ -336,12 +336,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 1fb6ec6c326930149b3ae85aa0aff2c5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &7623019595491950312
 CircleCollider2D:
@@ -381,6 +381,7 @@ MonoBehaviour:
   maxbombNumber: 8
   maxbombRadius: 10
   maxlife: 10
+  explosionTime: 1
   PlayerNO: 0
   NO: 5
   index: 0
@@ -389,6 +390,9 @@ MonoBehaviour:
   delayTime: 0
   isSkilled: 0
   SkillCD: 0
+  WeaponCD: 0
+  AutoHealthCD: 8
+  AutoDefendCD: 15
   sprites:
   - {fileID: 1035218825800341191, guid: 978455e5d320f8347806ff47ab646081, type: 3}
   - {fileID: -2284197978936713291, guid: 978455e5d320f8347806ff47ab646081, type: 3}
@@ -1173,7 +1177,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4342739572919034900}
   - component: {fileID: 6490902003956920346}
-  - component: {fileID: 2063020047421994892}
   m_Layer: 0
   m_Name: Fairy
   m_TagString: Untagged
@@ -1246,21 +1249,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2063020047421994892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7893028871290873609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60ec5f2b9987473469443ff9a11580f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fairypowerPrefab: {fileID: 3996477548929918750, guid: 4643023b908b34a43a662b01410fa3c1, type: 3}
-  FuseTime: 1.5
-  player: {fileID: 7623019595491950314}
 --- !u!1 &8596053397991852114
 GameObject:
   m_ObjectHideFlags: 0

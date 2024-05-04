@@ -21,6 +21,9 @@ TagManager:
   - wall
   - Skill_Goku
   - Kamehameha
+  - FairyPower
+  - Skill_Fairy
+  - Weapon_Rocket
   layers:
   - Default
   - TransparentFX

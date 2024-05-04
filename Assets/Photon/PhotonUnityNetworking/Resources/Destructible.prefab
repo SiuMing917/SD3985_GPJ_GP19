@@ -146,14 +146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cb7ffbaa7ca874da331db5f6478cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructionTime: 1
-  itemSpawnChance: 0.5
+  destructionTime: 0.5
+  itemSpawnChance: 0.3
   spawnableItems:
   - {fileID: 5506136304269498376, guid: 1d4679c7ad818a448bbb589ad7601c81, type: 3}
   - {fileID: 6846523068906012941, guid: 45e3b8b7edaa8a244a4e21cfd8b34982, type: 3}
   - {fileID: 852096791497683749, guid: e16459e9a873481429c3ebc3f5623bef, type: 3}
   - {fileID: 711187902382716084, guid: a35e169891dc29c469c498bccc502f99, type: 3}
   - {fileID: 8133137323097349166, guid: 7407a368917bddb4a9ffab7d62b4e01d, type: 3}
+  - {fileID: 4919880783239593775, guid: cce4ac86af6d69a44a69b1f41724f262, type: 3}
+  - {fileID: 5557944187628411757, guid: 472b6da1ee169054b902f5f5a9cdf446, type: 3}
 --- !u!114 &-901020207551168153
 MonoBehaviour:
   m_ObjectHideFlags: 0

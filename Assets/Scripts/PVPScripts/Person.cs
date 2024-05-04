@@ -17,6 +17,7 @@ public class Person : MonoBehaviourPun
     public int maxbombNumber = 8;
     public int maxbombRadius = 10;
     public int maxlife = 10;
+    public float explosionTime = 1f;
 
     public int PlayerNO;//PlayerNO = 0:AI;PlayerNO > 0:player
     public int NO = 5;
@@ -25,8 +26,11 @@ public class Person : MonoBehaviourPun
     public bool Online = false;
     public float delayTime;
     public bool isSkilled = false;
-    public float SkillCD = 0f;
 
+    public float SkillCD = 0f;
+    public float WeaponCD = 0f;
+    public float AutoHealthCD = 10f;
+    public float AutoDefendCD = 15f;
 
     public Sprite[] sprites;
     public GameObject bombPrefab;
@@ -110,69 +114,8 @@ public class Person : MonoBehaviourPun
         {
             delayTime = 0;
         }
-        if (NO == 0)
-        {
-            speed = 3.0f;
-            bombNumber = 2;
-            bombRadius = 1;
-            life = 3;
-            coin = 0;
-            maxspeed = 9.0f;
-            maxbombNumber = 8;
-            maxbombRadius = 8;
-            maxlife = 8;
-        }
-        if (NO == 1)
-        {
-            speed = 2.0f;
-            bombNumber = 1;
-            bombRadius = 2;
-            life = 3;
-            coin = 0;
-            maxspeed = 10.0f;
-            maxbombNumber = 9;
-            maxbombRadius = 9;
-            maxlife = 8;
-        }
 
-        if (NO == 2)
-        {
-            speed = 1.0f;
-            bombNumber = 1;
-            bombRadius = 1;
-            life = 5;
-            coin = 0;
-            maxspeed = 6.0f;
-            maxbombNumber = 8;
-            maxbombRadius = 12;
-            maxlife = 10;
-        }
-
-        if (NO == 3)
-        {
-            speed = 3.0f;
-            bombNumber = 2;
-            bombRadius = 1;
-            life = 3;
-            coin = 0;
-            maxspeed = 8.0f;
-            maxbombNumber = 8;
-            maxbombRadius = 8;
-            maxlife = 7;
-        }
-
-        if (NO == 4)
-        {
-            speed = 2.0f;
-            bombNumber = 2;
-            bombRadius = 2;
-            life = 2;
-            coin = 0;
-            maxspeed = 9.0f;
-            maxbombNumber = 9;
-            maxbombRadius = 9;
-            maxlife = 7;
-        }
+        //photonView.RPC("InitializedPlayerStatus", RpcTarget.All, NO);
 
     }
 
@@ -211,7 +154,8 @@ public class Person : MonoBehaviourPun
         if (delayTime > 0)
         {
             delayTime -= Time.deltaTime;
-            life = 1;
+            //life = 1;
+            photonView.RPC("InitializedPlayerStatus", RpcTarget.All, NO);
             return;
         }
 
@@ -229,10 +173,56 @@ public class Person : MonoBehaviourPun
             FireByKey();
         }
 
-        if (SkillCD > 0)
+        if (SkillCD > 0f)
         {
+            if(NO == 1)
+            {
+                SkillCD -= Time.deltaTime;
+            }
             SkillCD -= Time.deltaTime;
         }
+
+        if (WeaponCD > 0f)
+        {
+            WeaponCD -= Time.deltaTime;
+        }
+
+        if (AutoDefendCD > 0f)
+        {
+            AutoDefendCD -= Time.deltaTime;
+        }
+        else
+        {
+            if (NO == 4)
+            {
+                StartCoroutine(Defend());
+            }
+            AutoDefendCD = 15f;
+        }
+
+        if (AutoHealthCD > 0f)
+        {
+            AutoHealthCD -= Time.deltaTime;
+        }
+        else
+        {
+            if (life < maxlife)
+            {
+                if (NO == 2)
+                {
+                    photonView.RPC("AddLife", RpcTarget.All);
+                    photonView.RPC("AddLife", RpcTarget.All);
+                }
+                else
+                {
+                    photonView.RPC("AddLife", RpcTarget.All);
+                }
+                AutoHealthCD = 10f;
+            }
+        }
+
+
+
 
     }
     #endregion
@@ -260,7 +250,7 @@ public class Person : MonoBehaviourPun
             {
                 photonView.RPC("changeSprite", RpcTarget.All, NO * 16 + leftCount / 5 + 4);
             }
-            transform.Translate(speed * Time.fixedDeltaTime * Vector3.left, Space.World);
+            transform.Translate(speed * Time.fixedDeltaTime * Vector3.left);
             orientation = 1;
         }
         if (direction == 2)
@@ -271,7 +261,7 @@ public class Person : MonoBehaviourPun
                 sr.sprite = sprites[NO * 16 + rightCount / 5 + 8];
             if (Online && photonView.IsMine)
                 photonView.RPC("changeSprite", RpcTarget.All, NO * 16 + rightCount / 5 + 8);
-            transform.Translate(speed * Time.fixedDeltaTime * Vector3.right, Space.World);
+            transform.Translate(speed * Time.fixedDeltaTime * Vector3.right);
             orientation = 2;
         }
         if (direction == 0)
@@ -286,7 +276,7 @@ public class Person : MonoBehaviourPun
             {
                 photonView.RPC("changeSprite", RpcTarget.All, NO * 16 + downCount / 5);
             }
-            transform.Translate(speed * Time.fixedDeltaTime * Vector3.down, Space.World);
+            transform.Translate(speed * Time.fixedDeltaTime * Vector3.down);
             orientation = 0;
         }
         if (direction == 3)
@@ -297,7 +287,7 @@ public class Person : MonoBehaviourPun
                 sr.sprite = sprites[NO * 16 + upCount / 5 + 12];
             if (Online && photonView.IsMine)
                 photonView.RPC("changeSprite", RpcTarget.All, NO * 16 + upCount / 5 + 12);
-            transform.Translate(speed * Time.fixedDeltaTime * Vector3.up, Space.World);
+            transform.Translate(speed * Time.fixedDeltaTime * Vector3.up);
             orientation = 3;
         }
         if (direction == -1)
@@ -412,6 +402,18 @@ public class Person : MonoBehaviourPun
         GameManager.Instance.photonView.RPC("KamehamehaActive", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index, orientation);
     }
 
+    [PunRPC]
+    public void UseFairyPowerOnline(Vector3 POS, int LocalIndex)
+    {
+        GameManager.Instance.photonView.RPC("UseFariyPower", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index);
+    }
+
+    [PunRPC]
+    public void UseRocketOnline(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        GameManager.Instance.photonView.RPC("RocketBomb", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), targetPos,host);
+    }
+
 
 
     private void FireByKey()
@@ -434,10 +436,45 @@ public class Person : MonoBehaviourPun
 
         if(transform.Find("Skill").Find("Goku").gameObject.activeSelf == true)
         {
-            if (Input.GetKeyDown(KeyCode.Q )&& SkillCD <= 0)
+            if (Input.GetKeyDown(KeyCode.Q )&& SkillCD <= 0 && !isSkilled)
             {
                 photonView.RPC("UseKamahemahaOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index, orientation);
+                this.SkillCD = 5f;
             }
+        }
+
+        if (transform.Find("Skill").Find("Fairy").gameObject.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Q) && SkillCD <= 0 && !isSkilled)
+            {
+                photonView.RPC("UseFairyPowerOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index);
+                this.SkillCD = 5f;
+            }
+        }
+
+        if (transform.Find("Weapon").Find("Rocket").gameObject.activeSelf == true)
+        {
+            if(bombNumber > 1 && Input.GetMouseButtonDown(0) && WeaponCD <=0)// 按下鼠標左鍵
+            {
+                Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
+                clickPosition.z = 0f;
+                clickPosition.x = Mathf.Round(clickPosition.x);
+                clickPosition.y = Mathf.Round(clickPosition.y);
+
+                photonView.RPC("UseRocketOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), clickPosition, index);
+                this.WeaponCD = 2f;
+                //Instantiate(bombPrefab).GetComponent<BombBomb>().ThrowBombActive(this.transform.position, clickPosition);
+                //StartCoroutine(ThrowBomb(clickPosition)); // 執行放置炸彈到點擊位置的方法
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("SpikeArrow").gameObject.activeSelf) // 按下鼠標左鍵
+        {
+            Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
+            clickPosition.z = 0f;
+            clickPosition.x = Mathf.Round(clickPosition.x);
+            clickPosition.y = Mathf.Round(clickPosition.y);
+            //StartCoroutine(ShootSpike(clickPosition));
         }
 
     }
@@ -551,6 +588,76 @@ public class Person : MonoBehaviourPun
     }
 
     [PunRPC]
+    public void InitializedPlayerStatus(int NO)
+    {
+        if (NO == 0)
+        {
+            speed = 2.0f;
+            bombNumber = 2;
+            bombRadius = 1;
+            life = 3;
+            coin = 0;
+            maxspeed = 9.0f;
+            maxbombNumber = 8;
+            maxbombRadius = 8;
+            maxlife = 8;
+            transform.GetComponent<Rigidbody2D>().mass=100;
+        }
+        if (NO == 1)
+        {
+            speed = 2.0f;
+            bombNumber = 1;
+            bombRadius = 2;
+            life = 3;
+            coin = 0;
+            maxspeed = 10.0f;
+            maxbombNumber = 6;
+            maxbombRadius = 8;
+            maxlife = 8;
+        }
+
+        if (NO == 2)
+        {
+            speed = 1.0f;
+            bombNumber = 1;
+            bombRadius = 2;
+            life = 5;
+            coin = 0;
+            maxspeed = 6.0f;
+            maxbombNumber = 8;
+            maxbombRadius = 12;
+            maxlife = 10;
+        }
+
+        if (NO == 3)
+        {
+            speed = 2.0f;
+            bombNumber = 2;
+            bombRadius = 1;
+            life = 3;
+            coin = 0;
+            maxspeed = 8.0f;
+            maxbombNumber = 8;
+            maxbombRadius = 8;
+            maxlife = 8;
+            explosionTime = 2f;
+        }
+
+        if (NO == 4)
+        {
+            speed = 3.0f;
+            bombNumber = 2;
+            bombRadius = 2;
+            life = 2;
+            coin = 0;
+            maxspeed = 9.0f;
+            maxbombNumber = 9;
+            maxbombRadius = 9;
+            maxlife = 6;
+        }
+    }
+
+    [PunRPC]
     public void ActivateGokuSkill()
     {
         foreach (Transform child in transform.Find("Skill"))
@@ -558,6 +665,48 @@ public class Person : MonoBehaviourPun
             child.gameObject.SetActive(false);
         }
         transform.Find("Skill").Find("Goku").gameObject.SetActive(true);
+    }
+
+    [PunRPC]
+    public void ActivateFairySkill()
+    {
+        foreach (Transform child in transform.Find("Skill"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Skill").Find("Fairy").gameObject.SetActive(true);
+    }
+
+    [PunRPC]
+    public void ActivateRocketWeapon()
+    {
+        foreach (Transform child in transform.Find("Weapon"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
+    }
+    [PunRPC]
+    public void ActivateSpkikeArrowWeapon()
+    {
+        foreach (Transform child in transform.Find("Weapon"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
+    }
+
+
+    [PunRPC]
+    public void AddBombNumber()
+    {
+        this.bombNumber++;
+    }
+
+    [PunRPC]
+    public void AddLife()
+    {
+        this.life++;
     }
 
 }

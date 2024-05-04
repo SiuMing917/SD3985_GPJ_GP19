@@ -34,7 +34,7 @@ public class Tools : MonoBehaviourPun
         if (CompareTag("tool_bomb"))
         {
             if (collision.GetComponent<Person>().bombNumber < collision.GetComponent<Person>().maxbombNumber)
-                collision.GetComponent<Person>().bombNumber++;
+                collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All);
         }
         if (CompareTag("tool_potion"))
         {
@@ -54,6 +54,18 @@ public class Tools : MonoBehaviourPun
         if (CompareTag("Skill_Goku"))
         {
             collision.GetComponent<Person>().photonView.RPC("ActivateGokuSkill", RpcTarget.All);
+        }
+        if(CompareTag("Skill_Fairy"))
+        {
+            collision.GetComponent<Person>().photonView.RPC("ActivateFairySkill", RpcTarget.All);
+        }
+        if (CompareTag("Weapon_Rocket"))
+        {
+            collision.GetComponent<Person>().photonView.RPC("ActivateRocketWeapon", RpcTarget.All);
+        }
+        if (CompareTag("Weapon_SpikeArrow"))
+        {
+            collision.GetComponent<Person>().photonView.RPC("ActivateSpkikeArrowWeapon", RpcTarget.All);
         }
 
         //gameManager.itemsType[x, y] = GameManager.ItemType.EMPTY;

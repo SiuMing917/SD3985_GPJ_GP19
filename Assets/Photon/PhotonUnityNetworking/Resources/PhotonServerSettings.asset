@@ -60,6 +60,17 @@ MonoBehaviour:
   - KamehamehaActive
   - UseKamehameha
   - UseKamahemahaOnline
+  - ActivateActivateRocketWeapon
+  - ActivateFairySkill
+  - ActivateSpkikeArrowWeapon
+  - UseFairyPowerOnline
+  - UseFariyPower
+  - RocketBomb
+  - UseRocketOnline
+  - ActivateRocketWeapon
+  - AddBombNumber
+  - InitializedPlayerStatus
+  - AddLife
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

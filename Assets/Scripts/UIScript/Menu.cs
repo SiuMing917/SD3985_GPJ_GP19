@@ -17,9 +17,9 @@ public class Menu : MonoBehaviour
     public Button[] yesOrNoButton;
     public Image IntroPanel;
 
-    public static int mode = -1;//0:单人 1:双人 2:联机
-    public static bool sound = true;//true:有音效 false:无音效
-    public static bool isFullScreen;//true:全屏
+    public static int mode = -1;
+    public static bool sound = true;
+    public static bool isFullScreen;
     public static int[] screenSize = new int[2] { 800, 600 };
 
     private int index;
@@ -97,7 +97,7 @@ public class Menu : MonoBehaviour
     public void PlaySingleGameOrdinary()
     {
         mode = 0;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void PlaySingleGameWuxi()

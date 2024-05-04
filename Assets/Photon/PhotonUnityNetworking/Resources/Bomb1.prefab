@@ -101,11 +101,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6bb1daae12b78634eb4abdb4c1457e65, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -170,10 +170,12 @@ MonoBehaviour:
     m_RotationOrder: 4
   radius: 1
   explodeTime: 3
+  bombID: 0
   x: 0
   y: 0
   host: 0
   isStatic: 1
+  isExploded: 0
   explosionPrefab: {fileID: 6081993494393245072, guid: 62e5ccd54e15b4e408f0109a24b5d295, type: 3}
   explosionLayerMask:
     serializedVersion: 2
@@ -215,7 +217,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3147321454223629555}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6bb1daae12b78634eb4abdb4c1457e65, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
