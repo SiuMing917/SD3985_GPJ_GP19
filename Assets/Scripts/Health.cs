@@ -39,4 +39,19 @@ public class Health : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Destructible"))
+        {
+            Debug.Log("hittt");
+            TakeDamage(5);
+        }
+
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("hittt");
+            TakeDamage(5);
+        }
+    }
+
 }

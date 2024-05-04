@@ -79,20 +79,30 @@ public class MovementController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        var healthComponent = this.gameObject.GetComponent<Health>();
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-
-
             //DeathSequence();
-            var healthComonent = this.gameObject.GetComponent<Health>();
+            //var healthComponent = this.gameObject.GetComponent<Health>();
             Debug.Log("explosion hit2");
-            Debug.Log(healthComonent);
+            Debug.Log(healthComponent);
 
-            if (healthComonent != null)
+            if (healthComponent != null)
             {
-                healthComonent.TakeDamage(damage);
+                healthComponent.TakeDamage(damage);
                 Debug.Log("explosion hit3");
             }
+        }
+        if (other.gameObject.CompareTag("Destructible"))
+        {
+            Debug.Log("hittt");
+            healthComponent.TakeDamage(5);
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("hittt");
+            healthComponent.TakeDamage(5);
         }
     }
 
