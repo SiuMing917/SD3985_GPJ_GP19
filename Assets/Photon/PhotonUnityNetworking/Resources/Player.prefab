@@ -390,7 +390,7 @@ MonoBehaviour:
   delayTime: 0
   isSkilled: 0
   SkillCD: 0
-  WeaponCD: 0
+  WeaponBullet: 5
   AutoHealthCD: 8
   AutoDefendCD: 15
   sprites:

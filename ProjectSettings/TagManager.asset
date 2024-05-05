@@ -3,7 +3,30 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Destructible
+  - Spike
+  - Explosion
+  - Enemy
+  - Bullet
+  - Bomb
+  - Role
+  - Box
+  - door
+  - Barriar
+  - tool_potion
+  - tool_bomb
+  - tool_shoes
+  - tool_heart
+  - wall
+  - Skill_Goku
+  - Kamehameha
+  - FairyPower
+  - Skill_Fairy
+  - Weapon_Rocket
+  - RocketBomb
+  - BombMark
+  - Manager
   layers:
   - Default
   - TransparentFX
@@ -13,13 +36,13 @@ TagManager:
   - UI
   - 
   - 
+  - Stage
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Bomb
+  - Explosion
+  - Item
+  - Indestrucble
   - 
   - 
   - 

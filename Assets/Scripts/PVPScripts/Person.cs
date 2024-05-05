@@ -28,7 +28,7 @@ public class Person : MonoBehaviourPun
     public bool isSkilled = false;
 
     public float SkillCD = 0f;
-    public float WeaponCD = 0f;
+    public int WeaponBullet = 5;
     public float AutoHealthCD = 10f;
     public float AutoDefendCD = 15f;
 
@@ -173,6 +173,11 @@ public class Person : MonoBehaviourPun
             FireByKey();
         }
 
+        if(WeaponBullet <= 0)
+        {
+            photonView.RPC("ClearWeapon", RpcTarget.All);
+        }
+
         if (SkillCD > 0f)
         {
             if(NO == 1)
@@ -182,10 +187,6 @@ public class Person : MonoBehaviourPun
             SkillCD -= Time.deltaTime;
         }
 
-        if (WeaponCD > 0f)
-        {
-            WeaponCD -= Time.deltaTime;
-        }
 
         if (AutoDefendCD > 0f)
         {
@@ -433,7 +434,7 @@ public class Person : MonoBehaviourPun
 
         if (transform.Find("Weapon").Find("Rocket").gameObject.activeSelf == true && Time.timeScale == 1f)
         {
-            if(bombNumber > 1 && Input.GetMouseButtonDown(0) && WeaponCD <=0)// 按下鼠標左鍵
+            if(bombNumber > 1 && Input.GetMouseButtonDown(0) && WeaponBullet >0)// 按下鼠標左鍵
             {
                 Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
                 clickPosition.z = 0f;
@@ -441,9 +442,9 @@ public class Person : MonoBehaviourPun
                 clickPosition.y = Mathf.Round(clickPosition.y);
 
                 photonView.RPC("UseRocketOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), clickPosition, index);
-                this.WeaponCD = 2f;
+                //this.WeaponBullet --;
                 //Instantiate(bombPrefab).GetComponent<BombBomb>().ThrowBombActive(this.transform.position, clickPosition);
-                //StartCoroutine(ThrowBomb(clickPosition)); // 執行放置炸彈到點擊位置的方法
+                //StartCoroutine(ThrowBomb(clickPosition)); // 執行放置炸彈到點擊位置的方法s
             }
         }
 
@@ -660,6 +661,7 @@ public class Person : MonoBehaviourPun
             child.gameObject.SetActive(false);
         }
         transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
+        WeaponBullet = 10;
     }
     [PunRPC]
     public void ActivateSpkikeArrowWeapon()
@@ -669,8 +671,17 @@ public class Person : MonoBehaviourPun
             child.gameObject.SetActive(false);
         }
         transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
+        WeaponBullet = 3;
     }
 
+    [PunRPC]
+    public void ClearWeapon()
+    {
+        foreach (Transform child in transform.Find("Weapon"))
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
 
     [PunRPC]
     public void AddBombNumber()

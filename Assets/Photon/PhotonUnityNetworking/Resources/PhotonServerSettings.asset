@@ -74,6 +74,7 @@ MonoBehaviour:
   - OnDestroy
   - SpriteChange
   - RocketExplosion
+  - ClearWeapon
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

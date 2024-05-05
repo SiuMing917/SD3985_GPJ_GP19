@@ -794,7 +794,7 @@ public class GameManager : MonoBehaviourPun
             GameObject bombpos = PhotonNetwork.Instantiate(this.item[13].name, targetPos, Quaternion.identity);            
 
             roleList.GetT(host).GetComponent<Person>().bombNumber--;
-            roleList.GetT(host).GetComponent<Person>().WeaponCD = 2f;
+            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
 
             Vector3 direction = (targetPos - playPos).normalized;
             float distance = Vector3.Distance(transform.position, targetPos);
