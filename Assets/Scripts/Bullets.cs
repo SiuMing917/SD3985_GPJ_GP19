@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour
 {
-    public float life = 3f;
+    GameObject target;
+    public float speed;
+    Rigidbody2D bulletRB;
 
-    void Awake()
+    private void Start()
     {
-        Destroy(gameObject, life);
-    }
-    private void Update()
-    {
-        Destroy(gameObject, life);
+        bulletRB = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player");
+        Vector2 movDir = (target.transform.position - transform.position).normalized * speed;
+        bulletRB.velocity = new Vector2(movDir.x, movDir.y);
+        Destroy(this.gameObject, 2);
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            var health = collision.gameObject.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(5);
+
+            }
+            Destroy(this.gameObject);
+        }
+        
     }
 }
