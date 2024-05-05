@@ -182,9 +182,10 @@ public class Person : MonoBehaviourPun
         {
             if(NO == 1)
             {
-                SkillCD -= Time.deltaTime;
+                SkillCD -= Time.deltaTime*2;
             }
-            SkillCD -= Time.deltaTime;
+            else
+                SkillCD -= Time.deltaTime;
         }
 
 
@@ -434,7 +435,7 @@ public class Person : MonoBehaviourPun
 
         if (transform.Find("Weapon").Find("Rocket").gameObject.activeSelf == true && Time.timeScale == 1f)
         {
-            if(bombNumber > 1 && Input.GetMouseButtonDown(0) && WeaponBullet >0)// 按下鼠標左鍵
+            if(bombNumber > 0 && Input.GetMouseButtonDown(0) && WeaponBullet >0)// 按下鼠標左鍵
             {
                 Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
                 clickPosition.z = 0f;
@@ -568,16 +569,15 @@ public class Person : MonoBehaviourPun
     {
         if (NO == 0)
         {
-            speed = 2.0f;
+            speed = 3.0f;
             bombNumber = 2;
             bombRadius = 1;
             life = 3;
             coin = 0;
-            maxspeed = 9.0f;
-            maxbombNumber = 8;
-            maxbombRadius = 8;
-            maxlife = 8;
-            transform.GetComponent<Rigidbody2D>().mass=30;
+            maxspeed = 12.0f;
+            maxbombNumber = 12;
+            maxbombRadius = 6;
+            maxlife = 6;
         }
         if (NO == 1)
         {
@@ -589,7 +589,7 @@ public class Person : MonoBehaviourPun
             maxspeed = 10.0f;
             maxbombNumber = 6;
             maxbombRadius = 8;
-            maxlife = 8;
+            maxlife = 6;
         }
 
         if (NO == 2)
@@ -597,12 +597,13 @@ public class Person : MonoBehaviourPun
             speed = 1.0f;
             bombNumber = 1;
             bombRadius = 2;
-            life = 5;
+            life = 4;
             coin = 0;
             maxspeed = 6.0f;
-            maxbombNumber = 8;
+            maxbombNumber = 5;
             maxbombRadius = 12;
-            maxlife = 10;
+            maxlife = 8;
+            transform.GetComponent<Rigidbody2D>().mass = 30;
         }
 
         if (NO == 3)
@@ -612,24 +613,24 @@ public class Person : MonoBehaviourPun
             bombRadius = 1;
             life = 3;
             coin = 0;
-            maxspeed = 8.0f;
-            maxbombNumber = 8;
+            maxspeed = 9.0f;
+            maxbombNumber = 6;
             maxbombRadius = 8;
-            maxlife = 8;
+            maxlife = 6;
             explosionTime = 2f;
         }
 
         if (NO == 4)
         {
-            speed = 3.0f;
+            speed = 2.0f;
             bombNumber = 2;
             bombRadius = 2;
             life = 2;
             coin = 0;
-            maxspeed = 9.0f;
-            maxbombNumber = 9;
+            maxspeed = 10.0f;
+            maxbombNumber = 6;
             maxbombRadius = 9;
-            maxlife = 6;
+            maxlife = 4;
         }
     }
 
