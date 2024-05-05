@@ -21,9 +21,13 @@ TagManager:
   - wall
   - Skill_Goku
   - Kamehameha
+<<<<<<< Updated upstream
   - FairyPower
   - Skill_Fairy
   - Weapon_Rocket
+=======
+  - Manager
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
