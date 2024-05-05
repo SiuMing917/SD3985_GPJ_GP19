@@ -24,6 +24,7 @@ public class MovementController : MonoBehaviour
     private AnimatedSpriteRenderer activeSpriteRenderer;
 
     public int damage = 10;
+    private bool takingInput = true;
 
     private void Awake()
     {
@@ -33,6 +34,11 @@ public class MovementController : MonoBehaviour
 
 
     private void Update()
+    {
+        GetPlayerInput();
+
+    }
+    private void GetPlayerInput()
     {
         if (Input.GetKey(inputUp))
         {
@@ -55,7 +61,6 @@ public class MovementController : MonoBehaviour
             SetDirection(Vector2.zero, activeSpriteRenderer);
         }
     }
-
     private void FixedUpdate()
     {
         Vector2 position = rigidbody.position;

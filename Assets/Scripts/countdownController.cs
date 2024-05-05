@@ -11,39 +11,24 @@ public class countdownController : MonoBehaviour
     public Text countdownDisplay;
     public int countdownTime;
     public int waveTime;
-    public GameObject otherGameObject;
+    //public PlayerInput playerInput;
+    public bool isgamePlaying { get; private set; }
+    private static countdownController instance1;
+    public static countdownController Instance1 { get => instance1; set => instance1 = value; }
+    public GameObject shopPenal;
 
-    public bool gamePlaying { get; private set; }
-
-    private void Start()
+    void Start()
     {
-        
+
         StartCoroutine(CountdownToStart());
-    }
-    IEnumerator CountdownWaveTime()
-    {
-        otherGameObject.SetActive(true);
-        while (waveTime > 0)
-        {
-            
-            waveTimeCountDisplay.text = waveTime.ToString();
-
-            yield return new WaitForSeconds(1f);
-
-            waveTime--;
-            
-        }
-        yield return new WaitForSeconds(1f);
-
-        countdownDisplay.gameObject.SetActive(false);
-        // show store/ upgrade page
     }
     IEnumerator CountdownToStart()
     {
+        countdownDisplay.gameObject.SetActive(true);
 
-        otherGameObject.SetActive(false);
         while (countdownTime > 0)
         {
+            Input.ResetInputAxes();
             countdownDisplay.text = countdownTime.ToString();
 
             yield return new WaitForSeconds(1f);
@@ -60,9 +45,39 @@ public class countdownController : MonoBehaviour
         waveTimeCountDisplay.gameObject.SetActive(true);
         StartCoroutine(CountdownWaveTime());
     }
+    IEnumerator CountdownWaveTime()
+    {
+        
+        while (waveTime > 0)
+        {
+            
+            waveTimeCountDisplay.text = waveTime.ToString();
+
+            yield return new WaitForSeconds(1f);
+
+            waveTime--;
+            
+        }
+        yield return new WaitForSeconds(1f);
+
+        countdownDisplay.gameObject.SetActive(false);
+        UpgradePhase();
+        // show store/ upgrade page
+    }
+    
     private void BeginGame()
     {
-        gamePlaying = true;
+        isgamePlaying = true;
         
     }
+    private void UpgradePhase()
+    {
+        isgamePlaying = false;
+        Invoke("ShowShopPenal", 1.25f);
+    }
+    private void ShowShopPenal()
+    {
+        shopPenal.SetActive(true);
+    }
+
 }

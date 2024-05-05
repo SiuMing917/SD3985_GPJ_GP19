@@ -1,35 +1,37 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public bool isPlayerAlive = true;
-    public GameObject enemy;
-    public float spawnTime = 3f;
+    [SerializeField] private float spawnRate = 1f;
+    [SerializeField] private GameObject[] enemyprefabs;
+    [SerializeField] private bool canSpawn = true;
     public Transform[] spawnPoints;
     public GameObject effect;
 
 
     void Start()
     {
-        InvokeRepeating("Spawn", spawnTime, spawnTime);
+        StartCoroutine(Spawn());
     }
 
-
-    void Spawn()
+   
+    private IEnumerator Spawn ()
     {
-        if (isPlayerAlive == true)
+        WaitForSeconds wait = new WaitForSeconds(spawnRate);
+        WaitForSeconds delay = new WaitForSeconds(3f);
+        while (canSpawn)
         {
 
+            yield return wait;
+            int rand = Random.Range(0, enemyprefabs.Length);
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
+            GameObject emenyToSpawn = enemyprefabs[rand];
             Instantiate(effect, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            yield return delay;
+            Instantiate(emenyToSpawn, transform.position, Quaternion.identity);
 
-            Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-            return;
         }
-
-
-
-
     }
 }
