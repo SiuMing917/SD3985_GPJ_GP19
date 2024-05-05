@@ -197,32 +197,8 @@ public class Person : MonoBehaviourPun
             {
                 StartCoroutine(Defend());
             }
-            AutoDefendCD = 15f;
+            AutoDefendCD = 20f;
         }
-
-        if (AutoHealthCD > 0f)
-        {
-            AutoHealthCD -= Time.deltaTime;
-        }
-        else
-        {
-            if (life < maxlife)
-            {
-                if (NO == 2)
-                {
-                    photonView.RPC("AddLife", RpcTarget.All);
-                    photonView.RPC("AddLife", RpcTarget.All);
-                }
-                else
-                {
-                    photonView.RPC("AddLife", RpcTarget.All);
-                }
-                AutoHealthCD = 10f;
-            }
-        }
-
-
-
 
     }
     #endregion
@@ -411,7 +387,10 @@ public class Person : MonoBehaviourPun
     [PunRPC]
     public void UseRocketOnline(Vector3 playPos, Vector3 targetPos, int host)
     {
-        GameManager.Instance.photonView.RPC("RocketBomb", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), targetPos,host);
+        if (Online && PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(GameManager.Instance.RocketFire(playPos, targetPos, host));
+        }
     }
 
 
@@ -452,7 +431,7 @@ public class Person : MonoBehaviourPun
             }
         }
 
-        if (transform.Find("Weapon").Find("Rocket").gameObject.activeSelf == true)
+        if (transform.Find("Weapon").Find("Rocket").gameObject.activeSelf == true && Time.timeScale == 1f)
         {
             if(bombNumber > 1 && Input.GetMouseButtonDown(0) && WeaponCD <=0)// 按下鼠標左鍵
             {
@@ -528,7 +507,7 @@ public class Person : MonoBehaviourPun
     public IEnumerator Defend()
     {
         isDefended = true;
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 2; i++)
         {
             sr.color = new Color(1, 1, 1, 0.9f);
             yield return new WaitForSeconds(0.1f);
@@ -550,10 +529,6 @@ public class Person : MonoBehaviourPun
             yield return new WaitForSeconds(0.1f);
             sr.color = new Color(1, 1, 1, 1);
             yield return new WaitForSeconds(0.1f);
-            if (Menu.mode != 3 && i == 2)
-            {
-                break;
-            }
         }
         sr.color = new Color(1, 1, 1, 1);
         isDefended = false;
@@ -601,7 +576,7 @@ public class Person : MonoBehaviourPun
             maxbombNumber = 8;
             maxbombRadius = 8;
             maxlife = 8;
-            transform.GetComponent<Rigidbody2D>().mass=100;
+            transform.GetComponent<Rigidbody2D>().mass=30;
         }
         if (NO == 1)
         {

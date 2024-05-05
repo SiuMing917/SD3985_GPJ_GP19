@@ -12,7 +12,7 @@ public class Destructible : MonoBehaviourPun
 
     private void Start()
     {
-        Destroy(gameObject, destructionTime);
+            Destroy(gameObject, destructionTime);
     }
 
     private void OnDestroy()

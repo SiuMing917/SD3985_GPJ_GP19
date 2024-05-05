@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: -3175918128893223224, guid: e047a80dd0eff124dbb3b43a58792cb9, type: 3}
   - {fileID: -6771676236449578781, guid: e047a80dd0eff124dbb3b43a58792cb9, type: 3}
   animationTime: 0.125
-  loop: 0
+  loop: 1
   idle: 0
 --- !u!1 &2971102628148007592
 GameObject:
@@ -334,7 +334,7 @@ MonoBehaviour:
   - {fileID: 3891889430353354993, guid: 77378393eaf3fe04387b1941d248dabf, type: 3}
   - {fileID: 6285860838762689335, guid: 77378393eaf3fe04387b1941d248dabf, type: 3}
   animationTime: 0.125
-  loop: 0
+  loop: 1
   idle: 0
 --- !u!1 &8730117929085862445
 GameObject:
@@ -442,5 +442,5 @@ MonoBehaviour:
   - {fileID: -4830720148593167457, guid: 564bb63966a357540a9f5ec5b94c4d2b, type: 3}
   - {fileID: 2363799373831751792, guid: 564bb63966a357540a9f5ec5b94c4d2b, type: 3}
   animationTime: 0.125
-  loop: 0
+  loop: 1
   idle: 0

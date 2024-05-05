@@ -24,6 +24,8 @@ TagManager:
   - FairyPower
   - Skill_Fairy
   - Weapon_Rocket
+  - RocketBomb
+  - BombMark
   layers:
   - Default
   - TransparentFX
