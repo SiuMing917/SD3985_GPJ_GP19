@@ -52,7 +52,7 @@ public class Boss : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
            // var bullet1 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             //var bullet2 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            //var bullet3 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            // var bullet3 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, 45) * bulletSpawnPoint.up * speed; //for shooting towards the right
             //bullet1.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, -45) * bulletSpawnPoint.up * speed; //for shooting towards the left
             //bullet2.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, 135) * bulletSpawnPoint.up * speed; //for shooting towards the down
