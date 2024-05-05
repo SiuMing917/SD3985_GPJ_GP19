@@ -5,6 +5,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+//using System;
 public class GameManager : MonoBehaviourPun
 {
     [Header("Explosion")]
@@ -14,6 +16,17 @@ public class GameManager : MonoBehaviourPun
     public AnimationCurve curve;
     [Header("Destructible")]
     public Destructible destructiblePrefab;
+
+    //public GameObject 
+    [Header("CountdownTime")]
+    //public Text enemyCounter;
+    public Text waveTimeCountDisplay;
+    public Text countdownDisplay;
+    public int countdownTime;
+    public int waveTime;
+
+    private float remainingTime;
+    public bool gamePlaying { get; private set; }
     //for PVE
     public static GameManager PVEInstance;
     public GameObject player1;
@@ -323,16 +336,17 @@ public class GameManager : MonoBehaviourPun
 
         }
 
-
-
         Time.timeScale = 1f;
         //audio
         AudioListener.pause = !Menu.sound;
+        Debug.Log("start");
+        gamePlaying = false;
+
     }
 
     private void Update()
     {
-        //        Debug.Log("rolelist_num:" + roleList.Count);
+        //Debug.Log("rolelist_num:" + roleList.Count);
         if (isGameOver)
             return;
 
@@ -456,7 +470,6 @@ public class GameManager : MonoBehaviourPun
             Menu.screenSize = new int[2] { Screen.width, Screen.height };
         }
     }
-
 
     private void CreateItem(GameObject createGameObject, int createX, int createY, Quaternion createRotation)
     {
