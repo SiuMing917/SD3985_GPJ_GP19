@@ -118,10 +118,11 @@ public class GameManager : MonoBehaviourPun
 
         //RandomMap by Default
         //map1 = (new MapCreation()).RandomMap();
-        
-        //ReadMap From File
-        map1 = (new MapCreation("Assets/Maps/MapData.txt")).RandomMap();
 
+        //ReadMap From File
+        //map1 = (new MapCreation("./Assets/Maps/MapData.txt")).RandomMap();
+
+        map1 = (new MapCreation()).RandomMap();
         itemsObject = new GameObject[xColumn, yRow];
         itemsType = new ItemType[xColumn, yRow];
         mode = Menu.mode;

@@ -16,7 +16,7 @@ public class Person : MonoBehaviourPun
     public float maxspeed = 6.0f;
     public int maxbombNumber = 8;
     public int maxbombRadius = 10;
-    public int maxlife = 10;
+    public int maxlife = 20;
     public float explosionTime = 1f;
 
     public int PlayerNO;//PlayerNO = 0:AI;PlayerNO > 0:player
@@ -433,6 +433,24 @@ public class Person : MonoBehaviourPun
             }
         }
 
+        if (transform.Find("Skill").Find("Master").gameObject.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Q) && SkillCD <= 0)
+            {
+                photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
+                this.SkillCD = 5f;
+            }
+        }
+
+        if (transform.Find("Skill").Find("Cleaner").gameObject.activeSelf == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Q) && SkillCD <= 0 && !isSkilled)
+            {
+                photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
+                this.SkillCD = 5f;
+            }
+        }
+
         if (transform.Find("Weapon").Find("Rocket").gameObject.activeSelf == true && Time.timeScale == 1f)
         {
             if(bombNumber > 0 && Input.GetMouseButtonDown(0) && WeaponBullet >0)// 按下鼠標左鍵
@@ -572,24 +590,24 @@ public class Person : MonoBehaviourPun
             speed = 3.0f;
             bombNumber = 2;
             bombRadius = 1;
-            life = 3;
+            life = 12;
             coin = 0;
             maxspeed = 12.0f;
             maxbombNumber = 12;
             maxbombRadius = 6;
-            maxlife = 6;
+            maxlife = 12;
         }
         if (NO == 1)
         {
             speed = 2.0f;
             bombNumber = 1;
             bombRadius = 2;
-            life = 3;
+            life = 12;
             coin = 0;
             maxspeed = 10.0f;
             maxbombNumber = 6;
             maxbombRadius = 8;
-            maxlife = 6;
+            maxlife = 12;
         }
 
         if (NO == 2)
@@ -597,12 +615,12 @@ public class Person : MonoBehaviourPun
             speed = 1.0f;
             bombNumber = 1;
             bombRadius = 2;
-            life = 4;
+            life = 16;
             coin = 0;
             maxspeed = 6.0f;
             maxbombNumber = 5;
             maxbombRadius = 12;
-            maxlife = 8;
+            maxlife = 16;
             transform.GetComponent<Rigidbody2D>().mass = 30;
         }
 
@@ -611,12 +629,12 @@ public class Person : MonoBehaviourPun
             speed = 2.0f;
             bombNumber = 2;
             bombRadius = 1;
-            life = 3;
+            life = 12;
             coin = 0;
             maxspeed = 9.0f;
             maxbombNumber = 6;
             maxbombRadius = 8;
-            maxlife = 6;
+            maxlife = 12;
             explosionTime = 2f;
         }
 
@@ -625,15 +643,17 @@ public class Person : MonoBehaviourPun
             speed = 2.0f;
             bombNumber = 2;
             bombRadius = 2;
-            life = 2;
+            life = 8;
             coin = 0;
             maxspeed = 10.0f;
             maxbombNumber = 6;
             maxbombRadius = 9;
-            maxlife = 4;
+            maxlife = 8;
         }
     }
 
+    //For Skills and Weapons
+    #region
     [PunRPC]
     public void ActivateGokuSkill()
     {
@@ -655,6 +675,26 @@ public class Person : MonoBehaviourPun
     }
 
     [PunRPC]
+    public void ActivateMasterSkill()
+    {
+        foreach (Transform child in transform.Find("Skill"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Skill").Find("Master").gameObject.SetActive(true);
+    }
+
+    [PunRPC]
+    public void ActivateCleanerSkill()
+    {
+        foreach (Transform child in transform.Find("Skill"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Skill").Find("Cleaner").gameObject.SetActive(true);
+    }
+
+    [PunRPC]
     public void ActivateRocketWeapon()
     {
         foreach (Transform child in transform.Find("Weapon"))
@@ -662,7 +702,7 @@ public class Person : MonoBehaviourPun
             child.gameObject.SetActive(false);
         }
         transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
-        WeaponBullet = 10;
+        WeaponBullet = 5;
     }
     [PunRPC]
     public void ActivateSpkikeArrowWeapon()
@@ -672,7 +712,65 @@ public class Person : MonoBehaviourPun
             child.gameObject.SetActive(false);
         }
         transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
+        WeaponBullet = 2;
+    }
+    [PunRPC]
+    public void ActivateTaserWeapon()
+    {
+        foreach (Transform child in transform.Find("Weapon"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
+        WeaponBullet = 2;
+    }
+    [PunRPC]
+    public void ActivateShotgunWeapon()
+    {
+        foreach (Transform child in transform.Find("Weapon"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Weapon").Find("Shotgun").gameObject.SetActive(true);
+        WeaponBullet = 2;
+    }
+    [PunRPC]
+    public void ActivateChopperWeapon()
+    {
+        foreach (Transform child in transform.Find("Weapon"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Weapon").Find("Chopper").gameObject.SetActive(true);
         WeaponBullet = 3;
+    }
+
+    [PunRPC]
+    public void ActivateHandWeapon()
+    {
+        foreach (Transform child in transform.Find("Weapon"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Weapon").Find("Hand").gameObject.SetActive(true);
+        WeaponBullet = 3;
+    }
+
+    [PunRPC]
+    public void ActivateMagicWeapon()
+    {
+        foreach (Transform child in transform.Find("Weapon"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("Weapon").Find("Magic").gameObject.SetActive(true);
+        WeaponBullet = 3;
+    }
+
+    [PunRPC]
+    public void AddWeaponBullet(int number)
+    {
+        WeaponBullet += number;
     }
 
     [PunRPC]
@@ -683,6 +781,7 @@ public class Person : MonoBehaviourPun
             child.gameObject.SetActive(false);
         }
     }
+    #endregion
 
     [PunRPC]
     public void AddBombNumber()
