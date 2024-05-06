@@ -17,10 +17,18 @@ public class countdownController : MonoBehaviour
     public static countdownController Instance1 { get => instance1; set => instance1 = value; }
     public GameObject shopPenal;
 
+    [SerializeField] List<UpgradeData> upgrades;
+    [SerializeField] List<UpgradeButton> upgradeButtons;
+    List<UpgradeData> selectedUpgrades;
+
+    [SerializeField] List<UpgradeData> aquiredUpgrades;
+
     void Start()
     {
 
         StartCoroutine(CountdownToStart());
+        //ShowShopPenal(GetUpgrades(3));
+
     }
     IEnumerator CountdownToStart()
     {
@@ -48,7 +56,7 @@ public class countdownController : MonoBehaviour
     IEnumerator CountdownWaveTime()
     {
         
-        while (waveTime > 0)
+        while (waveTime >= 0)
         {
             
             waveTimeCountDisplay.text = waveTime.ToString();
@@ -60,7 +68,7 @@ public class countdownController : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
 
-        countdownDisplay.gameObject.SetActive(false);
+        waveTimeCountDisplay.gameObject.SetActive(false);
         UpgradePhase();
         // show store/ upgrade page
     }
@@ -73,11 +81,54 @@ public class countdownController : MonoBehaviour
     private void UpgradePhase()
     {
         isgamePlaying = false;
-        Invoke("ShowShopPenal", 1.25f);
+        ShowShopPenal(upgrades);
     }
-    private void ShowShopPenal()
+    public void ShowShopPenal(List<UpgradeData>upgradeDatas)
     {
         shopPenal.SetActive(true);
+        for(int i = 0; i< upgradeDatas.Count; i++)
+        {
+            upgradeButtons[i].Set(upgradeDatas[i]);
+        }
     }
+
+    public void  CloseShopPenal()
+    {
+        shopPenal.SetActive(false);
+    }
+    public List<UpgradeData> GetUpgrades(int count)
+    {
+        
+        List<UpgradeData> upgradeList = new List<UpgradeData>();
+        //Debug.Log(count);
+
+        if (count> upgrades.Count)
+        {
+            count = upgrades.Count;
+            Debug.Log("count1"+ count);
+        }
+
+        for (int i = 0; i< count; i++)
+        {
+            //Debug.Log(count);
+            //Debug.Log("canget");
+            upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+            //Debug.Log("canget");
+        }
+        
+        return upgradeList;
+    }
+
+    public void Upgrade(int pressedButtonId)
+    {
+        //Debug.Log("pressed" + pressedButtonId.ToString());
+
+        GameObject.Find("Player").transform.GetComponent<upgradeStatus>().Upgrade(pressedButtonId);
+        //Upgrade.(pressedButtonId);
+        CloseShopPenal();
+
+    }
+
+
 
 }
