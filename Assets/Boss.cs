@@ -18,7 +18,11 @@ public class Boss : MonoBehaviour
 
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
-    public float bulletSpeed = 10;
+    public float speed;
+    public float lineofSite;
+    public float shootingRange;
+    public float fireRate = 1f;
+    private float nextFireTime;
 
 
     void Start()
@@ -37,19 +41,23 @@ public class Boss : MonoBehaviour
     void Update()
     {
         //agent.SetDestination(player.transform.position);
-        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if (distanceToPlayer < 5f)
+        float distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
+        if (distanceToPlayer < lineofSite && distanceToPlayer > shootingRange)
         {
-            agent.SetDestination(player.transform.position);
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            //agent.SetDestination(player.transform.position);
         }
-        else
+        else if (distanceToPlayer <= shootingRange && nextFireTime < Time.time)
         {
-            float randomX = Random.Range(transform.position.x - patrolRange, transform.position.x + patrolRange);
-            float randomY = Random.Range(transform.position.y - patrolRange, transform.position.y + patrolRange);
-
-            Vector2 randomPosition = new Vector2(randomX, randomY);
-
-            agent.SetDestination(randomPosition);
+            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+           // var bullet1 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            //var bullet2 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            // var bullet3 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            bullet.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, 45) * bulletSpawnPoint.up * speed; //for shooting towards the right
+            //bullet1.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, -45) * bulletSpawnPoint.up * speed; //for shooting towards the left
+            //bullet2.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, 135) * bulletSpawnPoint.up * speed; //for shooting towards the down
+            //bullet3.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, -135) * bulletSpawnPoint.up * speed; //for shooting towards the up
+            nextFireTime = Time.time + fireRate;
         }
 
         if (Input.GetKeyDown(KeyCode.K))
@@ -61,13 +69,8 @@ public class Boss : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            var bullet1 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            var bullet2= Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            var bullet3 = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            bullet.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, 45) * bulletSpawnPoint.up * bulletSpeed; //for shooting towards the right
-            bullet1.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, -45) * bulletSpawnPoint.up * bulletSpeed; //for shooting towards the left
-            bullet2.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, 135) * bulletSpawnPoint.up * bulletSpeed; //for shooting towards the down
-            bullet3.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, -135) * bulletSpawnPoint.up * bulletSpeed; //for shooting towards the up
+
+            bullet.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, 45) * bulletSpawnPoint.up * speed; //for shooting towards the right
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -94,10 +97,15 @@ public class Boss : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(this.gameObject);
-            //player died 
-            //show death scene
-
+            Debug.Log("boss died");
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, lineofSite);
+        Gizmos.DrawWireSphere(transform.position, shootingRange);
     }
 
 }

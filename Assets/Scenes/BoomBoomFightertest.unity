@@ -370,7 +370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &141140250
 Transform:
   m_ObjectHideFlags: 0
@@ -3349,7 +3349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382069064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1940775798}
@@ -4484,7 +4484,10 @@ MonoBehaviour:
   healthBar: {fileID: 369673101}
   bulletSpawnPoint: {fileID: 1382069065}
   bulletPrefab: {fileID: 4809327821749892347, guid: be4d8fb541ecca340b2fe9f56cd0abd1, type: 3}
-  bulletSpeed: 10
+  speed: 2
+  lineofSite: 4.84
+  shootingRange: 2.6
+  fireRate: 1
 --- !u!4 &1940775798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5011662203018667711, guid: 4edd2ceb5348ad24eb3005fc0e9c3dee, type: 3}
@@ -4697,7 +4700,7 @@ MonoBehaviour:
   countdownDisplay: {fileID: 432198269}
   countdownTime: 3
   waveTime: 30
-  shopPenal: {fileID: 1718424163}
+  shopPenal: {fileID: 0}
 --- !u!1001 &1971200784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4823,8 +4826,8 @@ Canvas:
   m_GameObject: {fileID: 1987551765}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
