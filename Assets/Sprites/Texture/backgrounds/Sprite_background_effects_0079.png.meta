@@ -27,7 +27,7 @@ TextureImporter:
       213: 21300014
     second: Sprite_background_effects_0079_7
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -48,7 +48,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -87,7 +86,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -330,15 +328,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Sprite_background_effects_0079_7: 21300014
-      Sprite_background_effects_0079_0: 21300000
-      Sprite_background_effects_0079_2: 21300004
-      Sprite_background_effects_0079_1: 21300002
-      Sprite_background_effects_0079_3: 21300006
-      Sprite_background_effects_0079_6: 21300012
-      Sprite_background_effects_0079_4: 21300008
-      Sprite_background_effects_0079_5: 21300010
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

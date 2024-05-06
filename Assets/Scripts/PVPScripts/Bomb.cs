@@ -306,6 +306,7 @@ public class Bomb : MonoBehaviourPun
     public int host;
     public bool isStatic = true;
     public bool isExploded = false;
+    public bool isDestroyed = false;
 
     [Header("Explosion")]
     public Explosion explosionPrefab;
@@ -433,17 +434,28 @@ public class Bomb : MonoBehaviourPun
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (coroutine != null && other.CompareTag("Spike"))
-        {
-            StopCoroutine(coroutine);
-            coroutine = null;
-        }
+        //if (coroutine != null && other.CompareTag("Spike"))
+        //{
+        //    StopCoroutine(coroutine);
+        //    coroutine = null;
+        //}
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
             //bombFuseTime = 0f;
             isExploded = true;
         }
+        if (other.gameObject.layer == LayerMask.NameToLayer("Spike"))
+        {
+            //bombFuseTime = 0f;
+            isExploded = true;
+        }
 
+    }
+
+    private void OnDestroy()
+    {
+        if (this.isDestroyed == false)
+            GameManager.roleList.GetT(host).GetComponent<Person>().bombNumber++;
     }
 
     //**/

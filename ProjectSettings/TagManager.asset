@@ -27,6 +27,18 @@ TagManager:
   - RocketBomb
   - BombMark
   - Manager
+  - Arrow
+  - Weapon_Arrow
+  - SpikeMark
+  - Chopper
+  - WeaponHand
+  - WeaponMagic
+  - Floor
+  - Wall
+  - PowerUp
+  - Cleaner
+  - DebuffArea
+  - WeaponTaser
   layers:
   - Default
   - TransparentFX
@@ -43,8 +55,8 @@ TagManager:
   - Explosion
   - Item
   - Indestrucble
-  - 
-  - 
+  - Spike
+  - WeaponBullet
   - 
   - 
   - 

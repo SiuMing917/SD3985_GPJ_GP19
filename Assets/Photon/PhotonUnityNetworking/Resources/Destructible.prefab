@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionTime: 0.5
-  itemSpawnChance: 0.3
+  itemSpawnChance: 1
   spawnableItems:
   - {fileID: 5506136304269498376, guid: 1d4679c7ad818a448bbb589ad7601c81, type: 3}
   - {fileID: 6846523068906012941, guid: 45e3b8b7edaa8a244a4e21cfd8b34982, type: 3}
@@ -156,6 +156,13 @@ MonoBehaviour:
   - {fileID: 8133137323097349166, guid: 7407a368917bddb4a9ffab7d62b4e01d, type: 3}
   - {fileID: 4919880783239593775, guid: cce4ac86af6d69a44a69b1f41724f262, type: 3}
   - {fileID: 5557944187628411757, guid: 472b6da1ee169054b902f5f5a9cdf446, type: 3}
+  - {fileID: 4098256272798062655, guid: 987e2ed5da1d99746b14f31f94d0cefa, type: 3}
+  - {fileID: 7399228968033278235, guid: 8680def61e3f14c43b3479bdeec974c3, type: 3}
+  - {fileID: 7669555558238184380, guid: dc29e999c2e9472439782d2df965f364, type: 3}
+  - {fileID: 3770797628816845155, guid: aaebbda6b1f408240b3328d939411c4c, type: 3}
+  - {fileID: 7131516943084728724, guid: 45991fd324535294a91b383d903962d0, type: 3}
+  - {fileID: 3292203736040575638, guid: 64c98804a7f14a24aa8996fb7a448d0f, type: 3}
+  - {fileID: 4328195317379158926, guid: 23eb25808be8617449ae9098c787b918, type: 3}
 --- !u!114 &-901020207551168153
 MonoBehaviour:
   m_ObjectHideFlags: 0

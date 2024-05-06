@@ -1136,6 +1136,9 @@ MonoBehaviour:
   IndestrucbleLayerMask:
     serializedVersion: 2
     m_Bits: 16384
+  CleanLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1161,6 +1164,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   destructiblePrefab: {fileID: 2954635204356252722, guid: 41538b1e9b8f6484e8d6384ed8b5c288, type: 3}
+  waveTimeCountDisplay: {fileID: 0}
+  countdownDisplay: {fileID: 0}
+  countdownTime: 0
+  waveTime: 0
   player1: {fileID: 0}
   player2: {fileID: 0}
   destructibleTiles: {fileID: 0}
@@ -1183,6 +1190,16 @@ MonoBehaviour:
   - {fileID: 2506303601965795443, guid: eaeda6eb7b432be448a00ab111c525af, type: 3}
   - {fileID: 5540375871138349800, guid: a4a4a7d15617b47488b055f02ddddf3d, type: 3}
   - {fileID: 2277325865965386656, guid: 18b6d643ec179b047a7c6851bb34175f, type: 3}
+  - {fileID: 8663292425155091537, guid: 5031fc1e1ebcb874496fceeb7fd45fd9, type: 3}
+  - {fileID: 7184062598880847197, guid: 34d0448a31758a546875b4f9f3003d02, type: 3}
+  - {fileID: 3777561580190104554, guid: f64166cae8e59884e808bd2d39564b03, type: 3}
+  - {fileID: 1767439516817651910, guid: 5156768c89e9a1b428a7fccf1b9113e4, type: 3}
+  - {fileID: 3525859352555216228, guid: 09283c8d5df68ba49a03d0736ffd9e7d, type: 3}
+  - {fileID: 8722033832990373238, guid: f8a97a8891a9f8f4ebc2ef8fea4bc27e, type: 3}
+  - {fileID: 262698385542373953, guid: 1e0a4a2d3f8360a479e1e31c817fcc58, type: 3}
+  - {fileID: 4530636547355366709, guid: 49f5423b22f31e545907f700ab58e99f, type: 3}
+  - {fileID: 6725995531626744552, guid: 1b949036b3ac8d944a23098c2d00651c, type: 3}
+  - {fileID: 3489480669879869871, guid: 20b5fcb999e8bf84c99bd6aa1b0bead8, type: 3}
   rolePrefab: {fileID: 7623019595491950314, guid: dea9411e4bff12e4d9f853ec7078b3f5, type: 3}
   barriarSprites: []
   explosionAudio: {fileID: 8300000, guid: 8b4c6f47f124d2742b6305e44b5d3c4f, type: 3}
@@ -1196,6 +1213,7 @@ MonoBehaviour:
   toolSprites:
   - {fileID: 21300000, guid: 4e76ac4c59975134a9d7641a5506f20d, type: 3}
   - {fileID: 21300000, guid: 052060584a8cd48459c31af6ab937df0, type: 3}
+  - {fileID: 21300000, guid: 63efda0b8a9e77443b20de19c1a12a07, type: 3}
   - {fileID: 21300000, guid: 63efda0b8a9e77443b20de19c1a12a07, type: 3}
   Online: 0
   c: 0
@@ -1217,6 +1235,16 @@ MonoBehaviour:
   - {fileID: 2506303601965795443, guid: eaeda6eb7b432be448a00ab111c525af, type: 3}
   - {fileID: 5540375871138349800, guid: a4a4a7d15617b47488b055f02ddddf3d, type: 3}
   - {fileID: 2277325865965386656, guid: 18b6d643ec179b047a7c6851bb34175f, type: 3}
+  - {fileID: 8663292425155091537, guid: 5031fc1e1ebcb874496fceeb7fd45fd9, type: 3}
+  - {fileID: 7184062598880847197, guid: 34d0448a31758a546875b4f9f3003d02, type: 3}
+  - {fileID: 3777561580190104554, guid: f64166cae8e59884e808bd2d39564b03, type: 3}
+  - {fileID: 1767439516817651910, guid: 5156768c89e9a1b428a7fccf1b9113e4, type: 3}
+  - {fileID: 3525859352555216228, guid: 09283c8d5df68ba49a03d0736ffd9e7d, type: 3}
+  - {fileID: 8722033832990373238, guid: f8a97a8891a9f8f4ebc2ef8fea4bc27e, type: 3}
+  - {fileID: 262698385542373953, guid: 1e0a4a2d3f8360a479e1e31c817fcc58, type: 3}
+  - {fileID: 4530636547355366709, guid: 49f5423b22f31e545907f700ab58e99f, type: 3}
+  - {fileID: 6725995531626744552, guid: 1b949036b3ac8d944a23098c2d00651c, type: 3}
+  - {fileID: 3489480669879869871, guid: 20b5fcb999e8bf84c99bd6aa1b0bead8, type: 3}
   InRoomPeople: 0
   OnlinePlayerNum: 0
   ui: {fileID: 0}

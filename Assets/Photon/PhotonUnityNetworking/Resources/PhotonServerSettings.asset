@@ -83,6 +83,20 @@ MonoBehaviour:
   - ActivateShotgunWeapon
   - ActivateTaserWeapon
   - ActivateMagicWeapon
+  - ActivateSpikeArrowWeapon
+  - UseArrowOnline
+  - UseChopperOnline
+  - ActivateSTOPState
+  - ClearSkill
+  - ClearState
+  - UseHandOnline
+  - UseMagicOnline
+  - UsePowerUpOnline
+  - UseCleanerOnline
+  - AddRadius
+  - AddSpeed
+  - DestroyMyObject
+  - UseTaserOnline
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

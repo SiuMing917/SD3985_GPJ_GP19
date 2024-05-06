@@ -177,6 +177,7 @@ MonoBehaviour:
   host: 0
   isStatic: 1
   isExploded: 0
+  isDestroyed: 0
   explosionPrefab: {fileID: 6081993494393245072, guid: 62e5ccd54e15b4e408f0109a24b5d295, type: 3}
   explosionLayerMask:
     serializedVersion: 2

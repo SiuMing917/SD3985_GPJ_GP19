@@ -27,6 +27,8 @@ public class Person : MonoBehaviourPun
     public float delayTime;
     public bool isSkilled = false;
 
+    public bool CleanerUser = false;
+
     public float SkillCD = 0f;
     public int WeaponBullet = 5;
     public float AutoHealthCD = 10f;
@@ -387,11 +389,66 @@ public class Person : MonoBehaviourPun
     }
 
     [PunRPC]
+    public void UsePowerUpOnline(Vector3 POS, int LocalIndex)
+    {
+        StartCoroutine(GameManager.Instance.UsePowerUp(POS, index));
+    }
+
+    [PunRPC]
+    public void UseCleanerOnline(Vector3 POS, int LocalIndex)
+    {
+        StartCoroutine(GameManager.Instance.UseCleaner(POS, index));
+    }
+
+    [PunRPC]
     public void UseRocketOnline(Vector3 playPos, Vector3 targetPos, int host)
     {
         if (Online && PhotonNetwork.IsMasterClient)
         {
             StartCoroutine(GameManager.Instance.RocketFire(playPos, targetPos, host));
+        }
+    }
+    [PunRPC]
+    public void UseArrowOnline(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online && PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(GameManager.Instance.ArrowFire(playPos, targetPos, host));
+        }
+    }
+    [PunRPC]
+    public void UseChopperOnline(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online && PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(GameManager.Instance.ChopperFire(playPos, targetPos, host));
+        }
+    }
+
+    [PunRPC]
+    public void UseHandOnline(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online && PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(GameManager.Instance.HandFire(playPos, targetPos, host));
+        }
+    }
+
+    [PunRPC]
+    public void UseMagicOnline(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online && PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(GameManager.Instance.MagicFire(playPos, targetPos, host));
+        }
+    }
+
+    [PunRPC]
+    public void UseTaserOnline(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online && PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(GameManager.Instance.TaserFire(playPos, targetPos, host));
         }
     }
 
@@ -437,19 +494,23 @@ public class Person : MonoBehaviourPun
         {
             if (Input.GetKeyDown(KeyCode.Q) && SkillCD <= 0)
             {
-                photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
+                photonView.RPC("UsePowerUpOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index);
+                //photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
                 this.SkillCD = 5f;
             }
         }
 
         if (transform.Find("Skill").Find("Cleaner").gameObject.activeSelf == true)
         {
-            if (Input.GetKeyDown(KeyCode.Q) && SkillCD <= 0 && !isSkilled)
+            if (Input.GetKeyDown(KeyCode.Q) && SkillCD <= 0)
             {
-                photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
-                this.SkillCD = 5f;
+                this.CleanerUser = true;
+                photonView.RPC("UseCleanerOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index);
+                //photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
+                this.SkillCD = 20f;
             }
         }
+
 
         if (transform.Find("Weapon").Find("Rocket").gameObject.activeSelf == true && Time.timeScale == 1f)
         {
@@ -473,9 +534,64 @@ public class Person : MonoBehaviourPun
             clickPosition.z = 0f;
             clickPosition.x = Mathf.Round(clickPosition.x);
             clickPosition.y = Mathf.Round(clickPosition.y);
+            photonView.RPC("UseArrowOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), clickPosition, index);
             //StartCoroutine(ShootSpike(clickPosition));
         }
 
+        if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("Chopper").gameObject.activeSelf) // 按下鼠標左鍵
+        {
+            //0:down 1:left 2:right 3:up
+            /**Vector3 chopperposion = this.transform.position;
+            if(orientation == 0)
+            {
+                chopperposion.y = this.transform.position.y - 1f; 
+            }
+            else if(orientation == 1)
+            {
+                chopperposion.x = this.transform.position.x - 1f;
+            }
+            else if (orientation == 2)
+            {
+                chopperposion.x = this.transform.position.x + 1f;
+            }
+            else if (orientation == 3)
+            {
+                chopperposion.y = this.transform.position.y + 1f;
+            }**/
+            Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
+            clickPosition.z = 0f;
+            clickPosition.x = Mathf.Round(clickPosition.x);
+            clickPosition.y = Mathf.Round(clickPosition.y);
+            photonView.RPC("UseChopperOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), clickPosition, index);
+        }
+
+        if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("Hand").gameObject.activeSelf) // 按下鼠標左鍵
+        {
+            Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
+            clickPosition.z = 0f;
+            clickPosition.x = Mathf.Round(clickPosition.x);
+            clickPosition.y = Mathf.Round(clickPosition.y);
+            photonView.RPC("UseHandOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), clickPosition, index);
+        }
+
+        if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("Magic").gameObject.activeSelf) // 按下鼠標左鍵
+        {
+            Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
+            clickPosition.z = 0f;
+            clickPosition.x = Mathf.Round(clickPosition.x);
+            clickPosition.y = Mathf.Round(clickPosition.y);
+            photonView.RPC("UseMagicOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), clickPosition, index);
+        }
+
+        if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("Taser").gameObject.activeSelf) // 按下鼠標左鍵
+        {
+            Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
+            clickPosition.z = 0f;
+            clickPosition.x = Mathf.Round(clickPosition.x);
+            clickPosition.y = Mathf.Round(clickPosition.y);
+            photonView.RPC("UseTaserOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), clickPosition, index);
+            //StartCoroutine(ShootSpike(clickPosition));
+        }
     }
 
     private void Die()
@@ -491,13 +607,13 @@ public class Person : MonoBehaviourPun
     }
 
 
-    public void ReduceLife()
+    public void ReduceLife( int i)
     {
         if (true)
         {
             if (!PhotonNetwork.IsConnected || (PhotonNetwork.IsConnected && PhotonNetwork.IsMasterClient))
             {
-                this.life--;
+                this.life = this.life-i;
             }
             if (life > 0)
             {
@@ -527,7 +643,7 @@ public class Person : MonoBehaviourPun
     public IEnumerator Defend()
     {
         isDefended = true;
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
             sr.color = new Color(1, 1, 1, 0.9f);
             yield return new WaitForSeconds(0.1f);
@@ -553,6 +669,17 @@ public class Person : MonoBehaviourPun
         sr.color = new Color(1, 1, 1, 1);
         isDefended = false;
     }
+
+    public IEnumerator StopMove()
+    {
+        isFree = false;
+        yield return new WaitForSeconds(1f);
+        photonView.RPC("ClearState", RpcTarget.All);
+        photonView.RPC("ClearWeapon", RpcTarget.All);
+        photonView.RPC("ClearSkill", RpcTarget.All);
+        isFree = true;
+    }
+
     [PunRPC]
     void changeSprite(int i)
     {
@@ -580,6 +707,14 @@ public class Person : MonoBehaviourPun
         {
             other.isTrigger = false;
         }
+        //if (other.gameObject.layer == LayerMask.NameToLayer("WeaponBullet"))
+        //{
+        //    other.isTrigger = true;
+        //}
+        //if (other.gameObject.layer == LayerMask.NameToLayer("Spike"))
+        //{
+        //    other.isTrigger = true;
+        //}
     }
 
     [PunRPC]
@@ -705,13 +840,13 @@ public class Person : MonoBehaviourPun
         WeaponBullet = 5;
     }
     [PunRPC]
-    public void ActivateSpkikeArrowWeapon()
+    public void ActivateSpikeArrowWeapon()
     {
         foreach (Transform child in transform.Find("Weapon"))
         {
             child.gameObject.SetActive(false);
         }
-        transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
+        transform.Find("Weapon").Find("SpikeArrow").gameObject.SetActive(true);
         WeaponBullet = 2;
     }
     [PunRPC]
@@ -721,8 +856,8 @@ public class Person : MonoBehaviourPun
         {
             child.gameObject.SetActive(false);
         }
-        transform.Find("Weapon").Find("Rocket").gameObject.SetActive(true);
-        WeaponBullet = 2;
+        transform.Find("Weapon").Find("Taser").gameObject.SetActive(true);
+        WeaponBullet = 1;
     }
     [PunRPC]
     public void ActivateShotgunWeapon()
@@ -768,9 +903,20 @@ public class Person : MonoBehaviourPun
     }
 
     [PunRPC]
+    public void ActivateSTOPState()
+    {
+        foreach (Transform child in transform.Find("State"))
+        {
+            child.gameObject.SetActive(false);
+        }
+        transform.Find("State").Find("STOP").gameObject.SetActive(true);
+        StartCoroutine(StopMove());
+    }
+
+    [PunRPC]
     public void AddWeaponBullet(int number)
     {
-        WeaponBullet += number;
+        this.WeaponBullet += number;
     }
 
     [PunRPC]
@@ -781,18 +927,56 @@ public class Person : MonoBehaviourPun
             child.gameObject.SetActive(false);
         }
     }
-    #endregion
 
     [PunRPC]
-    public void AddBombNumber()
+    public void ClearState()
     {
-        this.bombNumber++;
+        foreach (Transform child in transform.Find("State"))
+        {
+            child.gameObject.SetActive(false);
+        }
     }
 
     [PunRPC]
-    public void AddLife()
+    public void ClearSkill()
     {
-        this.life++;
+        foreach (Transform child in transform.Find("Skill"))
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    #endregion
+
+    [PunRPC]
+    public void AddBombNumber(int i)
+    {
+        if(bombNumber<maxbombNumber && bombNumber > 0)
+            this.bombNumber+= i;
+
+        if (bombNumber == 0)
+            this.bombNumber++;
+    }
+
+    [PunRPC]
+    public void AddLife(int i)
+    {
+        if(life<maxlife)
+        this.life+= i;
+    }
+
+    [PunRPC]
+    public void AddSpeed(float i)
+    {
+        if(speed<maxspeed && speed > 1f)
+        this.speed += i;
+    }
+
+    [PunRPC]
+    public void AddRadius(int i)
+    {
+        if(bombRadius < maxbombRadius && bombRadius > 1)
+        this.bombRadius += i;
     }
 
 }

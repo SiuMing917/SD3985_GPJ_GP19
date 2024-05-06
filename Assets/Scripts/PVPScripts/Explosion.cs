@@ -124,7 +124,7 @@ public class Explosion : MonoBehaviourPun
         {
             if (!collision.GetComponent<Person>().isDefended)
             {
-                collision.GetComponent<Person>().ReduceLife();
+                collision.GetComponent<Person>().ReduceLife(1);
             }
 
         }

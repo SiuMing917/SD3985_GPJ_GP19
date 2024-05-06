@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviourPun
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
     public LayerMask IndestrucbleLayerMask;
+    public LayerMask CleanLayerMask;
     public AnimationCurve curve;
     [Header("Destructible")]
     public Destructible destructiblePrefab;
@@ -45,7 +46,18 @@ public class GameManager : MonoBehaviourPun
         KAMEHAMEHA,
         FAIRYPOWER,
         ROCKETBOMB,
-        BOMBMARK
+        BOMBMARK,
+        ARROW,
+        SPIKE,
+        SPIKEMARK,
+        CHOPPER,
+        HAND,
+        MAGIC,
+        POWERUP,
+        CLEANER,
+        DEBUFFAREA,
+        TASER
+
     }
     public struct Location
     {
@@ -638,6 +650,26 @@ public class GameManager : MonoBehaviourPun
             return ItemType.ROCKETBOMB;
         if (typeTag.CompareTo("BombMark") == 0)
             return ItemType.BOMBMARK;
+        if (typeTag.CompareTo("Arrow") == 0)
+            return ItemType.ARROW;
+        if (typeTag.CompareTo("SpikeMark") == 0)
+            return ItemType.SPIKEMARK;
+        if (typeTag.CompareTo("Spike") == 0)
+            return ItemType.SPIKE;
+        if (typeTag.CompareTo("Chopper") == 0)
+            return ItemType.SPIKE;
+        if (typeTag.CompareTo("WeaponHand") == 0)
+            return ItemType.HAND;
+        if (typeTag.CompareTo("WeaponMagic") == 0)
+            return ItemType.MAGIC;
+        if (typeTag.CompareTo("PowerUp") == 0)
+            return ItemType.POWERUP;
+        if (typeTag.CompareTo("Cleaner") == 0)
+            return ItemType.CLEANER;
+        if (typeTag.CompareTo("DebuffArea") == 0)
+            return ItemType.DEBUFFAREA;
+        if (typeTag.CompareTo("WeaponTaser") == 0)
+            return ItemType.TASER;
         return ItemType.EMPTY;
     }
 
@@ -704,6 +736,7 @@ public class GameManager : MonoBehaviourPun
                     {
                         photonView.RPC("NormalExplosion", RpcTarget.All, bombposition, bombObject.GetPhotonView().ViewID, host);
                         bomb.isExploded = false;
+                        bomb.isDestroyed = true;
                         break;
                     }
                     yield return new WaitForSeconds(0.25f);
@@ -711,6 +744,7 @@ public class GameManager : MonoBehaviourPun
                     {
                         photonView.RPC("NormalExplosion", RpcTarget.All, bombposition, bombObject.GetPhotonView().ViewID, host);
                         bomb.isExploded = false;
+                        bomb.isDestroyed = true;
                         break;
                     }
                     yield return new WaitForSeconds(0.25f);
@@ -718,6 +752,7 @@ public class GameManager : MonoBehaviourPun
                     {
                         photonView.RPC("NormalExplosion", RpcTarget.All, bombposition, bombObject.GetPhotonView().ViewID, host);
                         bomb.isExploded = false;
+                        bomb.isDestroyed = true;
                         break;
                     }
                     if (i == 2)
@@ -729,6 +764,7 @@ public class GameManager : MonoBehaviourPun
                     {
                         photonView.RPC("NormalExplosion", RpcTarget.All, bombposition, bombObject.GetPhotonView().ViewID, host);
                         bomb.isExploded = false;
+                        bomb.isDestroyed = true;
                         break;
                     }
                 }
@@ -830,6 +866,199 @@ public class GameManager : MonoBehaviourPun
             photonView.RPC("RocketExplosion", RpcTarget.All, new Vector2(targetPos.x,targetPos.y), host);
         }
     }
+
+    public IEnumerator ArrowFire(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online)
+        {
+
+            GameObject arrowpos = PhotonNetwork.Instantiate(this.item[15].name, targetPos, Quaternion.identity);
+
+            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+
+            Vector3 direction = (targetPos - playPos).normalized;
+            GameObject arrow = PhotonNetwork.Instantiate(this.item[14].name, playPos + direction, Quaternion.identity);
+            arrow.transform.right = direction; // Rotate arrow towards player position
+
+            float distance = Vector3.Distance(playPos, targetPos);
+            float speed = distance / 3f;
+            float startTime = Time.time;
+
+            while (Time.time < startTime + 3f)
+            {
+                arrow.transform.position += direction * speed * Time.deltaTime;
+                yield return null;
+            }
+
+            PhotonNetwork.Destroy(arrow);
+            PhotonNetwork.Destroy(arrowpos);
+
+            GameObject spike = PhotonNetwork.Instantiate(this.item[16].name, targetPos, Quaternion.identity);
+            yield return new WaitForSeconds(20f);
+            PhotonNetwork.Destroy(spike);
+        }
+    }
+
+    public IEnumerator ChopperFire(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online)
+        {
+
+
+            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+
+            Vector3 direction = (targetPos - playPos).normalized;
+            GameObject Chopper = PhotonNetwork.Instantiate(this.item[17].name, playPos + direction, Quaternion.identity);
+            Chopper.transform.right = direction; // Rotate arrow towards player position
+
+            float distance = Vector3.Distance(playPos, targetPos);
+            float speed = distance / 5f;
+            float startTime = Time.time;
+
+            while (Time.time < startTime + 5f)
+            {
+                Chopper.transform.position += direction * speed * Time.deltaTime;
+                yield return null;
+            }
+
+            PhotonNetwork.Destroy(Chopper);
+        }
+    }
+
+    public IEnumerator HandFire(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online)
+        {
+
+
+            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+
+            Vector3 direction = (targetPos - playPos).normalized;
+            GameObject Hand = PhotonNetwork.Instantiate(this.item[18].name, playPos + direction, Quaternion.identity);
+            Hand.transform.right = direction; // Rotate arrow towards player position
+
+            float distance = Vector3.Distance(playPos, targetPos);
+            float speed = distance / 5f;
+            float startTime = Time.time;
+
+            while (Time.time < startTime + 5f)
+            {
+                Hand.transform.position += direction * speed * Time.deltaTime;
+                yield return null;
+            }
+
+            PhotonNetwork.Destroy(Hand);
+        }
+    }
+
+    public IEnumerator MagicFire(Vector3 playPosition, Vector3 targetPos, int host)
+    {
+        Vector3 playPos = playPosition;
+        playPos.z = 0f;
+        playPos.x = Mathf.Round(playPos.x);
+        playPos.y = Mathf.Round(playPos.y);
+        if (Online)
+        {
+
+            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+            GameObject Magic = PhotonNetwork.Instantiate(this.item[19].name, playPos, Quaternion.identity);
+            GameObject MagicPos = PhotonNetwork.Instantiate(this.item[19].name, targetPos, Quaternion.identity);
+
+            yield return new WaitForSeconds(1f);
+            Collider2D collider = Physics2D.OverlapBox(targetPos, Vector2.one / 2f, 0f, explosionLayerMask);
+            PhotonNetwork.Destroy(Magic);
+            PhotonNetwork.Destroy(MagicPos);
+            if (collider.gameObject.CompareTag("Box"))
+            {
+                PhotonNetwork.Destroy(collider.gameObject);
+                yield return new WaitForSeconds(0.1f);
+                roleList.GetT(host).GetComponent<Transform>().position = targetPos;
+                yield return new WaitForSeconds(0.1f);
+                GameObject Box = PhotonNetwork.Instantiate(this.item[1].name, playPos, Quaternion.identity);
+            }
+        }
+    }
+
+
+    public IEnumerator UsePowerUp(Vector3 playPosition, int host)
+    {
+        Vector3 playPos = playPosition;
+        playPos.z = 0f;
+        if (Online)
+        {
+
+            roleList.GetT(host).GetComponent<Person>().photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
+            GameObject PowerUp = PhotonNetwork.Instantiate(this.item[20].name, playPos, Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
+            //roleList.GetT(host).GetComponent<Person>().SkillCD = 20f;
+            PhotonNetwork.Destroy(PowerUp);
+
+        }
+    }
+
+    public IEnumerator UseCleaner(Vector3 playPosition, int host)
+    {
+        Vector3 playPos = playPosition;
+        playPos.z = 0f;
+        if (Online)
+        {
+            roleList.GetT(host).GetComponent<Person>().CleanerUser = true;
+            yield return new WaitForSeconds(0.5f);
+            GameObject Cleaner = PhotonNetwork.Instantiate(this.item[21].name, playPos, Quaternion.identity);
+            Vector2 center = playPos;
+            float radius = 5f; // 圓形區域的半徑
+            CleanerArea(center, radius, host);
+            yield return new WaitForSeconds(1f);
+            PhotonNetwork.Destroy(Cleaner);
+            yield return new WaitForSeconds(0.5f);
+            roleList.GetT(host).GetComponent<Person>().CleanerUser = false;
+        }
+    }
+
+    public IEnumerator TaserFire(Vector3 playPos, Vector3 targetPos, int host)
+    {
+        if (Online)
+        {
+
+            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+
+            Vector3 direction = (targetPos - playPos).normalized;
+            GameObject bullet = PhotonNetwork.Instantiate(this.item[22].name, playPos + direction, Quaternion.identity);
+            bullet.transform.right = direction; // Rotate arrow towards player position
+
+            float distance = Vector3.Distance(playPos, targetPos);
+            float speed = distance / 3f;
+            float startTime = Time.time;
+
+            while (Time.time < startTime + 3f)
+            {
+                bullet.transform.position += direction * speed * Time.deltaTime;
+                yield return null;
+            }
+
+            PhotonNetwork.Destroy(bullet);
+
+            //GameObject expolore = PhotonNetwork.Instantiate(this.item[23].name, targetPos, Quaternion.identity);
+
+            GameObject debuff = PhotonNetwork.Instantiate(this.item[23].name, targetPos, Quaternion.identity);
+            yield return new WaitForSeconds(15f);
+            PhotonNetwork.Destroy(debuff);
+        }
+    }
+
+    public void CleanerArea(Vector2 center, float radius, int host)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(center, radius);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject.CompareTag("Arrow") || collider.gameObject.CompareTag("WeaponHand") || collider.gameObject.CompareTag("Spike") || collider.gameObject.CompareTag("Chopper") || collider.gameObject.CompareTag("WeaponMagic") || collider.gameObject.CompareTag("WeaponTaser") || collider.gameObject.CompareTag("DebuffArea") || collider.gameObject.CompareTag("Weapon_Arrow") || collider.gameObject.CompareTag("Weapon_Rocket")|| collider.gameObject.CompareTag("Bomb"))
+            {
+                PhotonNetwork.Destroy(collider.gameObject);
+            }
+        }
+    }
+
     //Kamehameha
     #region
     [PunRPC]
@@ -1727,6 +1956,12 @@ public class GameManager : MonoBehaviourPun
         {
             ui.Defeat();
         }
+    }
+
+    [PunRPC]
+    public void DestroyMyObject(int ObjectID)
+    {
+        PhotonNetwork.Destroy(PhotonView.Find(ObjectID));
     }
 }
 
