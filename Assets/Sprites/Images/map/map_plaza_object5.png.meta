@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 475d551851f5b6d48bc05742bcd0e19d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6598755559318581207
+    second: map_plaza_object5_0
+  - first:
+      213: -740099040016158886
+    second: map_plaza_object5_1
+  - first:
+      213: -4917168826530665834
+    second: map_plaza_object5_2
+  - first:
+      213: -6266569095091301467
+    second: map_plaza_object5_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +137,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: map_plaza_object5_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 42
+        width: 40
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df61d0383d739b50800000000000000
+      internalID: 6598755559318581207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_plaza_object5_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 42
+        width: 40
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5faa3528d3aab5f0800000000000000
+      internalID: -740099040016158886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_plaza_object5_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ae30a2105b2cbb0800000000000000
+      internalID: -4917168826530665834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_plaza_object5_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a354a61c9ca809a0800000000000000
+      internalID: -6266569095091301467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

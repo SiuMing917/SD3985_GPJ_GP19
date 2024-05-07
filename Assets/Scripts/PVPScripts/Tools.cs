@@ -91,6 +91,66 @@ public class Tools : MonoBehaviourPun
         {
             collision.GetComponent<Person>().photonView.RPC("ActivateTaserWeapon", RpcTarget.All);
         }
+
+        if (CompareTag("max_bomb"))
+        {
+            if (collision.GetComponent<Person>().bombNumber < collision.GetComponent<Person>().maxbombNumber)
+            {
+                collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All, 20);
+                collision.GetComponent<Person>().photonView.RPC("AddLife", RpcTarget.All, -1);
+            }
+        }
+        if (CompareTag("max_potion"))
+        {
+            if (collision.GetComponent<Person>().bombRadius < collision.GetComponent<Person>().maxbombRadius)
+            {
+                collision.GetComponent<Person>().photonView.RPC("AddRadius", RpcTarget.All, 20);
+                collision.GetComponent<Person>().photonView.RPC("AddLife", RpcTarget.All, -1);
+            }
+        }
+        if (CompareTag("max_shoes"))
+        {
+            if (collision.GetComponent<Person>().speed < collision.GetComponent<Person>().maxspeed)
+            {
+                collision.GetComponent<Person>().photonView.RPC("AddSpeed", RpcTarget.All, 20f);
+                collision.GetComponent<Person>().photonView.RPC("AddLife", RpcTarget.All, -1);
+            }
+        }
+        if (CompareTag("max_heart"))
+        {
+            if (collision.GetComponent<Person>().life < collision.GetComponent<Person>().maxlife)
+            {
+                collision.GetComponent<Person>().photonView.RPC("AddLife", RpcTarget.All, 20);
+                collision.GetComponent<Person>().photonView.RPC("AddSpeed", RpcTarget.All, -1f);
+                collision.GetComponent<Person>().photonView.RPC("AddRadius", RpcTarget.All, -1);
+                collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All, -1);
+            }
+        }
+        if (CompareTag("Item_AllDebuff"))
+        {
+                collision.GetComponent<Person>().photonView.RPC("AddSpeed", RpcTarget.All, -1f);
+                collision.GetComponent<Person>().photonView.RPC("AddRadius", RpcTarget.All, -1);
+                collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All, -1);
+        }
+        if (CompareTag("Item_MaxDeBuff"))
+        {
+                collision.GetComponent<Person>().photonView.RPC("AddSpeed", RpcTarget.All, -20f);
+                collision.GetComponent<Person>().photonView.RPC("AddRadius", RpcTarget.All, -20);
+                collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All, -20);
+        }
+        if (CompareTag("Item_AllBuff"))
+        {
+                collision.GetComponent<Person>().photonView.RPC("AddSpeed", RpcTarget.All, 1f);
+                collision.GetComponent<Person>().photonView.RPC("AddRadius", RpcTarget.All, 1);
+                collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All, 1);
+        }
+
+        if (CompareTag("Item_MaxBuff"))
+        {
+                collision.GetComponent<Person>().photonView.RPC("AddSpeed", RpcTarget.All, 20f);
+                collision.GetComponent<Person>().photonView.RPC("AddRadius", RpcTarget.All, 20);
+                collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All, 20);
+        }
         //gameManager.itemsType[x, y] = GameManager.ItemType.EMPTY;
         PhotonNetwork.Destroy(gameObject);
     }

@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: a0db356c1a5015140b857d9e02885c6e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4021798589781973537
+    second: map_pang_aniobject5_0
+  - first:
+      213: -6743324711905110107
+    second: map_pang_aniobject5_1
+  - first:
+      213: 631252175954572360
+    second: map_pang_aniobject5_2
+  - first:
+      213: 4591471542697398236
+    second: map_pang_aniobject5_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +137,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: map_pang_aniobject5_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 40
+        width: 40
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12a1f1e428c40d730800000000000000
+      internalID: 4021798589781973537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_pang_aniobject5_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 40
+        width: 40
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a758c5f6e5ea62a0800000000000000
+      internalID: -6743324711905110107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_pang_aniobject5_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844f67f6288a2c800800000000000000
+      internalID: 631252175954572360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_pang_aniobject5_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf0bca9a0f28bf30800000000000000
+      internalID: 4591471542697398236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

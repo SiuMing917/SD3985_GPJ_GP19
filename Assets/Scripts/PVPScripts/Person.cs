@@ -28,6 +28,7 @@ public class Person : MonoBehaviourPun
     public bool isSkilled = false;
 
     public bool CleanerUser = false;
+    public bool CanPlaceBox = true;
 
     public float SkillCD = 0f;
     public int WeaponBullet = 5;
@@ -175,7 +176,27 @@ public class Person : MonoBehaviourPun
             FireByKey();
         }
 
-        if(WeaponBullet <= 0)
+        if(this.bombNumber > this.maxbombNumber)
+        {
+            this.bombNumber = this.maxbombNumber;
+        }
+
+        if (this.bombRadius > this.maxbombRadius)
+        {
+            this.bombRadius = this.maxbombRadius;
+        }
+
+        if (this.speed > this.maxspeed)
+        {
+            this.speed = this.maxspeed;
+        }
+
+        if (this.life > this.maxlife)
+        {
+            this.life = this.maxlife;
+        }
+
+        if (WeaponBullet <= 0)
         {
             photonView.RPC("ClearWeapon", RpcTarget.All);
         }
@@ -370,6 +391,16 @@ public class Person : MonoBehaviourPun
         }
     }
 
+    [PunRPC]
+    public void SetBoxOnline(int LocalIndex, Vector3 POS, int orientation)
+    {
+
+        if (Online && PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(GameManager.Instance.PlaceBox(POS, orientation, LocalIndex));
+        }
+    }
+
     public void UseKamahemaha()
     {
         GameManager.Instance.photonView.RPC("UseKamehameha", RpcTarget.All,new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index, orientation);
@@ -472,7 +503,12 @@ public class Person : MonoBehaviourPun
             }
         }
 
-        if(transform.Find("Skill").Find("Goku").gameObject.activeSelf == true)
+        if (Input.GetKeyDown(KeyCode.E) && Time.timeScale == 1f && CanPlaceBox)
+        {
+            photonView.RPC("SetBoxOnline", RpcTarget.All, index, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), this.orientation);
+        }
+
+        if (transform.Find("Skill").Find("Goku").gameObject.activeSelf == true)
         {
             if (Input.GetKeyDown(KeyCode.Q )&& SkillCD <= 0 && !isSkilled)
             {
@@ -727,7 +763,7 @@ public class Person : MonoBehaviourPun
             bombRadius = 1;
             life = 12;
             coin = 0;
-            maxspeed = 12.0f;
+            maxspeed = 8.0f;
             maxbombNumber = 12;
             maxbombRadius = 6;
             maxlife = 12;
@@ -739,7 +775,7 @@ public class Person : MonoBehaviourPun
             bombRadius = 2;
             life = 12;
             coin = 0;
-            maxspeed = 10.0f;
+            maxspeed = 6.0f;
             maxbombNumber = 6;
             maxbombRadius = 8;
             maxlife = 12;
@@ -752,7 +788,7 @@ public class Person : MonoBehaviourPun
             bombRadius = 2;
             life = 16;
             coin = 0;
-            maxspeed = 6.0f;
+            maxspeed = 4.0f;
             maxbombNumber = 5;
             maxbombRadius = 12;
             maxlife = 16;
@@ -766,7 +802,7 @@ public class Person : MonoBehaviourPun
             bombRadius = 1;
             life = 12;
             coin = 0;
-            maxspeed = 9.0f;
+            maxspeed = 6.0f;
             maxbombNumber = 6;
             maxbombRadius = 8;
             maxlife = 12;
@@ -780,7 +816,7 @@ public class Person : MonoBehaviourPun
             bombRadius = 2;
             life = 8;
             coin = 0;
-            maxspeed = 10.0f;
+            maxspeed = 7.0f;
             maxbombNumber = 6;
             maxbombRadius = 9;
             maxlife = 8;
@@ -951,32 +987,60 @@ public class Person : MonoBehaviourPun
     [PunRPC]
     public void AddBombNumber(int i)
     {
-        if(bombNumber<maxbombNumber && bombNumber > 0)
+        if(bombNumber <= maxbombNumber && bombNumber >= 0)
             this.bombNumber+= i;
 
-        if (bombNumber == 0)
-            this.bombNumber++;
+        if (this.bombNumber <= 0)
+            this.bombNumber = 1;
+
+        if (this.bombNumber > this.maxbombNumber)
+        {
+            this.bombNumber = this.maxbombNumber;
+        }
     }
 
     [PunRPC]
     public void AddLife(int i)
     {
-        if(life<maxlife)
+        if(life<=maxlife && life >= 1)
         this.life+= i;
+
+        if (this.life <= 0)
+            this.life = 1;
+
+        if (this.life > this.maxlife)
+        {
+            this.life = this.maxlife;
+        }
     }
 
     [PunRPC]
     public void AddSpeed(float i)
     {
-        if(speed<maxspeed && speed > 1f)
+        if(speed<=maxspeed && speed >= 1f)
         this.speed += i;
+        if (this.speed <= 0f)
+            this.speed = 1f;
+
+        if (this.speed > this.maxspeed)
+        {
+            this.speed = this.maxspeed;
+        }
     }
 
     [PunRPC]
     public void AddRadius(int i)
     {
-        if(bombRadius < maxbombRadius && bombRadius > 1)
+        if(bombRadius <= maxbombRadius && bombRadius >= 1)
         this.bombRadius += i;
+
+        if (this.bombRadius <= 0f)
+            this.bombRadius = 1;
+
+        if (this.bombRadius > this.maxbombRadius)
+        {
+            this.bombRadius = this.maxbombRadius;
+        }
     }
 
 }

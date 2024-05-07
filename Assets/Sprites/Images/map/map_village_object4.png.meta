@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 904295a7ddea5f747b2eb6b23096ce4a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7019392752318210896
+    second: map_village_object4_0
+  - first:
+      213: 6721547702367418127
+    second: map_village_object4_1
+  - first:
+      213: 1078989495733963929
+    second: map_village_object4_2
+  - first:
+      213: -3664334358389726201
+    second: map_village_object4_3
+  - first:
+      213: -1160329858234586086
+    second: map_village_object4_4
+  - first:
+      213: 2787597529121878850
+    second: map_village_object4_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +143,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: map_village_object4_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 42
+        width: 40
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053e0e49484e96160800000000000000
+      internalID: 7019392752318210896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_village_object4_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 42
+        width: 40
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07f374e50cb74d50800000000000000
+      internalID: 6721547702367418127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_village_object4_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 42
+        width: 40
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99cc999ca3759fe00800000000000000
+      internalID: 1078989495733963929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_village_object4_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704ebe5c05ba52dc0800000000000000
+      internalID: -3664334358389726201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_village_object4_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ce5a1442ea5efe0800000000000000
+      internalID: -1160329858234586086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_village_object4_5
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243f014fe298fa620800000000000000
+      internalID: 2787597529121878850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

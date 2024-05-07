@@ -24,18 +24,18 @@ public class PVPRandomDebuff : MonoBehaviourPun
         {
             if (!collision.GetComponent<Person>().isDefended)
             {
-                int randomIndex = Random.Range(0, 3);
-                if (randomIndex == 0)
+                int randomIndex = Random.Range(0, 7);
+                if (randomIndex == 0 || randomIndex == 4)
                 {
                     collision.GetComponent<Person>().ReduceLife(1);
                     collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All, -1);
                 }
-                if (randomIndex == 1)
+                if (randomIndex == 1 || randomIndex == 5)
                 {
                     collision.GetComponent<Person>().ReduceLife(1);
                     collision.GetComponent<Person>().photonView.RPC("AddRadius", RpcTarget.All, -1);
                 }
-                if (randomIndex == 2)
+                if (randomIndex == 2 || randomIndex == 6)
                 {
                     collision.GetComponent<Person>().ReduceLife(1);
                     collision.GetComponent<Person>().photonView.RPC("AddSpeed", RpcTarget.All, -1f);
@@ -43,7 +43,10 @@ public class PVPRandomDebuff : MonoBehaviourPun
                 if (randomIndex == 3)
                 {
                     collision.GetComponent<Person>().ReduceLife(1);
-                    collision.GetComponent<Person>().photonView.RPC("AddLife", RpcTarget.All, -1);
+                    collision.GetComponent<Person>().photonView.RPC("AddSpeed", RpcTarget.All, -1f);
+                    collision.GetComponent<Person>().photonView.RPC("AddRadius", RpcTarget.All, -1);
+                    collision.GetComponent<Person>().photonView.RPC("AddBombNumber", RpcTarget.All, -1);
+                    //collision.GetComponent<Person>().photonView.RPC("AddLife", RpcTarget.All, -1);
                 }
             }
 

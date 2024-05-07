@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviourPun
     public AnimationCurve curve;
     [Header("Destructible")]
     public Destructible destructiblePrefab;
+    public Destructible destructiblePrefab2;
 
     //public GameObject 
     [Header("CountdownTime")]
@@ -56,7 +57,9 @@ public class GameManager : MonoBehaviourPun
         POWERUP,
         CLEANER,
         DEBUFFAREA,
-        TASER
+        TASER,
+        PLAYERBOX,
+        HARDBOX
 
     }
     public struct Location
@@ -132,9 +135,8 @@ public class GameManager : MonoBehaviourPun
         //map1 = (new MapCreation()).RandomMap();
 
         //ReadMap From File
-        //map1 = (new MapCreation("./Assets/Maps/MapData.txt")).RandomMap();
+        map1 = (new MapCreation("Assets/Maps/MapData.txt")).RandomMap();
 
-        map1 = (new MapCreation()).RandomMap();
         itemsObject = new GameObject[xColumn, yRow];
         itemsType = new ItemType[xColumn, yRow];
         mode = Menu.mode;
@@ -189,9 +191,22 @@ public class GameManager : MonoBehaviourPun
                     }
                     else
                     {
-                        if (map1[j, i] == 1 || map1[j, i] == 2)
+                        if (map1[j, i] == 1)
                         {
-                            CreateItem(item[0], i, j, Quaternion.identity);//生成障碍
+                            CreateItem(item[3], i, j, Quaternion.identity);//生成地板
+                        }
+
+                        if (map1[j, i] == 2)
+                        {
+                            CreateItem(item[0], i, j, Quaternion.identity);//Barriars
+                        }
+                        if (map1[j, i] == 3)
+                        {
+                            CreateItem(item[25], i, j, Quaternion.identity);//HardBox
+                        }
+                        if (map1[j, i] == 4)
+                        {
+                            CreateItem(item[16], i, j, Quaternion.identity);//Spike
                         }
                     }
 
@@ -199,7 +214,7 @@ public class GameManager : MonoBehaviourPun
             }
         }
 
-        //随机生成箱子
+        //Radom Box
         for (int i = 0; i < xColumn; i++)
         {
             for (int j = 0; j < yRow; j++)
@@ -670,6 +685,10 @@ public class GameManager : MonoBehaviourPun
             return ItemType.DEBUFFAREA;
         if (typeTag.CompareTo("WeaponTaser") == 0)
             return ItemType.TASER;
+        if (typeTag.CompareTo("PlayerBox") == 0)
+            return ItemType.PLAYERBOX;
+        if (typeTag.CompareTo("HardBox") == 0)
+            return ItemType.HARDBOX;
         return ItemType.EMPTY;
     }
 
@@ -776,6 +795,39 @@ public class GameManager : MonoBehaviourPun
                     //photonView.RPC("NormalExplosion", RpcTarget.All, bombposition, bombObject.GetPhotonView().ViewID, host);
                 //}
             }
+        }
+    }
+
+    public IEnumerator PlaceBox(Vector3 playerposition, int orientation, int host)
+    {
+        Location coord = GetCoord(playerposition);
+        Vector2 position = playerposition;
+        position.x = Mathf.Round(position.x);
+        position.y = Mathf.Round(position.y);
+        if (roleList.GetT(host).GetComponent<Person>().CanPlaceBox == true )
+        {
+            roleList.GetT(host).GetComponent<Person>().CanPlaceBox = false;
+            if (orientation == 2)
+            {
+                GameObject box = PhotonNetwork.Instantiate(this.item[24].name, position + Vector2.right, Quaternion.identity);
+            }
+            else if (orientation == 1)
+            {
+                GameObject kamekameha = PhotonNetwork.Instantiate(this.item[24].name, position + Vector2.left, Quaternion.identity);
+
+            }
+            else if (orientation == 3)
+            {
+                GameObject kamekameha = PhotonNetwork.Instantiate(this.item[24].name, position + Vector2.up, Quaternion.identity);
+            }
+            else if (orientation == 0)
+            {
+                GameObject kamekameha = PhotonNetwork.Instantiate(this.item[24].name, position + Vector2.down, Quaternion.identity);
+            }
+            
+            yield return new WaitForSeconds(2f);
+            roleList.GetT(host).GetComponent<Person>().CanPlaceBox = true;
+            //yield return null;
         }
     }
 
@@ -971,10 +1023,26 @@ public class GameManager : MonoBehaviourPun
             if (collider.gameObject.CompareTag("Box"))
             {
                 PhotonNetwork.Destroy(collider.gameObject);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(1f);
                 roleList.GetT(host).GetComponent<Transform>().position = targetPos;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.5f);
                 GameObject Box = PhotonNetwork.Instantiate(this.item[1].name, playPos, Quaternion.identity);
+            }
+            else if (collider.gameObject.CompareTag("PlayerBox"))
+            {
+                PhotonNetwork.Destroy(collider.gameObject);
+                yield return new WaitForSeconds(1f);
+                roleList.GetT(host).GetComponent<Transform>().position = targetPos;
+                yield return new WaitForSeconds(0.5f);
+                GameObject Box = PhotonNetwork.Instantiate(this.item[24].name, playPos, Quaternion.identity);
+            }
+            else if (collider.gameObject.CompareTag("HardBox"))
+            {
+                PhotonNetwork.Destroy(collider.gameObject);
+                yield return new WaitForSeconds(1f);
+                roleList.GetT(host).GetComponent<Transform>().position = targetPos;
+                yield return new WaitForSeconds(0.5f);
+                GameObject Box = PhotonNetwork.Instantiate(this.item[25].name, playPos, Quaternion.identity);
             }
         }
     }
@@ -1215,10 +1283,22 @@ public class GameManager : MonoBehaviourPun
 
         foreach (Collider2D collider in colliders)
         {
-            if (collider.gameObject.CompareTag("Box"))
+            if (collider.gameObject.CompareTag("Box")|| collider.gameObject.CompareTag("PlayerBox"))
             {
                 PhotonNetwork.InstantiateRoomObject(destructiblePrefab.name, position, Quaternion.identity);
                 PhotonNetwork.Destroy(collider.gameObject);
+            }
+            if (collider.gameObject.CompareTag("HardBox"))
+            {
+                if (collider.gameObject.GetComponent<HardBox>().life <= 1)
+                {
+                    PhotonNetwork.InstantiateRoomObject(destructiblePrefab2.name, position, Quaternion.identity);
+                    PhotonNetwork.Destroy(collider.gameObject);
+                }
+                else
+                {
+                    collider.gameObject.GetComponent<HardBox>().life--;
+                }
             }
         }
     }

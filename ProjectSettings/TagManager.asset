@@ -39,6 +39,16 @@ TagManager:
   - Cleaner
   - DebuffArea
   - WeaponTaser
+  - PlayerBox
+  - max_bomb
+  - max_potion
+  - max_shoes
+  - max_heart
+  - Item_AllDebuff
+  - Item_MaxDeBuff
+  - Item_AllBuff
+  - Item_MaxBuff
+  - HardBox
   layers:
   - Default
   - TransparentFX
