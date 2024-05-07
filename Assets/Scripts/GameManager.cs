@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviourPun
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
     public LayerMask IndestrucbleLayerMask;
+    public LayerMask BombLayerMask;
     public LayerMask CleanLayerMask;
     public AnimationCurve curve;
     [Header("Destructible")]
@@ -1237,7 +1238,8 @@ public class GameManager : MonoBehaviourPun
 
         Collider2D hitCollider = Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask);
         Collider2D hitIndestrucble = Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, IndestrucbleLayerMask);
-        if (hitCollider|| hitIndestrucble)
+        Collider2D hitColliderBomb = Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, BombLayerMask);
+        if (hitCollider|| hitIndestrucble || hitColliderBomb)
         {
                 ClearDestructibleObject(position);
                 return;

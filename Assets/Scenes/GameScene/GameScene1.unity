@@ -1136,6 +1136,9 @@ MonoBehaviour:
   IndestrucbleLayerMask:
     serializedVersion: 2
     m_Bits: 16384
+  BombLayerMask:
+    serializedVersion: 2
+    m_Bits: 131072
   CleanLayerMask:
     serializedVersion: 2
     m_Bits: 0

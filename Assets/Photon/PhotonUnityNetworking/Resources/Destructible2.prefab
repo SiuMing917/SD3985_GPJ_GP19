@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7723345503461020933}
   - component: {fileID: 3553553574436139088}
   - component: {fileID: 9093706866878401326}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Destructible2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
