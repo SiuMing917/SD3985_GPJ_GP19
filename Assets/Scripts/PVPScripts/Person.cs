@@ -513,7 +513,7 @@ public class Person : MonoBehaviourPun
             if (Input.GetKeyDown(KeyCode.Q )&& SkillCD <= 0 && !isSkilled)
             {
                 photonView.RPC("UseKamahemahaOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index, orientation);
-                this.SkillCD = 5f;
+                this.SkillCD = 10f;
             }
         }
 
@@ -522,7 +522,7 @@ public class Person : MonoBehaviourPun
             if (Input.GetKeyDown(KeyCode.Q) && SkillCD <= 0 && !isSkilled)
             {
                 photonView.RPC("UseFairyPowerOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index);
-                this.SkillCD = 5f;
+                this.SkillCD = 10f;
             }
         }
 
@@ -530,9 +530,10 @@ public class Person : MonoBehaviourPun
         {
             if (Input.GetKeyDown(KeyCode.Q) && SkillCD <= 0)
             {
+                this.WeaponBullet++;
                 photonView.RPC("UsePowerUpOnline", RpcTarget.All, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), index);
                 //photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
-                this.SkillCD = 5f;
+                this.SkillCD = 15f;
             }
         }
 
@@ -552,6 +553,7 @@ public class Person : MonoBehaviourPun
         {
             if(bombNumber > 0 && Input.GetMouseButtonDown(0) && WeaponBullet >0)// 按下鼠標左鍵
             {
+                this.WeaponBullet--;
                 Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
                 clickPosition.z = 0f;
                 clickPosition.x = Mathf.Round(clickPosition.x);
@@ -566,6 +568,7 @@ public class Person : MonoBehaviourPun
 
         if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("SpikeArrow").gameObject.activeSelf) // 按下鼠標左鍵
         {
+            this.WeaponBullet--;
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
             clickPosition.z = 0f;
             clickPosition.x = Mathf.Round(clickPosition.x);
@@ -576,6 +579,7 @@ public class Person : MonoBehaviourPun
 
         if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("Chopper").gameObject.activeSelf) // 按下鼠標左鍵
         {
+            this.WeaponBullet--;
             //0:down 1:left 2:right 3:up
             /**Vector3 chopperposion = this.transform.position;
             if(orientation == 0)
@@ -603,6 +607,7 @@ public class Person : MonoBehaviourPun
 
         if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("Hand").gameObject.activeSelf) // 按下鼠標左鍵
         {
+            this.WeaponBullet--;
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
             clickPosition.z = 0f;
             clickPosition.x = Mathf.Round(clickPosition.x);
@@ -612,6 +617,7 @@ public class Person : MonoBehaviourPun
 
         if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("Magic").gameObject.activeSelf) // 按下鼠標左鍵
         {
+            this.WeaponBullet--;
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
             clickPosition.z = 0f;
             clickPosition.x = Mathf.Round(clickPosition.x);
@@ -621,6 +627,7 @@ public class Person : MonoBehaviourPun
 
         if (Input.GetMouseButtonDown(0) && transform.Find("Weapon").Find("Taser").gameObject.activeSelf) // 按下鼠標左鍵
         {
+            this.WeaponBullet--;
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // 取得鼠標點擊位置
             clickPosition.z = 0f;
             clickPosition.x = Mathf.Round(clickPosition.x);
@@ -642,6 +649,7 @@ public class Person : MonoBehaviourPun
         StartCoroutine(DeathEffect());
     }
 
+    [PunRPC]
     public void UsingMagic()
     {
         StartCoroutine(MagicMoving());
@@ -713,7 +721,7 @@ public class Person : MonoBehaviourPun
     public IEnumerator MagicMoving()
     {
        this.GetComponent<Collider2D>().isTrigger = true;
-       yield return new WaitForSeconds(1.5f);
+       yield return new WaitForSeconds(2f);
        this.GetComponent<Collider2D>().isTrigger = false;
     }
     public IEnumerator StopMove()
@@ -1053,4 +1061,9 @@ public class Person : MonoBehaviourPun
         }
     }
 
+    [PunRPC]
+    public void MoveToPosition(Vector3 position)
+    {
+        this.transform.position = position;
+    }
 }

@@ -876,14 +876,12 @@ public class GameManager : MonoBehaviourPun
 
     public IEnumerator RocketFire(Vector3 playPos, Vector3 targetPos, int host)
     {
-        if (Online)
-        {
             GameObject bomb = PhotonNetwork.Instantiate(this.item[12].name, playPos, Quaternion.identity);
 
             GameObject bombpos = PhotonNetwork.Instantiate(this.item[13].name, targetPos, Quaternion.identity);            
 
             roleList.GetT(host).GetComponent<Person>().bombNumber--;
-            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+            //roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
 
             Vector3 direction = (targetPos - playPos).normalized;
             float distance = Vector3.Distance(transform.position, targetPos);
@@ -916,17 +914,13 @@ public class GameManager : MonoBehaviourPun
             PhotonNetwork.Destroy(bomb);
 
             photonView.RPC("RocketExplosion", RpcTarget.All, new Vector2(targetPos.x,targetPos.y), host);
-        }
     }
 
     public IEnumerator ArrowFire(Vector3 playPos, Vector3 targetPos, int host)
     {
-        if (Online)
-        {
-
             GameObject arrowpos = PhotonNetwork.Instantiate(this.item[15].name, targetPos, Quaternion.identity);
 
-            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+            //roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
 
             Vector3 direction = (targetPos - playPos).normalized;
             GameObject arrow = PhotonNetwork.Instantiate(this.item[14].name, playPos + direction, Quaternion.identity);
@@ -948,16 +942,12 @@ public class GameManager : MonoBehaviourPun
             GameObject spike = PhotonNetwork.Instantiate(this.item[16].name, targetPos, Quaternion.identity);
             yield return new WaitForSeconds(20f);
             PhotonNetwork.Destroy(spike);
-        }
     }
 
     public IEnumerator ChopperFire(Vector3 playPos, Vector3 targetPos, int host)
     {
-        if (Online)
-        {
 
-
-            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+            //roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
 
             Vector3 direction = (targetPos - playPos).normalized;
             GameObject Chopper = PhotonNetwork.Instantiate(this.item[17].name, playPos + direction, Quaternion.identity);
@@ -974,16 +964,12 @@ public class GameManager : MonoBehaviourPun
             }
 
             PhotonNetwork.Destroy(Chopper);
-        }
     }
 
     public IEnumerator HandFire(Vector3 playPos, Vector3 targetPos, int host)
     {
-        if (Online)
-        {
 
-
-            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+            //roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
 
             Vector3 direction = (targetPos - playPos).normalized;
             GameObject Hand = PhotonNetwork.Instantiate(this.item[18].name, playPos + direction, Quaternion.identity);
@@ -1000,7 +986,6 @@ public class GameManager : MonoBehaviourPun
             }
 
             PhotonNetwork.Destroy(Hand);
-        }
     }
 
     public IEnumerator MagicFire(Vector3 playPosition, Vector3 targetPos, int host)
@@ -1009,10 +994,7 @@ public class GameManager : MonoBehaviourPun
         playPos.z = 0f;
         playPos.x = Mathf.Round(playPos.x);
         playPos.y = Mathf.Round(playPos.y);
-        if (Online)
-        {
-
-            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+            //roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
             GameObject Magic = PhotonNetwork.Instantiate(this.item[19].name, playPos, Quaternion.identity);
             GameObject MagicPos = PhotonNetwork.Instantiate(this.item[19].name, targetPos, Quaternion.identity);
 
@@ -1024,33 +1006,34 @@ public class GameManager : MonoBehaviourPun
             {
                 PhotonNetwork.Destroy(collider.gameObject);
                 yield return new WaitForSeconds(0.5f);
-                roleList.GetT(host).GetComponent<Person>().UsingMagic();
+                roleList.GetT(host).GetComponent<Person>().photonView.RPC("UsingMagic", RpcTarget.All);
                 yield return new WaitForSeconds(0.5f);
                 roleList.GetT(host).GetComponent<Transform>().position = targetPos;
-                yield return new WaitForSeconds(0.5f);
+            roleList.GetT(host).GetComponent<Person>().photonView.RPC("MoveToPosition", RpcTarget.All, targetPos);
+            yield return new WaitForSeconds(0.5f);
                 GameObject Box = PhotonNetwork.Instantiate(this.item[1].name, playPos, Quaternion.identity);
             }
             else if (collider.gameObject.CompareTag("PlayerBox"))
             {
                 PhotonNetwork.Destroy(collider.gameObject);
                 yield return new WaitForSeconds(0.5f);
-                roleList.GetT(host).GetComponent<Person>().UsingMagic();
+                roleList.GetT(host).GetComponent<Person>().photonView.RPC("UsingMagic", RpcTarget.All);
                 yield return new WaitForSeconds(0.5f);
-                roleList.GetT(host).GetComponent<Transform>().position = targetPos;
-                yield return new WaitForSeconds(0.5f);
+            //roleList.GetT(host).GetComponent<Transform>().position = targetPos;
+            roleList.GetT(host).GetComponent<Person>().photonView.RPC("MoveToPosition", RpcTarget.All, targetPos);
+            yield return new WaitForSeconds(0.5f);
                 GameObject Box = PhotonNetwork.Instantiate(this.item[24].name, playPos, Quaternion.identity);
             }
             else if (collider.gameObject.CompareTag("HardBox"))
             {
                 PhotonNetwork.Destroy(collider.gameObject);
                 yield return new WaitForSeconds(0.5f);
-                roleList.GetT(host).GetComponent<Person>().UsingMagic();
+                roleList.GetT(host).GetComponent<Person>().photonView.RPC("UsingMagic", RpcTarget.All);
                 yield return new WaitForSeconds(0.5f);
-                roleList.GetT(host).GetComponent<Transform>().position = targetPos;
+                roleList.GetT(host).GetComponent<Person>().photonView.RPC("MoveToPosition", RpcTarget.All,targetPos);
                 yield return new WaitForSeconds(0.5f);
                 GameObject Box = PhotonNetwork.Instantiate(this.item[25].name, playPos, Quaternion.identity);
             }
-        }
     }
 
 
@@ -1058,24 +1041,17 @@ public class GameManager : MonoBehaviourPun
     {
         Vector3 playPos = playPosition;
         playPos.z = 0f;
-        if (Online)
-        {
-
-            roleList.GetT(host).GetComponent<Person>().photonView.RPC("AddWeaponBullet", RpcTarget.All, 1);
             GameObject PowerUp = PhotonNetwork.Instantiate(this.item[20].name, playPos, Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
             //roleList.GetT(host).GetComponent<Person>().SkillCD = 20f;
             PhotonNetwork.Destroy(PowerUp);
 
-        }
     }
 
     public IEnumerator UseCleaner(Vector3 playPosition, int host)
     {
         Vector3 playPos = playPosition;
         playPos.z = 0f;
-        if (Online)
-        {
             roleList.GetT(host).GetComponent<Person>().CleanerUser = true;
             yield return new WaitForSeconds(0.5f);
             GameObject Cleaner = PhotonNetwork.Instantiate(this.item[21].name, playPos, Quaternion.identity);
@@ -1086,15 +1062,11 @@ public class GameManager : MonoBehaviourPun
             PhotonNetwork.Destroy(Cleaner);
             yield return new WaitForSeconds(0.5f);
             roleList.GetT(host).GetComponent<Person>().CleanerUser = false;
-        }
     }
 
     public IEnumerator TaserFire(Vector3 playPos, Vector3 targetPos, int host)
     {
-        if (Online)
-        {
-
-            roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
+            //roleList.GetT(host).GetComponent<Person>().WeaponBullet--;
 
             Vector3 direction = (targetPos - playPos).normalized;
             GameObject bullet = PhotonNetwork.Instantiate(this.item[22].name, playPos + direction, Quaternion.identity);
@@ -1117,7 +1089,6 @@ public class GameManager : MonoBehaviourPun
             GameObject debuff = PhotonNetwork.Instantiate(this.item[23].name, targetPos, Quaternion.identity);
             yield return new WaitForSeconds(15f);
             PhotonNetwork.Destroy(debuff);
-        }
     }
 
     public void CleanerArea(Vector2 center, float radius, int host)

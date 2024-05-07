@@ -942,6 +942,7 @@ MonoBehaviour:
   delayTime: 0
   isSkilled: 0
   CleanerUser: 0
+  CanPlaceBox: 1
   SkillCD: 0
   WeaponBullet: 5
   AutoHealthCD: 8

@@ -98,6 +98,8 @@ MonoBehaviour:
   - DestroyMyObject
   - UseTaserOnline
   - SetBoxOnline
+  - UsingMagic
+  - MoveToPosition
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
