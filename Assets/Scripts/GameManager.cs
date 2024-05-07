@@ -60,7 +60,8 @@ public class GameManager : MonoBehaviourPun
         DEBUFFAREA,
         TASER,
         PLAYERBOX,
-        HARDBOX
+        HARDBOX,
+        FLOOR
 
     }
     public struct Location
@@ -192,12 +193,12 @@ public class GameManager : MonoBehaviourPun
                     }
                     else
                     {
-                        if (map1[j, i] == 1)
+                        if (map1[j, i] == 2)
                         {
-                            CreateItem(item[3], i, j, Quaternion.identity);//生成地板
+                            CreateItem(item[26], i, j, Quaternion.identity);//生成地板
                         }
 
-                        if (map1[j, i] == 2)
+                        if (map1[j, i] == 1)
                         {
                             CreateItem(item[0], i, j, Quaternion.identity);//Barriars
                         }
@@ -690,6 +691,8 @@ public class GameManager : MonoBehaviourPun
             return ItemType.PLAYERBOX;
         if (typeTag.CompareTo("HardBox") == 0)
             return ItemType.HARDBOX;
+        if (typeTag.CompareTo("Floor") == 0)
+            return ItemType.FLOOR;
         return ItemType.EMPTY;
     }
 

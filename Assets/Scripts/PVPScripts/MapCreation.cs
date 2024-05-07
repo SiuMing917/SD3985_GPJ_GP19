@@ -10,17 +10,25 @@ public class MapCreation
     {
         mapList = new List<int[,]>();
 
-        // Read map data from the file
-        string[] lines = File.ReadAllLines(filePath);
-        foreach (string line in lines)
+        // 檢查文件是否存在
+        if (File.Exists(filePath))
         {
-            string[] elements = line.Split(',');
-            int[,] map = new int[elements.Length, elements.Length];
-            for (int i = 0; i < elements.Length; i++)
+            // 讀取文件中的所有行
+            string[] lines = File.ReadAllLines(filePath);
+            int[,] map = new int[lines.Length, lines[0].Split(',').Length];
+            for (int i = 0; i < lines.Length; i++)
             {
-                map[i, 0] = int.Parse(elements[i]);
+                string[] split = lines[i].Split(',');
+                for (int j = 0; j < split.Length; j++)
+                {
+                    map[i, j] = int.Parse(split[j]);
+                }
             }
             mapList.Add(map);
+        }
+        else
+        {
+            Debug.LogError("File not found: " + filePath);
         }
     }
     public MapCreation()

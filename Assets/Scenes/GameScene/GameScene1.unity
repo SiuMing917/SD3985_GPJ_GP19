@@ -1206,6 +1206,7 @@ MonoBehaviour:
   - {fileID: 3489480669879869871, guid: 20b5fcb999e8bf84c99bd6aa1b0bead8, type: 3}
   - {fileID: 1041994577412212106, guid: d750ce090e46f3e428e072429f383dee, type: 3}
   - {fileID: 1696098320443946292, guid: 418f3041a30bf794cab1ec20acbc9a49, type: 3}
+  - {fileID: 6275325119638916258, guid: 8c1246ccd7b0dc246b80fa588edbc6b0, type: 3}
   rolePrefab: {fileID: 7623019595491950314, guid: dea9411e4bff12e4d9f853ec7078b3f5, type: 3}
   barriarSprites: []
   explosionAudio: {fileID: 8300000, guid: 8b4c6f47f124d2742b6305e44b5d3c4f, type: 3}
@@ -1253,6 +1254,7 @@ MonoBehaviour:
   - {fileID: 3489480669879869871, guid: 20b5fcb999e8bf84c99bd6aa1b0bead8, type: 3}
   - {fileID: 1041994577412212106, guid: d750ce090e46f3e428e072429f383dee, type: 3}
   - {fileID: 1696098320443946292, guid: 418f3041a30bf794cab1ec20acbc9a49, type: 3}
+  - {fileID: 6275325119638916258, guid: 8c1246ccd7b0dc246b80fa588edbc6b0, type: 3}
   InRoomPeople: 0
   OnlinePlayerNum: 0
   ui: {fileID: 0}
