@@ -1023,7 +1023,9 @@ public class GameManager : MonoBehaviourPun
             if (collider.gameObject.CompareTag("Box"))
             {
                 PhotonNetwork.Destroy(collider.gameObject);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.5f);
+                roleList.GetT(host).GetComponent<Person>().UsingMagic();
+                yield return new WaitForSeconds(0.5f);
                 roleList.GetT(host).GetComponent<Transform>().position = targetPos;
                 yield return new WaitForSeconds(0.5f);
                 GameObject Box = PhotonNetwork.Instantiate(this.item[1].name, playPos, Quaternion.identity);
@@ -1031,7 +1033,9 @@ public class GameManager : MonoBehaviourPun
             else if (collider.gameObject.CompareTag("PlayerBox"))
             {
                 PhotonNetwork.Destroy(collider.gameObject);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.5f);
+                roleList.GetT(host).GetComponent<Person>().UsingMagic();
+                yield return new WaitForSeconds(0.5f);
                 roleList.GetT(host).GetComponent<Transform>().position = targetPos;
                 yield return new WaitForSeconds(0.5f);
                 GameObject Box = PhotonNetwork.Instantiate(this.item[24].name, playPos, Quaternion.identity);
@@ -1039,7 +1043,9 @@ public class GameManager : MonoBehaviourPun
             else if (collider.gameObject.CompareTag("HardBox"))
             {
                 PhotonNetwork.Destroy(collider.gameObject);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.5f);
+                roleList.GetT(host).GetComponent<Person>().UsingMagic();
+                yield return new WaitForSeconds(0.5f);
                 roleList.GetT(host).GetComponent<Transform>().position = targetPos;
                 yield return new WaitForSeconds(0.5f);
                 GameObject Box = PhotonNetwork.Instantiate(this.item[25].name, playPos, Quaternion.identity);

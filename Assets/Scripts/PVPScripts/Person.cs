@@ -642,6 +642,10 @@ public class Person : MonoBehaviourPun
         StartCoroutine(DeathEffect());
     }
 
+    public void UsingMagic()
+    {
+        StartCoroutine(MagicMoving());
+    }
 
     public void ReduceLife( int i)
     {
@@ -706,6 +710,12 @@ public class Person : MonoBehaviourPun
         isDefended = false;
     }
 
+    public IEnumerator MagicMoving()
+    {
+       this.GetComponent<Collider2D>().isTrigger = true;
+       yield return new WaitForSeconds(1.5f);
+       this.GetComponent<Collider2D>().isTrigger = false;
+    }
     public IEnumerator StopMove()
     {
         isFree = false;
@@ -783,7 +793,7 @@ public class Person : MonoBehaviourPun
 
         if (NO == 2)
         {
-            speed = 1.0f;
+            speed = 2.0f;
             bombNumber = 1;
             bombRadius = 2;
             life = 16;
@@ -1017,10 +1027,10 @@ public class Person : MonoBehaviourPun
     [PunRPC]
     public void AddSpeed(float i)
     {
-        if(speed<=maxspeed && speed >= 1f)
+        if(speed<=maxspeed && speed >= 2f)
         this.speed += i;
-        if (this.speed <= 0f)
-            this.speed = 1f;
+        if (this.speed <= 1f)
+            this.speed = 2f;
 
         if (this.speed > this.maxspeed)
         {
