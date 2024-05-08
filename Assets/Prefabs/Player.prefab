@@ -761,7 +761,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  explosionPrefab: {fileID: 7072909721022370635, guid: 43283f08def395f4bb71274e0c5111ae, type: 3}
+  explosionPrefab: {fileID: 823413358125780218, guid: 43283f08def395f4bb71274e0c5111ae, type: 3}
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 256

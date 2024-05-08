@@ -7,8 +7,27 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 //using System;
-public class GameManager : MonoBehaviourPun
+public class GameManager : Singleton<GameManager>
 {
+    [Header("PVE")]
+    private GameObject player;
+    public bool isFirstStageEnd = false;            //釬峈菴珨論僇蚔牁腔梓祩ㄗ籵墅昜睿儕荎墅ㄘ
+    public bool isGameOverPVE = false;            //釬峈蚔牁賦旰腔梓祩ㄗ湖侚boss蚔牁賦旰ㄘ
+    private bool isEliteGenerated = false;    //岆瘁汜傖儕荎墅
+    public bool isPlayerInMainRoom = false;           //瓚剿player岆瘁軗輛賸翋滇潔
+    public bool isPlayerInBossRoom = false;           //瓚剿player岆瘁軗輛賸boss滇潔
+    public PlayerStats playerStats;
+    public GameObject[] blueRewardBoxes;          //懦伎惘眊
+    public GameObject transitionDoor;             //換冞藷
+
+    public List<GameObject> enemiesOne = new List<GameObject>();    //菴珨疏墅昜
+    public List<GameObject> enemiesTwo = new List<GameObject>();    //菴媼疏墅昜
+    public GameObject[] elites;   //儕荎墅
+    public bool playerDead     //鳳player岆瘁侚厗
+    {
+        get { return player.GetComponent<PlayerStats>().isDead; }
+    }
+
     [Header("Explosion")]
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
@@ -129,6 +148,15 @@ public class GameManager : MonoBehaviourPun
     {
         //PVE
         PVEInstance = this;
+
+        //base.Awake();
+        Time.timeScale = 1;
+        if (FindObjectOfType<PlayerController>())
+        {
+            player = FindObjectOfType<PlayerController>().gameObject;
+            playerStats = player.GetComponent<PlayerStats>();
+        }
+
         //PVP
         CollhasIng = false;
         instance = this;
@@ -376,11 +404,15 @@ public class GameManager : MonoBehaviourPun
 
     private void Update()
     {
+        //PVE
+        GenerateNextRoundEnemy();
+        GenerateRewardBox();
+        if (isGameOverPVE) transitionDoor.SetActive(true);
+
         //Debug.Log("rolelist_num:" + roleList.Count);
         if (isGameOver)
             return;
 
-        //�ж�ʤ����ʧ��
         if (mode == 0 || mode == 2)
         {
             if (roleList.GetT(0) != null && roleList.GetT(1) == null && roleList.GetT(2) == null && roleList.GetT(3) == null)
@@ -501,6 +533,31 @@ public class GameManager : MonoBehaviourPun
         }
     }
 
+    //FOR PVE
+    void GenerateRewardBox()
+    {
+        if (enemiesOne.Count == 0 && enemiesTwo.Count == 0 && isFirstStageEnd == false)
+        {
+            isFirstStageEnd = true;
+            for (int i = 0; i < blueRewardBoxes.Length; i++)
+            {
+                blueRewardBoxes[i].SetActive(true);
+            }
+        }
+    }
+
+    void GenerateNextRoundEnemy()
+    {
+        if (enemiesOne.Count == 0 && isEliteGenerated == false)
+        {
+            for (int i = 0; i < elites.Length; i++)
+            {
+                elites[i].SetActive(true);
+            }
+            isEliteGenerated = true;
+        }
+    }
+    //FOR PVP
     private void CreateItem(GameObject createGameObject, int createX, int createY, Quaternion createRotation)
     {
         Vector3 createPosition = CorrectPosition(createX, createY);
