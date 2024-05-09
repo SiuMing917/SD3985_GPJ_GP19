@@ -36,6 +36,10 @@ public class MovementController : MonoBehaviour
     private void Update()
     {
         GetPlayerInput();
+        if (this.GetComponent<PlayerStats>().isDead)
+        {
+            DeathSequence();
+        }
 
     }
     private void GetPlayerInput()

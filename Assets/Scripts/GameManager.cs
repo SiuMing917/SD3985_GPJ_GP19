@@ -26,7 +26,12 @@ public class GameManager : Singleton<GameManager>
     public bool playerDead     //鳳player岆瘁侚厗
     {
         get { return player.GetComponent<PlayerStats>().isDead; }
-    }
+    }   
+
+    public static GameManager PVEInstance;
+    public GameObject player1;
+    public GameObject player2;
+    public Tilemap destructibleTiles;
 
     [Header("Explosion")]
     public Explosion explosionPrefab;
@@ -49,11 +54,7 @@ public class GameManager : Singleton<GameManager>
 
     private float remainingTime;
     public bool gamePlaying { get; private set; }
-    //for PVE
-    public static GameManager PVEInstance;
-    public GameObject player1;
-    public GameObject player2;
-    public Tilemap destructibleTiles;
+
     //for PVP
     public enum ItemType
     {
@@ -154,6 +155,13 @@ public class GameManager : Singleton<GameManager>
         if (FindObjectOfType<PlayerController>())
         {
             player = FindObjectOfType<PlayerController>().gameObject;
+            //player1 = FindObjectOfType<PlayerController>().gameObject;
+            playerStats = player.GetComponent<PlayerStats>();
+        }
+        else if (FindObjectOfType<MovementController>())
+        {
+            player = FindObjectOfType<MovementController>().gameObject;
+            player1 = FindObjectOfType<MovementController>().gameObject;
             playerStats = player.GetComponent<PlayerStats>();
         }
 

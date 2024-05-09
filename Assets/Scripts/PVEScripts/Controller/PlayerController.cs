@@ -7,19 +7,19 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
-    public float speed;         //人物速度
+    public float speed;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
     private void Update()
     {
-        anim.SetFloat("run",Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y));
+        //anim.SetFloat("run",Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y));
     }
     private void FixedUpdate()
     {
-        Move();
+        //Move();
     }
 
     public void Move()

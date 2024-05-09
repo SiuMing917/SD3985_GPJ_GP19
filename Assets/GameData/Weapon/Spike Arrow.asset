@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e79e3f20de6124e8a89079eea67697, type: 3}
+  m_Name: Spike Arrow
+  m_EditorClassIdentifier: 
+  attackRange: 0
+  coolDown: 3
+  minDamage: 3
+  maxDamage: 6
+  bulletAmount: 10
+  criticalChance: 0
+  weaponName: Spike Arrow
+  bulletPoolName: Spike Arrow Pool
+  weaponType: 0
+  weaponLevel: 2
+  weaponPrefab: {fileID: 6112101072299215823, guid: 3391ca945265c144cb2ad923a77bd5fb, type: 3}
+  weaponOnGroundPrefab: {fileID: 2622179621832993658, guid: 03d4c44a029b0384e911630645f42d5a, type: 3}
+  isCritical: 0
+  bulletPrefab: {fileID: 2051761416207393602, guid: acc28ef0fbf5de840bb7f1516aa7f908, type: 3}

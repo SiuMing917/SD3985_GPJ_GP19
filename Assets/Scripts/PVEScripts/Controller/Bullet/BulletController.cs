@@ -44,5 +44,13 @@ public class BulletController : MonoBehaviour
             gameObject.SetActive(false);
             isActive = false;
         }
+        else if(CompareTag("Explosion") && collision.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyStats>().TakeDamage(weaponData);
+        }
+        else if (CompareTag("Explosion") && collision.CompareTag("Boss"))
+        {
+            collision.gameObject.GetComponent<BossStats>().TakeDamage(weaponData);
+        }
     }
 }

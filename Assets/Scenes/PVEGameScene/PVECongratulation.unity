@@ -283,7 +283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d0aad5f85bdd0604ead8af040e108039, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eefe188f7d20d34458b1834c89ac09de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -681,7 +681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u606D\u559C\u901A\u5173\uFF01"
+  m_Text: CONGRADULATION!
 --- !u!222 &1270923779
 CanvasRenderer:
   m_ObjectHideFlags: 0

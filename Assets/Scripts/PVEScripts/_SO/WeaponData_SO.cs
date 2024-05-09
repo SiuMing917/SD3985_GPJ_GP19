@@ -12,17 +12,17 @@ public class WeaponData_SO : ScriptableObject
     public float coolDown;
     public int minDamage;
     public int maxDamage;
-    public int bulletAmount;          //一发子弹要消耗多少精力
-    public float criticalChance;      //暴击率
+    public int bulletAmount;
+    public float criticalChance;
     public string weaponName;
-    public string bulletPoolName;     //子弹池名字
-    public WeaponType weaponType;     //武器类型
-    public WeaponLevel weaponLevel;   //武器级别
-    public GameObject weaponPrefab;   //武器预制体
-    public GameObject weaponOnGroundPrefab;   //在地上的武器预制体
+    public string bulletPoolName;
+    public WeaponType weaponType;
+    public WeaponLevel weaponLevel;
+    public GameObject weaponPrefab;
+    public GameObject weaponOnGroundPrefab;
 
     public bool isCritical = false;
 
     public GameObject bulletPrefab;
-    bool onGround;   //判断是否在地面上
+    bool onGround;
 }

@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: bea47542cbc501240b2c6d873411b60f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7947873647787460855
+    second: map_pang_aniobject4_0
+  - first:
+      213: -7144479256309068607
+    second: map_pang_aniobject4_1
+  - first:
+      213: -5329047865994886455
+    second: map_pang_aniobject4_2
+  - first:
+      213: -2403905265549262777
+    second: map_pang_aniobject4_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,7 +137,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: map_pang_aniobject4_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f84f0819f48c4e60800000000000000
+      internalID: 7947873647787460855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_pang_aniobject4_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc0d8e28f5b9dc90800000000000000
+      internalID: -7144479256309068607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
