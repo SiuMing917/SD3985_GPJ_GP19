@@ -283,7 +283,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 5
+  maxSpeed: 1
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -363,6 +363,8 @@ MonoBehaviour:
   nextFire: 0
   isCritical: 0
   isDead: 0
+  debutEffect: {fileID: 0}
+  isElite: 0
 --- !u!50 &8361060944813592798
 Rigidbody2D:
   serializedVersion: 4

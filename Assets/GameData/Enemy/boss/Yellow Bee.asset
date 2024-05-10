@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906acc9c385c2fc4ead76dde9ab9500d, type: 3}
   m_Name: Yellow Bee
   m_EditorClassIdentifier: 
-  maxHealth: 300
-  currentHealth: 300
+  maxHealth: 1000
+  currentHealth: 1000
   baseDefence: 2
   currentDefence: 2
   maxEnergy: 0

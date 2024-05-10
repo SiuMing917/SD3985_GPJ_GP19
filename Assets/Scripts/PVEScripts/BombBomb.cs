@@ -149,7 +149,7 @@ public class BombBomb : MonoBehaviour
         if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))
         {
             //Vector2 mask = position + 1f;
-            ClearDestructible(position);
+            //ClearDestructible(position);
             // ClearDestructible(mask);
             ClearDestructibleObject(position);
             return;

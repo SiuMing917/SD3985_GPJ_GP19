@@ -703,9 +703,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0.32}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.5
 --- !u!212 &6217819077875707526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -865,7 +865,7 @@ MonoBehaviour:
   explosionRadius: 1
   destructibleTiles: {fileID: 0}
   destructiblePrefab: {fileID: 5517966312333032629, guid: 39b7cb57db51ea145becebbea44df9cd, type: 3}
-  destructibleObjects: {fileID: 0}
+  destructibleObjects: {fileID: 4530207824328966203, guid: 7dde3cf8cafc0e04b860ecd110173ecc, type: 3}
   arrowPrefab: {fileID: 1269633628666449447, guid: 752fc1539d20772409b4799ecbcab6ac, type: 3}
   spikePrefab: {fileID: 7455075646977116417, guid: eee6208bf52d59642bb4adeafa69cd7b, type: 3}
   gokuPrefab: {fileID: 3194480108530572295, guid: 473fc393e83b073419181602a4eba693, type: 3}

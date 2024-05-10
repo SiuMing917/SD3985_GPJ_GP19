@@ -50,13 +50,13 @@ public class Kamehameha : MonoBehaviour
         Vector2 position = playPos;
         //position += Vector2.right;
 
-        if (player.transform.Find("Right").GetComponent<SpriteRenderer>().enabled)
+        if (player.transform.Find("Movement").Find("Right").GetComponent<SpriteRenderer>().enabled)
         {
             BombExplosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
             explosion.SetActiveRenderer(explosion.start);
             explosion.DestroyAfter(explosionDuration);
             Explode(position, Vector2.right, 15);
-        }else if(player.transform.Find("Left").GetComponent<SpriteRenderer>().enabled)
+        }else if(player.transform.Find("Movement").Find("Left").GetComponent<SpriteRenderer>().enabled)
         {
             BombExplosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
             explosion.SetActiveRenderer(explosion.start);
@@ -64,7 +64,7 @@ public class Kamehameha : MonoBehaviour
             explosion.DestroyAfter(explosionDuration);
             Explode(position, Vector2.left, 15);
         }
-        else if (player.transform.Find("Up").GetComponent<SpriteRenderer>().enabled)
+        else if (player.transform.Find("Movement").Find("Up").GetComponent<SpriteRenderer>().enabled)
         {
             BombExplosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
             explosion.SetActiveRenderer(explosion.start);
@@ -72,7 +72,7 @@ public class Kamehameha : MonoBehaviour
             explosion.DestroyAfter(explosionDuration);
             Explode(position, Vector2.up, 15);
         }
-        else if (player.transform.Find("Down").GetComponent<SpriteRenderer>().enabled)
+        else if (player.transform.Find("Movement").Find("Down").GetComponent<SpriteRenderer>().enabled)
         {
             BombExplosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
             explosion.SetActiveRenderer(explosion.start);
@@ -120,7 +120,7 @@ public class Kamehameha : MonoBehaviour
 
         if (hitCollider != null)
         {
-            ClearDestructible(position);
+            //ClearDestructible(position);
             ClearDestructibleObject(position);
         }
 

@@ -156,7 +156,7 @@ MonoBehaviour:
   repathRate: 0.05
   canSearch: 1
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 2
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -257,6 +257,7 @@ MonoBehaviour:
   nextFire: 0
   isCritical: 0
   isDead: 0
+  debutEffect: {fileID: 0}
   isElite: 1
 --- !u!1 &7965917064385297267
 GameObject:
