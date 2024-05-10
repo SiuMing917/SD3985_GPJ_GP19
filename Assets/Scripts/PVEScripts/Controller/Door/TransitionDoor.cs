@@ -7,10 +7,9 @@ public class TransitionDoor : MonoBehaviour
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player")&&Input.GetKeyDown(KeyCode.Space))
+        if(collision.CompareTag("Player"))
         {
-            //¹§Ï²Í¨¹Ø£¡
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(5);
         }
     }
 }
