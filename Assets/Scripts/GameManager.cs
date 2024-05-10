@@ -21,7 +21,12 @@ public class GameManager : Singleton<GameManager>
     public GameObject transitionDoor;             //換冞藷
 
     public List<GameObject> enemiesOne = new List<GameObject>();    //菴珨疏墅昜
-    public List<GameObject> enemiesTwo = new List<GameObject>();    //菴媼疏墅昜
+    public List<GameObject> enemiesTwo = new List<GameObject>();
+    public List<GameObject> enemiesThree = new List<GameObject>();
+    public List<GameObject> enemiesFour = new List<GameObject>();
+    public List<GameObject> enemiesFive = new List<GameObject>();
+    public List<GameObject> enemiesFinal = new List<GameObject>();
+
     public GameObject[] elites;   //儕荎墅
     public bool playerDead     //鳳player岆瘁侚厗
     {
@@ -556,13 +561,56 @@ public class GameManager : Singleton<GameManager>
 
     void GenerateNextRoundEnemy()
     {
-        if (enemiesOne.Count == 0 && isEliteGenerated == false)
+        if (enemiesOne.Count == 0 )
         {
-            for (int i = 0; i < elites.Length; i++)
+            
+            for (int i = 0; i < enemiesTwo.Count; i++)
             {
-                elites[i].SetActive(true);
+                
+                enemiesTwo[i].SetActive(true);
+                //elites[i].SetActive(true);
             }
-            isEliteGenerated = true;
+            //isEliteGenerated = true;
+        }
+        if (enemiesTwo.Count == 0 )
+        {
+            for (int i = 0; i < enemiesThree.Count; i++)
+            {
+
+                enemiesThree[i].SetActive(true);
+                
+            }
+            
+        }
+        if (enemiesThree.Count == 0 )
+        {
+            for (int i = 0; i < enemiesFour.Count; i++)
+            {
+
+                enemiesFour[i].SetActive(true);
+
+            }
+
+        }
+        if (enemiesFour.Count == 0 )
+        {
+            for (int i = 0; i < enemiesFive.Count; i++)
+            {
+
+                enemiesFive[i].SetActive(true);
+
+            }
+
+        }
+        if (enemiesFive.Count == 0 )
+        {
+            for (int i = 0; i < enemiesFinal.Count; i++)
+            {
+
+                enemiesFinal[i].SetActive(true);
+
+            }
+
         }
     }
     //FOR PVP

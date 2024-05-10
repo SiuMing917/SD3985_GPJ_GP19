@@ -93,24 +93,24 @@ public class MovementController : MonoBehaviour
         {
             //DeathSequence();
             //var healthComponent = this.gameObject.GetComponent<Health>();
-            Debug.Log("explosion hit2");
-            Debug.Log(healthComponent);
+            //Debug.Log("explosion hit2");
+            //Debug.Log(healthComponent);
 
             if (healthComponent != null)
             {
                 healthComponent.TakeDamage(damage);
-                Debug.Log("explosion hit3");
+                //Debug.Log("explosion hit3");
             }
         }
         if (other.gameObject.CompareTag("Destructible"))
         {
-            Debug.Log("hittt");
+           // Debug.Log("hittt");
             healthComponent.TakeDamage(5);
         }
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("hittt");
+            //Debug.Log("hittt");
             healthComponent.TakeDamage(5);
         }
     }
