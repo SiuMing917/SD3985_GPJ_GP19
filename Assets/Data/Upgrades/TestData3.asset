@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270527b2791d712498bb85c52e80d318, type: 3}
   m_Name: TestData3
   m_EditorClassIdentifier: 
-  upgradeType: 0
+  upgradeType: 2
   Name: TestData1 - bomb amount +3
   icon: {fileID: -3823133634876601662, guid: b5f6c841c60ee4048a45847cbca3c77c, type: 3}

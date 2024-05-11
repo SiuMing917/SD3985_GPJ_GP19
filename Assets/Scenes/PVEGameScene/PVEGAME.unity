@@ -2604,7 +2604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &368638739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20221,7 +20221,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 22bd3e34086030d4d8c5c62742947f75, type: 2}
   - {fileID: 11400000, guid: c134699638a08f147ac4cb24bcba4d6e, type: 2}
   - {fileID: 11400000, guid: d18dbdee178145046a68b23c2d34a1c8, type: 2}
-  upgradeButtons: []
+  upgradeButtons:
+  - {fileID: 890363821}
+  - {fileID: 506044075}
+  - {fileID: 980385004}
   aquiredUpgrades: []
 --- !u!1001 &921811080
 PrefabInstance:

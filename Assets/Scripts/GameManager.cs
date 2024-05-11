@@ -447,7 +447,7 @@ public class GameManager : Singleton<GameManager>
 
         if (enemiesOne.Count == 0)
         {
-
+            penalcontrol.GetComponent<penalController>().OpenPenal();
             for (int i = 0; i < enemiesTwo.Count; i++)
             {
                 enemiesTwo[i].SetActive(true);
@@ -456,24 +456,28 @@ public class GameManager : Singleton<GameManager>
         }
         if (enemiesTwo.Count == 0)
         {
+            penalcontrol.GetComponent<penalController>().OpenPenal();
             for (int i = 0; i < enemiesThree.Count; i++)
             { enemiesThree[i].SetActive(true); }
 
         }
         if (enemiesThree.Count == 0)
         {
+            penalcontrol.GetComponent<penalController>().OpenPenal();
             for (int i = 0; i < enemiesFour.Count; i++)
             { enemiesFour[i].SetActive(true); }
 
         }
         if (enemiesFour.Count == 0)
         {
+            penalcontrol.GetComponent<penalController>().OpenPenal();
             for (int i = 0; i < enemiesFive.Count; i++)
             { enemiesFive[i].SetActive(true); }
 
         }
         if (enemiesFive.Count == 0)
         {
+            penalcontrol.GetComponent<penalController>().OpenPenal();
             for (int i = 0; i < enemiesFinal.Count; i++)
             { enemiesFinal[i].SetActive(true); }
 
