@@ -192,7 +192,7 @@ public class BombBomb : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (coroutine != null && other.CompareTag("Spike"))
+        if (other.CompareTag("Spike")|| other.CompareTag("Explosion") && coroutine != null)
         {
             StopCoroutine(coroutine);
             coroutine = null;

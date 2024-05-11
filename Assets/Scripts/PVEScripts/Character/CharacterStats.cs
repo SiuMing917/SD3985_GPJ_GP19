@@ -11,7 +11,7 @@ public class CharacterStats : MonoBehaviour
     public BulletPool bulletPool;
 
     public Camera mainCamera;
-    public GameObject weapon;               //获取武器预制体
+    public GameObject weapon;
     protected Animator anim;
     protected BoxCollider2D coll;
 
@@ -23,7 +23,7 @@ public class CharacterStats : MonoBehaviour
     [HideInInspector]
     public bool isCritical;
     public bool isDead=false;
-    protected virtual void Awake()    //protected表示自己和子类可以访问，virtual表示可以让子类在此基础上添加
+    protected virtual void Awake()
     {
         characterData = Instantiate(templateData);
         anim = GetComponent<Animator>();
@@ -45,17 +45,17 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public WeaponController GetWeapon()   //创建一个获取武器Controller的函数，以免要调用时点很多层
+    public WeaponController GetWeapon()
     {
         if(weaponPos.childCount!=0)
         {
-            weaponData = weaponPos.GetChild(0).GetComponent<WeaponController>().weaponData;  //给人物的weaponData赋值
+            weaponData = weaponPos.GetChild(0).GetComponent<WeaponController>().weaponData;
             return weaponPos.GetChild(0).GetComponent<WeaponController>();
         }
         return null;
     }
     #region Read from Data_SO   
-    public int MaxHealth    //设置这么多属性变量好处可以在调用时简洁一点，直接CharacterStats.MaxHealth而不用CharacterStats.characterData.maxHealth
+    public int MaxHealth
     {  
         get { if (characterData != null) return characterData.maxHealth; else return 0; }
         set { characterData.maxHealth = value; }

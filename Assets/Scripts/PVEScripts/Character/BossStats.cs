@@ -126,7 +126,7 @@ public class BossStats : CharacterStats
         }
     }
 
-    void SwitchState()           //简单的状态机，实时改变状态，这个还要改，根据人物是否进入房间来改
+    void SwitchState()
     {
         if (isDead)
         {
@@ -164,9 +164,9 @@ public class BossStats : CharacterStats
             case EnemyStates.DEAD:
                 isDead = true;
                 aiPath.maxSpeed = 0;
-                transform.GetChild(0).GetChild(0).gameObject.SetActive(false);    //武器不显示
+                transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
                 knife.SetActive(false);
-                coll.enabled = false;      //防止死亡了之后还能被攻击
+                coll.enabled = false;
                 anim.Play("boss_dead");
                 break;
             case EnemyStates.GUARD:

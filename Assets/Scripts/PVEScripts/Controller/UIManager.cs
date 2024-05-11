@@ -8,14 +8,14 @@ public class UIManager : MonoBehaviour
 {
     public Text startTextButton;
     public Text loadingText;
-    public GameObject loadingPanel;  //加载时的面板
+    public GameObject loadingPanel;
     public Slider loadingSlider;
-    private bool bigger;            //标记数值在变大
-    private bool smaller;           //标记数值在变小
+    private bool bigger;
+    private bool smaller;
 
     private void Awake()
     {
-        Time.timeScale = 1;                //防止出现卡死情况
+        Time.timeScale = 1;
     }
     private void Update()
     {
@@ -39,11 +39,11 @@ public class UIManager : MonoBehaviour
         while(!operation.isDone)
         {
             loadingSlider.value = operation.progress;
-            loadingText.text = "正在加载中~" + operation.progress * 100 + "%";
+            loadingText.text = "Loading~" + operation.progress * 100 + "%";
             if(operation.progress>=0.9f)
             {
                 loadingSlider.value = 1;
-                loadingText.text= "正在加载中~" +  "100%";
+                loadingText.text= "Loading~" +  "100%";
                 if(Input.anyKeyDown)
                 {
                     operation.allowSceneActivation = true;
@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
             bigger = false;
             smaller = true;
         }
-        if(Mathf.Abs(alpha-0.4f)<0.01f)       //如果直接判==0.4会有问题，毕竟这个Time.delta是个小数，可能不会判定为恰好想等，因此接近即可
+        if(Mathf.Abs(alpha-0.4f)<0.01f)
         {
             bigger = true;
             smaller = false;

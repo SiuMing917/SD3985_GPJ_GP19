@@ -11,24 +11,24 @@ public class GameManager : Singleton<GameManager>
 {
     [Header("PVE")]
     private GameObject player;
-    public bool isFirstStageEnd = false;            //釬峈菴珨論僇蚔牁腔梓祩ㄗ籵墅昜睿儕荎墅ㄘ
-    public bool isGameOverPVE = false;            //釬峈蚔牁賦旰腔梓祩ㄗ湖侚boss蚔牁賦旰ㄘ
-    private bool isEliteGenerated = false;    //岆瘁汜傖儕荎墅
-    public bool isPlayerInMainRoom = false;           //瓚剿player岆瘁軗輛賸翋滇潔
-    public bool isPlayerInBossRoom = false;           //瓚剿player岆瘁軗輛賸boss滇潔
+    public bool isFirstStageEnd = false;
+    public bool isGameOverPVE = false;
+    private bool isEliteGenerated = false;
+    public bool isPlayerInMainRoom = false;
+    public bool isPlayerInBossRoom = false;
     public PlayerStats playerStats;
-    public GameObject[] blueRewardBoxes;          //懦伎惘眊
-    public GameObject transitionDoor;             //換冞藷
+    public GameObject[] blueRewardBoxes;
+    public GameObject transitionDoor;
 
-    public List<GameObject> enemiesOne = new List<GameObject>();    //菴珨疏墅昜
+    public List<GameObject> enemiesOne = new List<GameObject>();
     public List<GameObject> enemiesTwo = new List<GameObject>();
     public List<GameObject> enemiesThree = new List<GameObject>();
     public List<GameObject> enemiesFour = new List<GameObject>();
     public List<GameObject> enemiesFive = new List<GameObject>();
     public List<GameObject> enemiesFinal = new List<GameObject>();
 
-    public GameObject[] elites;   //儕荎墅
-    public bool playerDead     //鳳player岆瘁侚厗
+    public GameObject[] elites;
+    public bool playerDead
     {
         get { return player.GetComponent<PlayerStats>().isDead; }
     }   
@@ -107,7 +107,7 @@ public class GameManager : Singleton<GameManager>
     public int yRow = 15;
     public Vector3 reference = new Vector3(-5.2f, 7.1f, 0);
 
-    public GameObject[] item;//初始化地图所需物体 0.障碍 1.箱子 2.边界墙 3.地板 4.炸弹 5.爆炸效果 6.传送门 7.声波
+    public GameObject[] item; // initialize all items.
     public GameObject rolePrefab;
     public Sprite[] barriarSprites;
     public AudioClip explosionAudio;
@@ -116,7 +116,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject[] toolPrefab;
     public Sprite[] toolSprites;
 
-    Player[] allplayers;//获取联机玩家信息
+    Player[] allplayers; // get online info
     public bool Online = false;
     public int c = 0;
     public int[] PlayerIndex;
@@ -201,7 +201,7 @@ public class GameManager : Singleton<GameManager>
     }
     private void Start()
     {
-        //生成地图
+        //Map Generation
         #region
         for (int i = 0; i < xColumn; i++)
         {
@@ -210,33 +210,19 @@ public class GameManager : Singleton<GameManager>
                 itemsType[i, j] = ItemType.EMPTY;
             }
         }
-        //生成基本地图
+        //basic map
         for (int i = -1; i <= xColumn; i++)
         {
             for (int j = -1; j <= yRow; j++)
             {
-                CreateItem(item[3], i, j, Quaternion.identity);//生成地板
+                CreateItem(item[3], i, j, Quaternion.identity);//floor
                 if (i == -1 || i == xColumn || j == -1 || j == yRow)
-                    CreateItem(item[2], i, j, Quaternion.identity);//生成边界墙
+                    CreateItem(item[2], i, j, Quaternion.identity);//wall
                 else
                 {
-                    if (mode == 2)
-                    {
-                        if (map1[j, i] == 1)
-                        {
-                            CreateItem(item[0], i, j, Quaternion.identity);//生成障碍
-                        }
                         if (map1[j, i] == 2)
                         {
-                            doors.Add(new Location(i, j));
-                            CreateItem(item[6], i, j, Quaternion.identity);
-                        }
-                    }
-                    else
-                    {
-                        if (map1[j, i] == 2)
-                        {
-                            CreateItem(item[26], i, j, Quaternion.identity);//生成地板
+                            CreateItem(item[26], i, j, Quaternion.identity);//floor
                         }
 
                         if (map1[j, i] == 1)
@@ -251,7 +237,6 @@ public class GameManager : Singleton<GameManager>
                         {
                             CreateItem(item[16], i, j, Quaternion.identity);//Spike
                         }
-                    }
 
                 }
             }
@@ -274,117 +259,11 @@ public class GameManager : Singleton<GameManager>
             }
         }
         #endregion
-        //生成角色
-        if (mode == 0)
-        {
-            GameObject selectRole = GameObject.FindGameObjectWithTag("selectRole");
-            if (selectRole != null)
-            {
-                RandomGenerateRole(selectRole.GetComponent<SelectRole>().index, 1, 0);
-                Destroy(selectRole);
-            }
-            Online = false;
-            if (!Online)
-            {
-                while (roleList.Count < 4)
-                {
-                    int i = Random.Range(0, leftRoleNOList.Count);
-                    RandomGenerateRole(leftRoleNOList[i], 0, roleList.Count);
-                }
-
-                for (int i = 0; i < roleList.Count; i++)
-                {
-                    for (int j = i + 1; j < roleList.Count; j++)
-                    {
-                        Physics2D.IgnoreCollision(roleList.GetT(i).GetComponent<PolygonCollider2D>(), roleList.GetT(j).GetComponent<PolygonCollider2D>());
-                    }
-                }
-            }
-        }
-
-        if (mode == 1)
-        {
-            GameObject selectRole2 = GameObject.FindGameObjectWithTag("selectRole2");
-            if (selectRole2 != null)
-            {
-                RandomGenerateRole(selectRole2.GetComponent<SelectRole2>().index[0], 1, 0);
-                RandomGenerateRole(selectRole2.GetComponent<SelectRole2>().index[1], 2, 1);
-                Destroy(selectRole2);
-            }
-            Online = false;
-            if (!Online)
-            {
-                while (roleList.Count < 4)
-                {
-                    int i = Random.Range(0, leftRoleNOList.Count);
-                    RandomGenerateRole(leftRoleNOList[i], 0, roleList.Count);
-                }
-
-                for (int i = 0; i < roleList.Count; i++)
-                {
-                    for (int j = i + 1; j < roleList.Count; j++)
-                    {
-                        Physics2D.IgnoreCollision(roleList.GetT(i).GetComponent<PolygonCollider2D>(), roleList.GetT(j).GetComponent<PolygonCollider2D>());
-                    }
-                }
-            }
-        }
-
-        if (mode == 2)
-        {
-            GameObject selectRole = GameObject.FindGameObjectWithTag("selectRole");
-            if (selectRole != null)
-            {
-                RandomGenerateRole(selectRole.GetComponent<SelectRole>().index, 1, 0);
-                Destroy(selectRole);
-            }
-            Online = false;
-            if (!Online)
-            {
-                while (roleList.Count < 4)
-                {
-                    int i = Random.Range(0, leftRoleNOList.Count);
-                    RandomGenerateRole(leftRoleNOList[i], 0, roleList.Count);
-                }
-
-                for (int i = 0; i < roleList.Count; i++)
-                {
-                    for (int j = i + 1; j < roleList.Count; j++)
-                    {
-                        Physics2D.IgnoreCollision(roleList.GetT(i).GetComponent<PolygonCollider2D>(), roleList.GetT(j).GetComponent<PolygonCollider2D>());
-                    }
-                }
-            }
-        }
+        //Generate Players
         if (mode == 3 && Online)
         {
-            //Online属性
+            //Online Info
             GetOnlineInfo();
-            #region
-            //if (PhotonNetwork.IsMasterClient)
-            //{
-            //    int k = 0;
-            //    for (int i = 0; i < InRoomPeople; i++)
-            //    {
-            //        for (int j = 0; j < InRoomPeople; j++)
-            //        {
-            //            if (PlayerIndex[j] == k)
-            //            {
-            //                if (j != MasterClientIndex)
-            //                {
-            //                    RandomGenerateRole(PlayerRoleIndex[j], PlayerIndex[j] + 1, PlayerIndex[j]);
-            //                }
-            //                else
-            //                {
-            //                    RandomGenerateRole(PlayerRoleIndex[j], PlayerIndex[j] + 1, PlayerIndex[j]);
-            //                }
-            //            }
-            //        }
-            //        k++;
-            //    }
-            //}
-            //Debug.Log("OnlineLocalPlayerIndex:" + OnlineLocalPlayerIndex);
-            #endregion
             GenerateRole(birthPlaces[OnlineLocalPlayerIndex].x, birthPlaces[OnlineLocalPlayerIndex].y, OnlineLocalIndex, 1, OnlineLocalPlayerIndex);
             if (PhotonNetwork.IsMasterClient)
             {
@@ -549,7 +428,7 @@ public class GameManager : Singleton<GameManager>
     //FOR PVE
     void GenerateRewardBox()
     {
-        if (enemiesOne.Count == 0 && enemiesTwo.Count == 0 && isFirstStageEnd == false)
+        if (enemiesOne.Count == 0 && enemiesTwo.Count == 0 && enemiesThree.Count == 0 && enemiesFour.Count == 0 && enemiesFive.Count == 0 && isFirstStageEnd == false)
         {
             isFirstStageEnd = true;
             for (int i = 0; i < blueRewardBoxes.Length; i++)
@@ -598,16 +477,6 @@ public class GameManager : Singleton<GameManager>
             {
 
                 enemiesFive[i].SetActive(true);
-
-            }
-
-        }
-        if (enemiesFive.Count == 0 )
-        {
-            for (int i = 0; i < enemiesFinal.Count; i++)
-            {
-
-                enemiesFinal[i].SetActive(true);
 
             }
 
@@ -1693,7 +1562,8 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    //爆炸效果 isEnd:是否是末端(1:末端 0:中间 -1:中心) direction:方向 0:up 1:left 2:right 3:down
+    //Effect just for test
+    #region
     private void ExplodeEffect(int x, int y, int isEnd, int direction)
     {
 
@@ -2060,7 +1930,7 @@ public class GameManager : Singleton<GameManager>
             itemsType[x, y] = ItemType.TOOL;
         }
     }
-
+    #endregion
     private void Victory()
     {
         GameObject.Find("background").GetComponent<AudioSource>().Stop();

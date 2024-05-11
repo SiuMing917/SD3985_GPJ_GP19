@@ -62,7 +62,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2314274400255127928}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -31.77, y: -4.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -241,6 +241,8 @@ MonoBehaviour:
   nextFire: 0
   isCritical: 0
   isDead: 0
+  debutEffect: {fileID: 0}
+  isElite: 0
 --- !u!61 &2314274400255127936
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -251,7 +253,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -279,7 +281,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -342,7 +344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4365019763504953383, guid: d933240780b1a984292442bf0638b11d, type: 3}
       propertyPath: m_Name
-      value: "\u86EE\u732A\u51B2\u649E\uFF08\u5B50\u5F39\uFF09"
+      value: "Pig Attack\uFF08Bullet\uFF09"
       objectReference: {fileID: 0}
     - target: {fileID: 4365019763504953383, guid: d933240780b1a984292442bf0638b11d, type: 3}
       propertyPath: m_IsActive

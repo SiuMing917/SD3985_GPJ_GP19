@@ -12,7 +12,7 @@ public class EnemyStats : CharacterStats
     private AIPath aiPath;
     private GameObject bullet;
     private bool isChase=true;
-    public GameObject debutEffect;  //精英怪登场效果
+    public GameObject debutEffect;
     public bool isElite;
 
     private EnemyStates enemyStates;
@@ -42,31 +42,44 @@ public class EnemyStats : CharacterStats
         else weaponData.isCritical = false;
 
         if (weaponData.isCritical) damage *= 2;
-        damage = Mathf.Max(damage - BaseDefence, 0);     //伤害最低是0，不能加血
+        damage = Mathf.Max(damage - BaseDefence, 0);
         CurrentHealth = Mathf.Max(CurrentHealth - damage,0);
 
-        //damageText = GameObject.Find("DamageInfoText");   //GameObject.Find只能找active的物体，不能找隐藏物体
-        GameObject damageInfo = GameObject.Find("DamageInfo");   //可以把要用的文字挂在一个可见空物体下面，先找这个空物体
-        damageText=damageInfo.transform.Find("DamageInfoText").gameObject;  //再用Transform.Find方法可以找子物体名字，隐藏的也可以找到
-        if (weaponData.isCritical) damageText.GetComponent<Text>().color = Color.red;    //暴击让数字显示为红色
-        else damageText.GetComponent<Text>().color = Color.yellow;            //不暴击让数字显示为黄色
+        GameObject damageInfo = GameObject.Find("DamageInfo");
+        damageText=damageInfo.transform.Find("DamageInfoText").gameObject;
+        if (weaponData.isCritical) damageText.GetComponent<Text>().color = Color.red;
+        else damageText.GetComponent<Text>().color = Color.yellow;
 
-        damageText.GetComponent<Text>().text = damage.ToString();    //更新文字内容为当前的伤害
-        InvokeRepeating("SetDamageInfoTextPos", 0, 0.02f);            //实时更新文字的位置保证在怪物头顶而不是停留在原地
+        damageText.GetComponent<Text>().text = damage.ToString();
+        InvokeRepeating("SetDamageInfoTextPos", 0, 0.02f);
         damageText.SetActive(true);
-        StartCoroutine(SetDamageInfoTextFalse());   //协程是与这个程序一起跑，协程后面的程序不影响，同时在跑
+        StartCoroutine(SetDamageInfoTextFalse());
 
-        if(CurrentHealth<=0)                 //判断一下是否死亡，若死亡则播放死亡动画、停止运动并销毁
+        if(CurrentHealth<=0)
         {
             isDead = true;
             anim.SetBool("dead", isDead);
-            //aiPath.maxSpeed = 0;   //要获取这个组件还得先引用一下命名空间(这句话我在状态机调用)
             if (isElite == false && GameManager.Instance.enemiesOne.Contains(gameObject))
-                GameManager.Instance.enemiesOne.Remove(gameObject);          //用数量计算的话有时--抽风，多减了一次，我就换成列表的形式
-            else if (isElite == true && GameManager.Instance.enemiesTwo.Contains(gameObject))
+                GameManager.Instance.enemiesOne.Remove(gameObject);
+            else if (isElite == false && GameManager.Instance.enemiesTwo.Contains(gameObject))
+                GameManager.Instance.enemiesTwo.Remove(gameObject);
+            else if (isElite == false && GameManager.Instance.enemiesThree.Contains(gameObject))
+                GameManager.Instance.enemiesThree.Remove(gameObject);
+            else if (isElite == false && GameManager.Instance.enemiesFour.Contains(gameObject))
+                GameManager.Instance.enemiesFour.Remove(gameObject);
+            else if (isElite == false && GameManager.Instance.enemiesFive.Contains(gameObject))
+                GameManager.Instance.enemiesFive.Remove(gameObject);
+            else if (isElite == true)
             {
                 debutEffect.SetActive(false);
-                GameManager.Instance.enemiesTwo.Remove(gameObject);
+                if (GameManager.Instance.enemiesTwo.Contains(gameObject))
+                    GameManager.Instance.enemiesTwo.Remove(gameObject);
+                else if (GameManager.Instance.enemiesThree.Contains(gameObject))
+                    GameManager.Instance.enemiesThree.Remove(gameObject);
+                else if (GameManager.Instance.enemiesFour.Contains(gameObject))
+                    GameManager.Instance.enemiesFour.Remove(gameObject);
+                else if (GameManager.Instance.enemiesFive.Contains(gameObject))
+                    GameManager.Instance.enemiesFive.Remove(gameObject);
             }
             Destroy(gameObject, 2f);
         }
@@ -74,21 +87,21 @@ public class EnemyStats : CharacterStats
 
     IEnumerator SetDamageInfoTextFalse()
     {
-        yield return new WaitForSeconds(0.5f);   //注意WaitForSeconds前面有new,等完这个时间之后下面的语句才执行
+        yield return new WaitForSeconds(0.5f);
         damageText.SetActive(false);
-        CancelInvoke("SetDamageInfoTextPos");    //文字关闭后就把InvokeRepeating关闭，以免文字关闭还一直调用，开销很大
+        CancelInvoke("SetDamageInfoTextPos");
     }
 
     void SetDamageInfoTextPos()
     {
-        damageText.transform.position = mainCamera.WorldToScreenPoint(transform.position + new Vector3(0, 1, 0));  //由于UI是屏幕坐标，物体是世界坐标，因此将物体的坐标转换为屏幕坐标再赋值给UI的坐标就行
+        damageText.transform.position = mainCamera.WorldToScreenPoint(transform.position + new Vector3(0, 1, 0));
     }
 
     void Move()
     {
         if (GetComponent<EnemyStats>().isDead == false)
         {
-            if (transform.position.x < player.position.x)   //怪物在player左边时怪物对着player，反之则转180度
+            if (transform.position.x < player.position.x)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
@@ -113,7 +126,7 @@ public class EnemyStats : CharacterStats
                 z = -Vector3.Angle(Vector3.right, player.transform.position - weaponPos.position);
             }
             weaponPos.rotation = Quaternion.Euler(0, 0, z);
-            if (Mathf.Abs(z) > 90)        //枪的角度调整一下,注意不能直接改rotation，否则那改的是相对世界的旋转角度，要用Local改变相对父级角度
+            if (Mathf.Abs(z) > 90)
             {
                 weaponPos.GetChild(0).transform.localEulerAngles = new Vector3(180, 0, 0);
             }
@@ -128,29 +141,29 @@ public class EnemyStats : CharacterStats
     {
         if (isDead == false&&isChase==true)
         {
-            if (GetWeapon().weaponData.weaponType == WeaponType.GUN&&(Time.time > nextFire))   //远程武器攻击
+            if (GetWeapon().weaponData.weaponType == WeaponType.GUN&&(Time.time > nextFire))
             {
                 nextFire = Time.time + GetWeapon().weaponData.coolDown;
-                GameObject bullet = GetWeapon().weaponBulletPool.GetBullet();     //子弹池获取子弹
+                GameObject bullet = GetWeapon().weaponBulletPool.GetBullet();
                 bullet.GetComponent<BulletController>().weaponData = Instantiate(weaponData);
-                bullet.SetActive(true);                                     //显示子弹
-                bullet.transform.eulerAngles = weaponPos.eulerAngles;   //生成后就将bullet角度与当时的weaponPos一致
+                bullet.SetActive(true);
+                bullet.transform.eulerAngles = weaponPos.eulerAngles;
                 bullet.GetComponent<BulletController>().isActive = true;
                 bullet.transform.position = weaponPos.position;
                 Vector3 bulletDir = weaponPos.transform.right;
-                bullet.GetComponent<BulletController>().rb.velocity = new Vector2(bulletDir.x, bulletDir.y) * 20;  //二维平面给一个速度
+                bullet.GetComponent<BulletController>().rb.velocity = new Vector2(bulletDir.x, bulletDir.y) * 20;
             }
-            else if(Time.time>nextFire)    //近战武器
+            else if(Time.time>nextFire)
             {
                 nextFire = Time.time + GetWeapon().weaponData.coolDown;
                 bullet.GetComponent<BulletController>().weaponData = Instantiate(weaponData);
-                bullet.SetActive(true);                                     //显示子弹
-                aiPath.maxSpeed = 8;                                       //以很快速度冲Player
+                bullet.SetActive(true);
+                aiPath.maxSpeed = 8;
             }
         }
     }
 
-    void SwitchState()           //简单的状态机，实时改变状态，这个还要改，根据人物是否进入房间来改
+    void SwitchState()
     {
         if (isDead)
             enemyStates = EnemyStates.DEAD;
@@ -162,7 +175,6 @@ public class EnemyStats : CharacterStats
         {
             if(Vector3.Distance(player.transform.position,transform.position)<AttackRange)
             {
-                //Debug.Log("Found Player!");
                 enemyStates = EnemyStates.CHASE;
             }
             else
@@ -173,7 +185,7 @@ public class EnemyStats : CharacterStats
             case EnemyStates.PATROL:
                 isChase = false;
                 aiPath.maxSpeed = 3;
-                if (bullet) bullet.SetActive(false);      //猪的子弹不显示
+                if (bullet) bullet.SetActive(false);
                 break;
             case EnemyStates.CHASE:
                 isChase = true;
@@ -183,9 +195,9 @@ public class EnemyStats : CharacterStats
             case EnemyStates.DEAD:
                 isDead = true;
                 aiPath.maxSpeed = 0;
-                transform.GetChild(0).GetChild(0).gameObject.SetActive(false);    //武器不显示
-                if (bullet) bullet.SetActive(false);      //猪的子弹不显示
-                coll.enabled = false;      //防止死亡了之后还能被攻击
+                transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                if (bullet) bullet.SetActive(false);
+                coll.enabled = false;
                 break;
             case EnemyStates.GUARD:
                 isChase = false;
@@ -194,11 +206,4 @@ public class EnemyStats : CharacterStats
         }
     }
 
-
-
-    //private void OnDrawGizmos()        //在编辑器中可以将AttackRange范围可视化，便于调节
-    //{
-    //    Gizmos.color = Color.green;
-    //    Gizmos.DrawWireSphere(transform.position, 5);
-    //}
 }
