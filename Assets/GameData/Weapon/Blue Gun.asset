@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 0
   coolDown: 0.3
-  minDamage: 3
-  maxDamage: 6
+  minDamage: 20
+  maxDamage: 30
   bulletAmount: 8
   criticalChance: 0.2
   weaponName: Blue Gun

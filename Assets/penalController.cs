@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 public class penalController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class penalController : MonoBehaviour
     [SerializeField] GameObject playerDeadpenal;
     [SerializeField] List<UpgradeData> upgradeDatas;
     [SerializeField] List<UpgradeButton> upgradeButtons;
+    SceneManage sceneManager;
 
     public void OpenPenal()
     {
@@ -56,6 +58,15 @@ public class penalController : MonoBehaviour
         public string Rarity { get; set; }
         public float Increase { get; set; }
     }
+    public void ReloadScene()
+    {
+        sceneManager.LoadScene("PVEGAME");
+    }
+    public void Back()
+    {
+        sceneManager.LoadScene("1");
+    }
+    
 }
 
 

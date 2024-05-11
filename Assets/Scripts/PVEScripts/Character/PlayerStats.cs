@@ -265,6 +265,7 @@ public class PlayerStats : CharacterStats
                 rb.velocity = Vector2.zero;
                 transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
                 anim.SetBool("dead", isDead);
+                gameObject.GetComponent<penalController>().ShowPlayerDeadPenal();
             }
         }
     }

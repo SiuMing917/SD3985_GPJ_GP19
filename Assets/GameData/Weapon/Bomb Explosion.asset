@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 0
   coolDown: 0
-  minDamage: 5
-  maxDamage: 10
+  minDamage: 15
+  maxDamage: 15
   bulletAmount: 0
   criticalChance: 0
   weaponName: 

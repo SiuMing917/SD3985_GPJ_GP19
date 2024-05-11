@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 0
   coolDown: 0.4
-  minDamage: 1
-  maxDamage: 7
+  minDamage: 14
+  maxDamage: 23
   bulletAmount: 8
   criticalChance: 0.15
   weaponName: Golden Gun

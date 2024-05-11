@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Rainbow Gun
   m_EditorClassIdentifier: 
   attackRange: 0
-  coolDown: 0.3
-  minDamage: 4
-  maxDamage: 5
+  coolDown: 0.5
+  minDamage: 24
+  maxDamage: 37
   bulletAmount: 5
   criticalChance: 0.2
   weaponName: Rainbow Gun
