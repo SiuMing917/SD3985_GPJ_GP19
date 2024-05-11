@@ -439,44 +439,49 @@ public class GameManager : Singleton<GameManager>
     }
 
     void GenerateNextRoundEnemy()
+        
     {
+        GameObject penalcontrol = GameObject.Find("PenalManager");
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            
+            penalcontrol.GetComponent<penalController>().OpenPenal();
+            
+        }
+
         if (enemiesOne.Count == 0 )
         {
             
             for (int i = 0; i < enemiesTwo.Count; i++)
             {
-                
                 enemiesTwo[i].SetActive(true);
-                //elites[i].SetActive(true);
             }
             //isEliteGenerated = true;
         }
         if (enemiesTwo.Count == 0 )
         {
             for (int i = 0; i < enemiesThree.Count; i++)
-            {
-
-                enemiesThree[i].SetActive(true);
-                
-            }
+            {enemiesThree[i].SetActive(true);}
             
         }
         if (enemiesThree.Count == 0 )
         {
             for (int i = 0; i < enemiesFour.Count; i++)
-            {
-
-                enemiesFour[i].SetActive(true);
-
-            }
+            {enemiesFour[i].SetActive(true);            }
 
         }
         if (enemiesFour.Count == 0 )
         {
             for (int i = 0; i < enemiesFive.Count; i++)
-            {
+            {                enemiesFive[i].SetActive(true);            }
 
-                enemiesFive[i].SetActive(true);
+        }
+        if (enemiesFive.Count == 0 )
+        {
+            for (int i = 0; i < enemiesFinal.Count; i++)
+            {                enemiesFinal[i].SetActive(true);            }
+
+        }
 
             }
 

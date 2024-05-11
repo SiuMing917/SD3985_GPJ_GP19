@@ -1342,7 +1342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &432198268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4080,11 +4080,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a9608b413f6274da325c22f33043af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstStageEnd: 0
+  isGameOverPVE: 0
+  isPlayerInMainRoom: 0
+  isPlayerInBossRoom: 0
+  playerStats: {fileID: 0}
+  blueRewardBoxes: []
+  transitionDoor: {fileID: 0}
+  enemiesOne: []
+  enemiesTwo: []
+  enemiesThree: []
+  enemiesFour: []
+  enemiesFive: []
+  enemiesFinal: []
+  elites: []
+  player1: {fileID: 1150602108}
+  player2: {fileID: 0}
+  destructibleTiles: {fileID: 519426611}
   explosionPrefab: {fileID: 0}
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 0
   IndestrucbleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  BombLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  CleanLayerMask:
     serializedVersion: 2
     m_Bits: 0
   curve:
@@ -4094,13 +4117,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   destructiblePrefab: {fileID: 0}
+  destructiblePrefab2: {fileID: 0}
   waveTimeCountDisplay: {fileID: 1843406287}
   countdownDisplay: {fileID: 432198269}
   countdownTime: 3
   waveTime: 30
-  player1: {fileID: 1150602108}
-  player2: {fileID: 0}
-  destructibleTiles: {fileID: 519426611}
   mode: 0
   xColumn: 16
   yRow: 15
