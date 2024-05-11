@@ -20,6 +20,6 @@ MonoBehaviour:
   currentEnergy: 0
   attackRange: 8
   coolDown: 3
-  minDamage: 4
-  maxDamage: 4
+  minDamage: 5
+  maxDamage: 7
   criticalChance: 0.1

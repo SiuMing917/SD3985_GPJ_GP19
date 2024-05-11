@@ -12,6 +12,7 @@ public class penalController : MonoBehaviour
     [SerializeField] List<UpgradeButton> upgradeButtons;
     SceneManage sceneManager;
 
+    
     public void OpenPenal()
     {
  
@@ -43,11 +44,13 @@ public class penalController : MonoBehaviour
     public void ShowGameOverPenal()
     {
         Time.timeScale = 0;
+        
         gameOverpenal.SetActive(true);
     }
     public void ShowPlayerDeadPenal()
     {
         Time.timeScale = 0;
+        
         playerDeadpenal.SetActive(true);
     }
 
