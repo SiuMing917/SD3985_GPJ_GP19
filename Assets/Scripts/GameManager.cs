@@ -423,19 +423,38 @@ public class GameManager : Singleton<GameManager>
         {
             Menu.screenSize = new int[2] { Screen.width, Screen.height };
         }
+
+  
     }
 
     //FOR PVE
     void GenerateRewardBox()
     {
-        if (enemiesOne.Count == 0 && enemiesTwo.Count == 0 && enemiesThree.Count == 0 && enemiesFour.Count == 0 && enemiesFive.Count == 0 && isFirstStageEnd == false)
+ 
+        if(enemiesTwo.Count == 0)
         {
-            isFirstStageEnd = true;
-            for (int i = 0; i < blueRewardBoxes.Length; i++)
-            {
-                blueRewardBoxes[i].SetActive(true);
-            }
+            blueRewardBoxes[1].SetActive(true);
+           
         }
+        if (enemiesThree.Count == 0)
+        {
+            blueRewardBoxes[2].SetActive(true);
+            blueRewardBoxes[3].SetActive(true);
+            
+        }
+        if (enemiesFour.Count == 0)
+        {
+            blueRewardBoxes[4].SetActive(true);
+            blueRewardBoxes[4].SetActive(true);
+            blueRewardBoxes[5].SetActive(true);
+        }
+        if (enemiesFive.Count == 0)
+        {
+            blueRewardBoxes[6].SetActive(true);
+            blueRewardBoxes[7].SetActive(true);
+            blueRewardBoxes[8].SetActive(true);
+        }
+
     }
 
     void GenerateNextRoundEnemy()
@@ -447,7 +466,9 @@ public class GameManager : Singleton<GameManager>
 
         if (enemiesOne.Count == 0)
         {
-            penalcontrol.GetComponent<penalController>().OpenPenal();
+            isFirstStageEnd = true;
+            //penalcontrol.GetComponent<penalController>().OpenPenal();
+            
             for (int i = 0; i < enemiesTwo.Count; i++)
             {
                 enemiesTwo[i].SetActive(true);
@@ -456,30 +477,30 @@ public class GameManager : Singleton<GameManager>
         }
         if (enemiesTwo.Count == 0)
         {
-            penalcontrol.GetComponent<penalController>().OpenPenal();
+            //penalcontrol.GetComponent<penalController>().OpenPenal();
             for (int i = 0; i < enemiesThree.Count; i++)
             { enemiesThree[i].SetActive(true); }
 
         }
         if (enemiesThree.Count == 0)
         {
-            penalcontrol.GetComponent<penalController>().OpenPenal();
+            //penalcontrol.GetComponent<penalController>().OpenPenal();
             for (int i = 0; i < enemiesFour.Count; i++)
             { enemiesFour[i].SetActive(true); }
 
         }
         if (enemiesFour.Count == 0)
         {
-            penalcontrol.GetComponent<penalController>().OpenPenal();
+            //penalcontrol.GetComponent<penalController>().OpenPenal();
             for (int i = 0; i < enemiesFive.Count; i++)
             { enemiesFive[i].SetActive(true); }
 
         }
         if (enemiesFive.Count == 0)
         {
-            penalcontrol.GetComponent<penalController>().OpenPenal();
-            for (int i = 0; i < enemiesFinal.Count; i++)
-            { enemiesFinal[i].SetActive(true); }
+            //penalcontrol.GetComponent<penalController>().OpenPenal();
+            //for (int i = 0; i < enemiesFinal.Count; i++)
+            // enemiesFinal[i].SetActive(true); }
 
         }
 

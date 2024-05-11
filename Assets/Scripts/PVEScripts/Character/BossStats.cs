@@ -63,7 +63,9 @@ public class BossStats : CharacterStats
             isDead = true;
             GameManager.Instance.isGameOverPVE = true;
             anim.SetBool("dead", isDead);
+            GameManager.Instance.enemiesFinal.Remove(gameObject);
             Destroy(gameObject, 2f);
+            GameManager.Instance.GetComponent<penalController>().ShowGameOverPenal();
         }
     }
 

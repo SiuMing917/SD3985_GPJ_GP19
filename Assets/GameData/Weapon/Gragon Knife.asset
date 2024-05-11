@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 4
   coolDown: 1.5
-  minDamage: 13
-  maxDamage: 15
+  minDamage: 30
+  maxDamage: 50
   bulletAmount: 10
-  criticalChance: 0.15
+  criticalChance: 0.2
   weaponName: Gragon Knife
   bulletPoolName: 
   weaponType: 1

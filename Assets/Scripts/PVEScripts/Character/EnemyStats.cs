@@ -61,19 +61,31 @@ public class EnemyStats : CharacterStats
             anim.SetBool("dead", isDead);
             //aiPath.maxSpeed = 0;   //要获取这个组件还得先引用一下命名空间(这句话我在状态机调用)
             if (isElite == false && GameManager.Instance.enemiesOne.Contains(gameObject))
-                GameManager.Instance.enemiesOne.Remove(gameObject);          //用数量计算的话有时--抽风，多减了一次，我就换成列表的形式
-            else if (isElite == true && GameManager.Instance.enemiesTwo.Contains(gameObject))
             {
-                debutEffect.SetActive(false);
-                if (GameManager.Instance.enemiesTwo.Contains(gameObject))
-                    GameManager.Instance.enemiesTwo.Remove(gameObject);
-                else if (GameManager.Instance.enemiesThree.Contains(gameObject))
-                    GameManager.Instance.enemiesThree.Remove(gameObject);
-                else if (GameManager.Instance.enemiesFour.Contains(gameObject))
-                    GameManager.Instance.enemiesFour.Remove(gameObject);
-                else if (GameManager.Instance.enemiesFive.Contains(gameObject))
-                    GameManager.Instance.enemiesFive.Remove(gameObject);
+                GameManager.Instance.enemiesOne.Remove(gameObject);
             }
+                          
+            if (GameManager.Instance.enemiesTwo.Contains(gameObject))
+            {
+                GameManager.Instance.enemiesTwo.Remove(gameObject);           
+            }          
+                          
+            if (isElite == false && GameManager.Instance.enemiesThree.Contains(gameObject))
+            
+                GameManager.Instance.enemiesThree.Remove(gameObject);
+            
+            if (GameManager.Instance.enemiesFour.Contains(gameObject))
+            
+                GameManager.Instance.enemiesFour.Remove(gameObject);
+            
+            if (GameManager.Instance.enemiesFive.Contains(gameObject))
+            
+                GameManager.Instance.enemiesFive.Remove(gameObject);
+            
+            if (GameManager.Instance.enemiesFinal.Contains(gameObject))
+            
+                GameManager.Instance.enemiesFinal.Remove(gameObject);
+            
             Destroy(gameObject, 2f);
         }
     }

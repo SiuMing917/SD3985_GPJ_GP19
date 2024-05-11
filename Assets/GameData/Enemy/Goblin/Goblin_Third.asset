@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 906acc9c385c2fc4ead76dde9ab9500d, type: 3}
-  m_Name: Player
+  m_Name: Goblin_Third
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  currentHealth: 1000
-  baseDefence: 5
-  currentDefence: 5
-  maxEnergy: 360
-  currentEnergy: 360
-  attackRange: 0
-  coolDown: 0
-  minDamage: 30
-  maxDamage: 50
-  criticalChance: 0.2
+  maxHealth: 14
+  currentHealth: 14
+  baseDefence: 1
+  currentDefence: 1
+  maxEnergy: 0
+  currentEnergy: 0
+  attackRange: 8
+  coolDown: 3
+  minDamage: 4
+  maxDamage: 4
+  criticalChance: 0.1

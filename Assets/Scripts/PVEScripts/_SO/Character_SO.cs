@@ -19,7 +19,7 @@ public class Character_SO : ScriptableObject
     public float coolDown;
     public int minDamage;
     public int maxDamage;
-    public float criticalChance;      //±©»÷ÂÊ
+    public float criticalChance;      
 
     public void ApplyWeaponData(WeaponData_SO weapon)
     {
