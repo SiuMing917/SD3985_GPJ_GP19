@@ -14,5 +14,7 @@ public class UpgradeData : ScriptableObject
     public UpgradeType upgradeType;
     public string Name;
     public Sprite icon;
+
+    public int health;
 }
 
