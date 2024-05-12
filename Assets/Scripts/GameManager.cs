@@ -949,7 +949,7 @@ public class GameManager : Singleton<GameManager>
             arrow.transform.right = direction; // Rotate arrow towards player position
 
             float distance = Vector3.Distance(playPos, targetPos);
-            float speed = distance / 3f;
+            float speed = 5f;
             float startTime = Time.time;
 
             while (Time.time < startTime + 3f)
@@ -976,12 +976,12 @@ public class GameManager : Singleton<GameManager>
             Chopper.transform.right = direction; // Rotate arrow towards player position
 
             float distance = Vector3.Distance(playPos, targetPos);
-            float speed = distance / 5f;
+            float speed = 5f;
             float startTime = Time.time;
 
             while (Time.time < startTime + 5f)
             {
-                Chopper.transform.position += direction * speed * Time.deltaTime;
+                Chopper.transform.position += direction * speed *1.5f* Time.deltaTime;
                 yield return null;
             }
 
@@ -998,12 +998,12 @@ public class GameManager : Singleton<GameManager>
             Hand.transform.right = direction; // Rotate arrow towards player position
 
             float distance = Vector3.Distance(playPos, targetPos);
-            float speed = distance / 5f;
+            float speed = 5f;
             float startTime = Time.time;
 
             while (Time.time < startTime + 5f)
             {
-                Hand.transform.position += direction * speed * Time.deltaTime;
+                Hand.transform.position += direction * speed *1.5f* Time.deltaTime;
                 yield return null;
             }
 
@@ -1095,7 +1095,7 @@ public class GameManager : Singleton<GameManager>
             bullet.transform.right = direction; // Rotate arrow towards player position
 
             float distance = Vector3.Distance(playPos, targetPos);
-            float speed = distance / 3f;
+            float speed = 5f;
             float startTime = Time.time;
 
             while (Time.time < startTime + 3f)
