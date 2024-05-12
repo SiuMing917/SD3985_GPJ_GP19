@@ -146,7 +146,7 @@ public class GameManager : Singleton<GameManager>
     private List<int> leftRoleNOList = new List<int> { 0, 1, 2, 3, 4 };//the left roles
     public List<Location> doors = new List<Location>();
     public int[] bombNumbers = { 0, 0, 0, 0 };
-    private bool isGameOver = false;
+    public bool isGameOver = false;
     public bool CollhasIng = false;
     public int OnlineAliveNum;
 
@@ -296,14 +296,6 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        //PVE
-        GenerateNextRoundEnemy();
-        GenerateRewardBox();
-        if (isGameOverPVE)
-        { 
-            transitionDoor.SetActive(true);
-
-        }
 
         //Debug.Log("rolelist_num:" + roleList.Count);
         if (isGameOver)
@@ -428,7 +420,16 @@ public class GameManager : Singleton<GameManager>
             Menu.screenSize = new int[2] { Screen.width, Screen.height };
         }
 
-  
+        //PVE
+        GenerateNextRoundEnemy();
+        GenerateRewardBox();
+        if (isGameOverPVE)
+        {
+            transitionDoor.SetActive(true);
+
+        }
+
+
     }
 
     //FOR PVE
