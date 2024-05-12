@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
     public PlayerStats playerStats;
     public GameObject[] blueRewardBoxes;
     public GameObject transitionDoor;
+    public bool isPVEmode = false;
 
     public List<GameObject> enemiesOne = new List<GameObject>();
     public List<GameObject> enemiesTwo = new List<GameObject>();
@@ -162,12 +163,14 @@ public class GameManager : Singleton<GameManager>
             player = FindObjectOfType<PlayerController>().gameObject;
             //player1 = FindObjectOfType<PlayerController>().gameObject;
             playerStats = player.GetComponent<PlayerStats>();
+            isPVEmode = true;
         }
         else if (FindObjectOfType<MovementController>())
         {
             player = FindObjectOfType<MovementController>().gameObject;
             player1 = FindObjectOfType<MovementController>().gameObject;
             playerStats = player.GetComponent<PlayerStats>();
+            isPVEmode = true;
         }
 
         //PVP
@@ -296,6 +299,17 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
+        //PVE
+        if (isPVEmode)
+        {
+            GenerateNextRoundEnemy();
+            GenerateRewardBox();
+            if (isGameOverPVE)
+            {
+                transitionDoor.SetActive(true);
+
+            }
+        }
 
         //Debug.Log("rolelist_num:" + roleList.Count);
         if (isGameOver)
@@ -420,14 +434,6 @@ public class GameManager : Singleton<GameManager>
             Menu.screenSize = new int[2] { Screen.width, Screen.height };
         }
 
-        //PVE
-        GenerateNextRoundEnemy();
-        GenerateRewardBox();
-        if (isGameOverPVE)
-        {
-            transitionDoor.SetActive(true);
-
-        }
 
 
     }
