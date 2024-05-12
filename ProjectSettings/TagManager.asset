@@ -49,6 +49,10 @@ TagManager:
   - Item_AllBuff
   - Item_MaxBuff
   - HardBox
+  - PlayerBullet
+  - Border
+  - EnemyBullet
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -68,7 +72,7 @@ TagManager:
   - Spike
   - WeaponBullet
   - Destrucble
-  - 
+  - Enemy
   - 
   - 
   - 

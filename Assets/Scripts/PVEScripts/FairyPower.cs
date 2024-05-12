@@ -8,14 +8,18 @@ public class FairyPower : MonoBehaviour
     public GameObject fairypowerPrefab;
     public float FuseTime = 1f;
     public GameObject player;
+    public float skillcd = 5f;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && skillcd <= 0f)
         {
             Vector2 position = player.transform.position;
             StartCoroutine(useFariyPower(position));
+            skillcd = 5f;
         }
+        if (skillcd >= 0f)
+            skillcd -= Time.deltaTime;
     }
 
     public void FairyPowerActive(Vector3 playPos)

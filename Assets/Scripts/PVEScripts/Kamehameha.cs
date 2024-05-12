@@ -23,6 +23,8 @@ public class Kamehameha : MonoBehaviour
 
     private bool kamehamehaActive = false;
 
+    public float skillcd = 5f;
+
     private void Awake()
     {
         explosionRadius = GameManager.PVEInstance.player1.GetComponent<BombController>().explosionRadius;
@@ -37,11 +39,14 @@ public class Kamehameha : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !kamehamehaActive)
+        if (Input.GetKeyDown(KeyCode.Q) && !kamehamehaActive && skillcd <= 0f)
         {
             Vector2 position = player.transform.position;
             KamehamehaActive(position);
+            skillcd = 5f;
         }
+        if (skillcd >= 0f)
+            skillcd -= Time.deltaTime;
     }
 
     private void UseKamehameha(Vector3 playPos)

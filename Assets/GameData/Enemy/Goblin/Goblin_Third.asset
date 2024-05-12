@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906acc9c385c2fc4ead76dde9ab9500d, type: 3}
   m_Name: Goblin_Third
   m_EditorClassIdentifier: 
-  maxHealth: 14
-  currentHealth: 14
+  maxHealth: 40
+  currentHealth: 40
   baseDefence: 1
   currentDefence: 1
   maxEnergy: 0

@@ -476,7 +476,6 @@ public class GameManager : Singleton<GameManager>
 
         if (enemiesOne.Count == 0)
         {
-            isFirstStageEnd = true;
             //penalcontrol.GetComponent<penalController>().OpenPenal();
             
             for (int i = 0; i < enemiesTwo.Count; i++)
@@ -508,6 +507,7 @@ public class GameManager : Singleton<GameManager>
         }
         if (enemiesFive.Count == 0)
         {
+            isFirstStageEnd = true;
             //penalcontrol.GetComponent<penalController>().OpenPenal();
             //for (int i = 0; i < enemiesFinal.Count; i++)
             // enemiesFinal[i].SetActive(true); }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906acc9c385c2fc4ead76dde9ab9500d, type: 3}
   m_Name: Goblin_Sacred
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 20
+  maxHealth: 60
+  currentHealth: 60
   baseDefence: 2
   currentDefence: 2
   maxEnergy: 0

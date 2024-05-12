@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 2314274400255127934}
   - component: {fileID: 2314274400255127936}
   - component: {fileID: 2314274400255127937}
-  m_Layer: 7
+  m_Layer: 18
   m_Name: Pig
   m_TagString: Enemy
   m_Icon: {fileID: 0}

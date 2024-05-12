@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 8482993729754829337}
   - component: {fileID: 8482993729754829350}
   - component: {fileID: 8482993729754829351}
-  m_Layer: 7
+  m_Layer: 18
   m_Name: Pig_Elite
   m_TagString: Enemy
   m_Icon: {fileID: 0}

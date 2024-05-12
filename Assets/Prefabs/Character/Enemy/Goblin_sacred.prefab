@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 5724257185428089917}
   - component: {fileID: 5724257185428089916}
   - component: {fileID: 5724257185428089915}
-  m_Layer: 7
+  m_Layer: 18
   m_Name: Goblin_sacred
   m_TagString: Enemy
   m_Icon: {fileID: 0}
