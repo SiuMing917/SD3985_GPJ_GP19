@@ -299,7 +299,12 @@ public class GameManager : Singleton<GameManager>
         //PVE
         GenerateNextRoundEnemy();
         GenerateRewardBox();
-        if (isGameOverPVE) transitionDoor.SetActive(true);
+        if (isGameOverPVE)
+        { 
+            transitionDoor.SetActive(true);
+            GameObject penalcontrol = GameObject.Find("PenalManager");
+            penalcontrol.GetComponent<penalController>().ShowGameOverPenal();
+        }
 
         //Debug.Log("rolelist_num:" + roleList.Count);
         if (isGameOver)

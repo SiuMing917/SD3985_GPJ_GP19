@@ -38,6 +38,13 @@ public class PlayerStats : CharacterStats
         RefreshSkillUI();
         if (ChangeWeaponCD >= 0f)
             ChangeWeaponCD -= Time.deltaTime;
+
+        if(isDead == true)
+        {
+            GameObject penalcontrol = GameObject.Find("PenalManager");
+            penalcontrol.GetComponent<penalController>().ShowPlayerDeadPenal();
+            
+        }
     }
     protected override void Awake()
     {
@@ -264,11 +271,12 @@ public class PlayerStats : CharacterStats
                 coll.enabled = false;
                 rb.velocity = Vector2.zero;
                 transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                
                 anim.SetBool("dead", isDead);
 
-                GameObject penalcontrol = GameObject.Find("PenalManager");
-                penalcontrol.GetComponent<penalController>().ShowPlayerDeadPenal();
+               
             }
+
         }
     }
     IEnumerator SetDamageInfoTextFalse()
