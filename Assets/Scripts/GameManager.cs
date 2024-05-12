@@ -462,7 +462,13 @@ public class GameManager : Singleton<GameManager>
     {
         GameObject penalcontrol = GameObject.Find("PenalManager");
         if (Input.GetKeyDown(KeyCode.J))
-        { penalcontrol.GetComponent<penalController>().OpenPenal(); }
+        { //penalcontrol.GetComponent<penalController>().OpenPenal();
+            penalcontrol.GetComponent<penalController>().ShowPlayerDeadPenal();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        { //penalcontrol.GetComponent<penalController>().OpenPenal();
+            penalcontrol.GetComponent<penalController>().ShowGameOverPenal();
+        }
 
         if (enemiesOne.Count == 0)
         {

@@ -65,7 +65,8 @@ public class BossStats : CharacterStats
             anim.SetBool("dead", isDead);
             GameManager.Instance.enemiesFinal.Remove(gameObject);
             Destroy(gameObject, 2f);
-            GameManager.Instance.GetComponent<penalController>().ShowGameOverPenal();
+            GameObject penalcontrol = GameObject.Find("PenalManager");
+            penalcontrol.GetComponent<penalController>().ShowGameOverPenal();
         }
     }
 
