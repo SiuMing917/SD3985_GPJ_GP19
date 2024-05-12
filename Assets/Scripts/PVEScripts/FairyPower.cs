@@ -8,7 +8,7 @@ public class FairyPower : MonoBehaviour
     public GameObject fairypowerPrefab;
     public float FuseTime = 1f;
     public GameObject player;
-    public float skillcd = 5f;
+    public float skillcd = 0f;
 
     private void Update()
     {

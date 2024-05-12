@@ -482,6 +482,7 @@ public class GameManager : Singleton<GameManager>
             {
                 enemiesTwo[i].SetActive(true);
             }
+            isFirstStageEnd = true;
             //isEliteGenerated = true;
         }
         if (enemiesTwo.Count == 0)
@@ -507,7 +508,6 @@ public class GameManager : Singleton<GameManager>
         }
         if (enemiesFive.Count == 0)
         {
-            isFirstStageEnd = true;
             //penalcontrol.GetComponent<penalController>().OpenPenal();
             //for (int i = 0; i < enemiesFinal.Count; i++)
             // enemiesFinal[i].SetActive(true); }

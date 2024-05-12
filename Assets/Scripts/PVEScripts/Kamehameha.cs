@@ -23,7 +23,7 @@ public class Kamehameha : MonoBehaviour
 
     private bool kamehamehaActive = false;
 
-    public float skillcd = 5f;
+    public float skillcd = 0f;
 
     private void Awake()
     {

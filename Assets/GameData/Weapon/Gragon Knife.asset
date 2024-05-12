@@ -15,7 +15,7 @@ MonoBehaviour:
   attackRange: 4
   coolDown: 1.5
   minDamage: 20
-  maxDamage: 30
+  maxDamage: 40
   bulletAmount: 10
   criticalChance: 0.2
   weaponName: Gragon Knife

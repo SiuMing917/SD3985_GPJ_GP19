@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spike Arrow
   m_EditorClassIdentifier: 
   attackRange: 0
-  coolDown: 2
+  coolDown: 1
   minDamage: 13
   maxDamage: 19
   bulletAmount: 10

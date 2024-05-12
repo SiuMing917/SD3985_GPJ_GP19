@@ -15,7 +15,7 @@ MonoBehaviour:
   attackRange: 4
   coolDown: 1
   minDamage: 8
-  maxDamage: 15
+  maxDamage: 30
   bulletAmount: 10
   criticalChance: 0.2
   weaponName: Hand Knife

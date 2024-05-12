@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 0
   coolDown: 0.3
-  minDamage: 6
-  maxDamage: 8
+  minDamage: 10
+  maxDamage: 12
   bulletAmount: 5
   criticalChance: 0.15
   weaponName: Normal Gun
